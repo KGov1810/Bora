@@ -136,14 +136,14 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 **Description:** Cache the shell files so the app opens fast, and make sure a new deployment replaces the old version. The cache name holds a version constant that is bumped at every deployment.
 
 **Acceptance criteria:**
-- [ ] The app opens from the home screen with no network delay on the second launch.
-- [ ] After a deployment with a new version number, the next launch shows the new version.
+- [x] The app opens from the home screen with no network delay on the second launch.
+- [x] After a deployment with a new version number, the next launch shows the new version.
 - [x] Old caches are deleted when the new service worker activates.
 
 **Verification:**
 - [x] Tests pass: `node --test`
 - [x] Manual check (Claude): local server, the service worker registers with no console errors.
-- [ ] Manual check (owner): deploy a visible change and confirm it appears on the iPhone.
+- [x] Manual check (owner): deploy a visible change and confirm it appears on the iPhone.
 
 **Dependencies:** Tasks 4 and 5
 
@@ -155,6 +155,6 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 **Estimated scope:** Small (2 files)
 
 ## Checkpoint 2: Complete
-- [ ] The full real-device checklist of the spec passes
-- [ ] Every success criterion of the spec is met
-- [ ] Review with the owner before starting the next module
+- [x] The full real-device checklist of the spec passes
+- [x] Every success criterion of the spec is met
+- [x] Review with the owner before starting the next module

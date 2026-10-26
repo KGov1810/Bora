@@ -44,12 +44,12 @@ Before the shell, a small speech test page goes online first. It checks the main
 
 ### Phase 2: Installable app
 - [x] Task 5: App icon and web app manifest
-- [ ] Task 6: Service worker with versioned cache
+- [x] Task 6: Service worker with versioned cache
 
 ### Checkpoint 2: Complete
-- [ ] The full real-device checklist of the spec passes
-- [ ] Every success criterion of the spec is met
-- [ ] Review with the owner before starting the next module
+- [x] The full real-device checklist of the spec passes
+- [x] Every success criterion of the spec is met
+- [x] Review with the owner before starting the next module
 
 ## Risks and Mitigations
 
