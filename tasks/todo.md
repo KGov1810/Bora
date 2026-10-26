@@ -93,22 +93,22 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Description:** Write the first lesson of the approved outline as a real content file, in American English, with its pt-BR glossary, grammar explanation and at least 6 exercises, and list it in `content/path.json`.
 
 **Acceptance criteria:**
-- [ ] The lesson and the path pass the content files test.
-- [ ] The text is original, at A2 level, about 120 to 180 words.
-- [ ] The owner reviews the text, the explanation and the exercises.
+- [x] The lesson and the path pass the content files test.
+- [x] The text is original, at A2 level, about 120 to 180 words.
+- [x] The owner reviews the text, the explanation and the exercises.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
-- [ ] Manual check (owner): reads the lesson in chat.
+- [x] Tests pass: `node --test`
+- [x] Manual check (owner): reads the lesson in chat.
 
 **Dependencies:** Tasks 1 and 4
 
 **Files likely touched:**
-- `content/lessons/<first-lesson-id>.json`
+- `content/lessons/a2-present-simple-routine.json`
 - `content/path.json`
 
 **Estimated scope:** Small (2 files)
 
 ## Checkpoint 2: Complete
-- [ ] Every success criterion of the spec is met
-- [ ] Review with the owner before starting the `lessons` module
+- [x] Every success criterion of the spec is met
+- [x] Review with the owner before starting the `lessons` module

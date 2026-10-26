@@ -1,4 +1,15 @@
 {
   "schemaVersion": 1,
-  "levels": []
+  "levels": [
+    {
+      "level": "A2",
+      "units": [
+        {
+          "id": "a2-u1",
+          "title": "O dia a dia",
+          "lessons": ["a2-present-simple-routine"]
+        }
+      ]
+    }
+  ]
 }

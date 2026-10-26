@@ -1,7 +1,7 @@
 # Implementation Plan: content-format (Bora!)
 
 Source spec: `SPEC-content-format.md` (approved 2026-10-26). Module map: `CAPABILITY-MAP.md`.
-Tasks are tracked in `tasks/todo.md`. Completed plans are in `tasks/done/`.
+Tasks are tracked in `tasks/todo.md`. Status: complete.
 
 ## Overview
 
@@ -27,11 +27,11 @@ Make lessons pure data: a documented JSON format, a validator that checks every 
 
 ### Phase 2: Real content
 - [x] Task 4: Path validator and content files test
-- [ ] Task 5: First A2 lesson and learning path
+- [x] Task 5: First A2 lesson and learning path
 
 ### Checkpoint 2: Complete
-- [ ] Every success criterion of the spec is met
-- [ ] Review with the owner before starting the `lessons` module
+- [x] Every success criterion of the spec is met
+- [x] Review with the owner before starting the `lessons` module
 
 ## Risks and Mitigations
 

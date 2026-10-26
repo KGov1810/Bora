@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "id": "a2-present-simple-routine",
+  "level": "A2",
+  "title": "Um dia na vida de uma barista",
+  "grammarPoint": "Present simple; adverbs of frequency",
+  "theme": "daily life",
+  "estimatedMinutes": 10,
+  "text": {
+    "title": "A Day in the Life of a Barista",
+    "paragraphs": [
+      "Maya is twenty-six, and she lives in Brooklyn, New York. She works as a barista in a small coffee shop near her apartment. Her day usually starts very early.",
+      "Maya [[gets up]] at five thirty every morning. She takes a quick shower, but she never eats breakfast at home. She always walks to work, because the shop is only [[ten minutes away]].",
+      "The shop opens at six thirty. The first [[customers]] are often nurses and taxi drivers. They don't have much time, so they order their coffee [[to go]]. Maya knows a lot of them by name.",
+      "In the afternoon, the shop is usually quiet. Maya cleans the coffee machines and [[restocks]] the cups and the milk. She finishes work at three. She takes a dance class [[twice a week]], and on Sundays she sometimes has dinner with her parents in New Jersey."
+    ]
+  },
+  "glossary": {
+    "gets up": { "pt": "se levanta", "note": "to get up = levantar-se (da cama)" },
+    "ten minutes away": { "pt": "a dez minutos (de distância)" },
+    "customers": { "pt": "clientes" },
+    "to go": { "pt": "para viagem", "note": "Num café: \"For here or to go?\" = \"Para comer aqui ou para levar?\"" },
+    "restocks": { "pt": "repõe", "note": "to restock = repor o estoque" },
+    "twice a week": { "pt": "duas vezes por semana", "note": "once = uma vez, twice = duas vezes, three times = três vezes" }
+  },
+  "grammar": {
+    "title": "Present simple: rotinas e hábitos",
+    "explanation": [
+      "Usamos o present simple para falar de rotinas, hábitos e coisas que são sempre verdade. Por exemplo: Maya works in a coffee shop.",
+      "Com he, she e it, o verbo ganha -s: she works, she lives. Verbos que terminam em -sh, -ch, -ss, -x ou -o ganham -es: she finishes, she goes. E o verbo have vira has: she has dinner.",
+      "Na negativa, usamos don't (com I, you, we, they) ou doesn't (com he, she, it), e o verbo volta para a forma básica: they don't have, she doesn't eat.",
+      "Os advérbios de frequência (always, usually, often, sometimes, never) dizem com que frequência algo acontece. Eles vêm antes do verbo principal (she always walks), mas depois do verbo to be (the shop is usually quiet)."
+    ],
+    "examples": [
+      { "en": "Maya lives in Brooklyn.", "pt": "A Maya mora no Brooklyn." },
+      { "en": "She always walks to work.", "pt": "Ela sempre vai a pé para o trabalho." },
+      { "en": "They don't have much time.", "pt": "Eles não têm muito tempo." },
+      { "en": "The first customers are often nurses.", "pt": "Os primeiros clientes muitas vezes são enfermeiros." }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "prompt": "Onde a Maya trabalha?",
+      "options": ["Em uma cafeteria perto de casa", "Em um hospital", "Em um restaurante em New Jersey"],
+      "answer": 0,
+      "explanation": "O texto diz: \"She works as a barista in a small coffee shop near her apartment.\""
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "statement": "Maya eats breakfast at home every day.",
+      "answer": false,
+      "explanation": "Falso: ela nunca toma café da manhã em casa (\"she never eats breakfast at home\")."
+    },
+    {
+      "id": "q3",
+      "type": "choice",
+      "prompt": "Por que muitos clientes pedem o café para viagem?",
+      "options": ["Porque não têm muito tempo", "Porque a cafeteria é pequena", "Porque o café é mais barato"],
+      "answer": 0,
+      "explanation": "O texto diz: \"They don't have much time, so they order their coffee to go.\""
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "statement": "Maya takes a dance class twice a week.",
+      "answer": true,
+      "explanation": "Verdadeiro: \"She takes a dance class twice a week\" (duas vezes por semana)."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "Complete com o verbo no present simple.",
+      "sentence": "Maya ___ work at three.",
+      "answers": ["finishes"],
+      "hint": "finish",
+      "explanation": "Com she (Maya), verbos que terminam em -sh ganham -es: finish → finishes."
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "prompt": "Complete com a forma negativa.",
+      "sentence": "The nurses ___ have much time.",
+      "answers": ["don't", "do not"],
+      "hint": "não",
+      "explanation": "Com they (the nurses), a negativa usa don't (do not) + o verbo na forma básica."
+    },
+    {
+      "id": "q7",
+      "type": "fill-blank",
+      "prompt": "Complete com o verbo no present simple.",
+      "sentence": "My brother ___ in Chicago.",
+      "answers": ["lives"],
+      "hint": "live",
+      "explanation": "Com he (my brother), o verbo ganha -s: live → lives."
+    },
+    {
+      "id": "q8",
+      "type": "reorder",
+      "prompt": "Coloque as palavras na ordem certa.",
+      "words": ["She", "always", "walks", "to", "work"],
+      "explanation": "O advérbio de frequência vem antes do verbo principal: She always walks to work."
+    },
+    {
+      "id": "q9",
+      "type": "reorder",
+      "prompt": "Coloque as palavras na ordem certa.",
+      "words": ["The", "shop", "is", "usually", "quiet", "in", "the", "afternoon"],
+      "explanation": "Com o verbo to be, o advérbio vem depois dele: is usually quiet."
+    }
+  ]
+}
