@@ -1,6 +1,6 @@
 # Tasks: app-shell (Bora!)
 
-Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node --test tests/`, run by Claude), no regression on earlier screens, the owner approved the commit.
+Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node --test`, run by Claude), no regression on earlier screens, the owner approved the commit.
 
 ## Task 1: Deployable placeholder page and speech test page
 
@@ -35,12 +35,12 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 **Description:** Write the two pure modules from the spec, test first. `resolveRoute` maps a hash to a known tab and falls back to `home`. `createTranslator` returns a `t(key)` function that looks up a string and returns the key itself when it is missing.
 
 **Acceptance criteria:**
-- [ ] `resolveRoute` handles known, unknown, empty and nested hashes (`#/lessons/12` gives `lessons`).
-- [ ] `t(key)` returns the string for an existing key, and the key itself for a missing one.
-- [ ] Neither module touches the DOM.
+- [x] `resolveRoute` handles known, unknown, empty and nested hashes (`#/lessons/12` gives `lessons`).
+- [x] `t(key)` returns the string for an existing key, and the key itself for a missing one.
+- [x] Neither module touches the DOM.
 
 **Verification:**
-- [ ] Tests pass: `node --test tests/`
+- [x] Tests pass: `node --test`
 
 **Dependencies:** None
 
@@ -62,7 +62,7 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 - [ ] Light and dark themes follow the iPhone setting; content clears the notch and the home indicator.
 
 **Verification:**
-- [ ] Tests pass: `node --test tests/`
+- [ ] Tests pass: `node --test`
 - [ ] Manual check (Claude): local server, no console errors, tabs work.
 - [ ] Manual check (owner): tabs and both themes on the iPhone in Safari.
 
@@ -87,7 +87,7 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 - [ ] Reloading the page on any tab keeps that tab open.
 
 **Verification:**
-- [ ] Tests pass: `node --test tests/`
+- [ ] Tests pass: `node --test`
 - [ ] Manual check (Claude): every tab and every reload works locally.
 
 **Dependencies:** Task 3
@@ -138,7 +138,7 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 - [ ] Old caches are deleted when the new service worker activates.
 
 **Verification:**
-- [ ] Tests pass: `node --test tests/`
+- [ ] Tests pass: `node --test`
 - [ ] Manual check (Claude): local server, the service worker registers with no console errors.
 - [ ] Manual check (owner): deploy a visible change and confirm it appears on the iPhone.
 

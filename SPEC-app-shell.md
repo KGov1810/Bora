@@ -39,7 +39,7 @@ The test is run twice: once in Safari, and once from the home-screen icon. The r
 ```
 Dev server (local):     python3 -m http.server 8000
 Dev server (LAN/phone): python3 -m http.server 8000 --bind 0.0.0.0
-Unit tests:             node --test tests/
+Unit tests:             node --test
 ```
 
 The unit tests use Node.js's built-in test runner (Node ≥ 18), with no dependencies. Claude runs them in its workspace; the owner does not need Node.js installed.
@@ -124,7 +124,7 @@ export function resolveRoute(hash, routes, defaultRoute = 'home') {
 
 - **Always:**
   - use relative paths;
-  - run `node --test tests/` before proposing a commit;
+  - run `node --test` before proposing a commit;
   - put every UI string in `pt-BR.json`;
   - bump the cache version in `sw.js` on every deployment.
 - **Ask first:**
@@ -160,7 +160,7 @@ The primary color is lighter in dark mode, because `#C2410C` does not have enoug
 2. It can be installed on her iPhone and opens in standalone mode.
 3. The four tabs work and are labelled in Brazilian Portuguese.
 4. The real-device checklist passes in full.
-5. `node --test tests/` passes.
+5. `node --test` passes.
 6. The speech spike results are recorded and give a clear decision: either native speech recognition or iOS dictation for the `speech` module.
 
 ## Open Questions
@@ -170,4 +170,4 @@ None. Resolved:
 - **App name and icon:** **Bora!**, option C (see Brand).
 - **Repository:** `https://github.com/KGov1810/Bora`, served at `https://kgov1810.github.io/Bora/`. The path is case-sensitive.
 - **Spec language:** English, like the code.
-- **Node.js:** not installed on the owner's computer. Claude runs `node --test tests/` in its own workspace and reports the result before proposing any commit.
+- **Node.js:** not installed on the owner's computer. Claude runs `node --test` in its own workspace and reports the result before proposing any commit.

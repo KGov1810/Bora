@@ -20,7 +20,7 @@ Before the shell, a small speech test page goes online first. It checks the main
 
 ## Deployment and approvals
 
-- Claude runs `node --test tests/` in its own workspace before proposing each commit.
+- Claude runs `node --test` in its own workspace before proposing each commit.
 - Every commit and push needs the owner's explicit approval and a commit message (English). Pushes go to `main`, which needs no extra branch for a single-developer project.
 - The owner enables GitHub Pages once, in Settings › Pages, source: `main` branch, root folder. Claude guides this at Task 1.
 
@@ -34,7 +34,7 @@ Before the shell, a small speech test page goes online first. It checks the main
 - [x] Results recorded in `docs/spikes/speech-results.md`
 
 ### Phase 1: Shell
-- [ ] Task 2: Router and i18n logic, with unit tests
+- [x] Task 2: Router and i18n logic, with unit tests
 - [ ] Task 3: Shell with tab bar and the Início screen
 - [ ] Task 4: Placeholder screens for Lições, Exercícios and Progresso
 
