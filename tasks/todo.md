@@ -84,12 +84,12 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 **Description:** Add one view module per remaining tab, each with a title and a short pt-BR message saying the section is coming soon.
 
 **Acceptance criteria:**
-- [ ] Each tab shows its own screen.
-- [ ] Reloading the page on any tab keeps that tab open.
+- [x] Each tab shows its own screen.
+- [x] Reloading the page on any tab keeps that tab open.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
-- [ ] Manual check (Claude): every tab and every reload works locally.
+- [x] Tests pass: `node --test`
+- [x] Manual check (Claude): every tab and every reload works locally.
 
 **Dependencies:** Task 3
 
@@ -97,6 +97,8 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 - `js/views/lessons.js`
 - `js/views/exercises.js`
 - `js/views/progress.js`
+- `js/views/coming-soon.js` (shared placeholder, added during implementation)
+- `js/app.js`, `css/layout.css` (view registration and section styles)
 - `locales/pt-BR.json`
 
 **Estimated scope:** Small (4 files)

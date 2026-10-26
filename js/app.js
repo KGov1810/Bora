@@ -1,13 +1,18 @@
 import { resolveRoute } from './router.js';
 import { createTranslator } from './i18n.js';
 import * as homeView from './views/home.js';
+import * as lessonsView from './views/lessons.js';
+import * as exercisesView from './views/exercises.js';
+import * as progressView from './views/progress.js';
 
-const TABS = ['home', 'lessons', 'exercises', 'progress'];
-
-// Tabs without a view yet fall back to the home view (until Task 4).
 const VIEWS = {
   home: homeView,
+  lessons: lessonsView,
+  exercises: exercisesView,
+  progress: progressView,
 };
+
+const TABS = Object.keys(VIEWS);
 
 /** Loads the pt-BR strings; returns an empty dictionary if they cannot be fetched. */
 async function loadStrings() {
@@ -34,7 +39,7 @@ function applyStaticStrings(t) {
 /** Renders the view for the current hash and highlights its tab. */
 function renderRoute(t) {
   const route = resolveRoute(window.location.hash, TABS);
-  const view = VIEWS[route] ?? VIEWS.home;
+  const view = VIEWS[route];
   const container = document.getElementById('view');
 
   view.render(container, t);

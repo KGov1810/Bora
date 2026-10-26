@@ -10,5 +10,14 @@
   "home.path.label": "Seu caminho",
   "home.path.current": "Você está aqui",
   "home.path.next": "Próxima meta",
-  "home.soon": "As primeiras lições chegam em breve."
+  "home.soon": "As primeiras lições chegam em breve.",
+  "lessons.title": "Lições",
+  "lessons.intro": "A teoria de cada tema: gramática, vocabulário e pronúncia, explicados em português.",
+  "lessons.soon": "As primeiras lições do nível A2 chegam em breve.",
+  "exercises.title": "Exercícios",
+  "exercises.intro": "Pratique o que aprendeu nas lições, com correção na hora.",
+  "exercises.soon": "Os exercícios aparecem aqui assim que as primeiras lições estiverem prontas.",
+  "progress.title": "Progresso",
+  "progress.intro": "Acompanhe sua evolução e veja o que vale a pena revisar.",
+  "progress.soon": "Seu progresso aparece aqui depois dos primeiros exercícios."
 }
