@@ -1,6 +1,6 @@
 # Tasks: lessons (Bora!)
 
-Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (run by Claude), no console error in the headless check, new files listed in `sw.js` with a version bump, the owner approved the commit.
+Plan: `tasks/done/lessons-plan.md`. Definition of done for every task: `node --test` passes (run by Claude), no console error in the headless check, new files listed in `sw.js` with a version bump, the owner approved the commit.
 
 ## Task 1: Route parameter and glossary splitting
 
@@ -90,7 +90,7 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 
 **Verification:**
 - [x] Tests pass: `node --test`
-- [ ] Manual check (owner): "Ouvir" at both speeds on the iPhone.
+- [x] Manual check (owner): "Ouvir" at both speeds on the iPhone.
 
 **Dependencies:** Task 3
 
@@ -116,7 +116,7 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Verification:**
 - [x] Tests pass: `node --test`
 - [x] Headless check (Claude): open a lesson online, go offline, reopen it; change the file, go online, see the change.
-- [ ] Manual check (owner): airplane mode on the iPhone.
+- [x] Manual check (owner): airplane mode on the iPhone.
 
 **Dependencies:** Task 3
 
@@ -126,6 +126,6 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Estimated scope:** Small (1 file)
 
 ## Checkpoint 2: Complete
-- [ ] The real-iPhone checklist of the spec passes
-- [ ] Every success criterion of the spec is met
-- [ ] Review with the owner before starting the `exercises` module
+- [x] The real-iPhone checklist of the spec passes
+- [x] Every success criterion of the spec is met
+- [x] Review with the owner before starting the `exercises` module

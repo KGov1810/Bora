@@ -1,7 +1,7 @@
 # Implementation Plan: lessons (Bora!)
 
 Source spec: `SPEC-lessons.md` (approved 2026-10-26). Module map: `CAPABILITY-MAP.md`.
-Tasks are tracked in `tasks/todo.md`. Completed plans are in `tasks/done/`.
+Tasks were tracked in `tasks/done/lessons-todo.md`. Status: complete.
 
 ## Overview
 
@@ -27,13 +27,13 @@ Make lessons readable on her iPhone: the list of units and lessons in the Liçõ
 - [x] Owner reads the first lesson on the iPhone, in both themes
 
 ### Phase 2: Listening and offline
-- [ ] Task 4: "Ouvir" button with voice allow-list
-- [ ] Task 5: Offline lessons
+- [x] Task 4: "Ouvir" button with voice allow-list
+- [x] Task 5: Offline lessons
 
 ### Checkpoint 2: Complete
-- [ ] The real-iPhone checklist of the spec passes
-- [ ] Every success criterion of the spec is met
-- [ ] Review with the owner before starting the `exercises` module
+- [x] The real-iPhone checklist of the spec passes
+- [x] Every success criterion of the spec is met
+- [x] Review with the owner before starting the `exercises` module
 
 ## Risks and Mitigations
 
