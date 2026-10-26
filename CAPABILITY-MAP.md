@@ -21,10 +21,12 @@ Approved: 2026-10-26
 
 ## Build order
 
-0. Speech recognition feasibility spike on the target iPhone. This is the main risk, so it comes first.
-1. `app-shell`, `content-format`, `access`
+Updated 2026-10-26: `lessons` and `exercises` come before `access`, so the learner can start studying before any server exists.
+
+0. ✅ Speech recognition feasibility spike on the target iPhone
+1. ✅ `app-shell`, ✅ `content-format`
 2. `lessons`, then `exercises`
-3. `progress`
+3. `access`, then `progress`
 4. `ai-correction`
 5. `speech`
 
