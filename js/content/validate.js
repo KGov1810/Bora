@@ -98,7 +98,41 @@ function checkGrammar(grammar, report) {
   });
 }
 
-/** Checks the rules shared by every exercise: count, unique ids, explanation. */
+/** True when the value is an array of filled strings with a length in [min, max]. */
+function isStringListOfSize(value, min, max) {
+  return Array.isArray(value) && value.length >= min && value.length <= max && value.every(isFilledString);
+}
+
+// Per-type rules. Each checker reports problems with the exercise's path, e.g. "exercises[2]".
+const EXERCISE_CHECKERS = {
+  choice(exercise, at, report) {
+    if (!isFilledString(exercise.prompt)) report(`${at}.prompt must be a non-empty string`);
+    if (!isStringListOfSize(exercise.options, 2, 5)) {
+      report(`${at}.options must have 2 to 5 non-empty strings`);
+      return;
+    }
+    if (!Number.isInteger(exercise.answer) || exercise.answer < 0 || exercise.answer >= exercise.options.length) {
+      report(`${at}.answer must be the index of an option`);
+    }
+  },
+  'true-false'(exercise, at, report) {
+    if (!isFilledString(exercise.statement)) report(`${at}.statement must be a non-empty string`);
+    if (typeof exercise.answer !== 'boolean') report(`${at}.answer must be true or false`);
+  },
+  'fill-blank'(exercise, at, report) {
+    if (!isFilledString(exercise.prompt)) report(`${at}.prompt must be a non-empty string`);
+    const blanks = typeof exercise.sentence === 'string' ? exercise.sentence.split('___').length - 1 : 0;
+    if (blanks !== 1) report(`${at}.sentence must contain exactly one ___`);
+    if (!isFilledStringList(exercise.answers)) report(`${at}.answers must be a non-empty list of strings`);
+    if ('hint' in exercise && !isFilledString(exercise.hint)) report(`${at}.hint must be a non-empty string when present`);
+  },
+  reorder(exercise, at, report) {
+    if (!isFilledString(exercise.prompt)) report(`${at}.prompt must be a non-empty string`);
+    if (!isStringListOfSize(exercise.words, 2, 12)) report(`${at}.words must have 2 to 12 non-empty strings`);
+  },
+};
+
+/** Checks the rules shared by every exercise (count, unique ids, explanation), then its type's rules. */
 function checkExercises(exercises, report) {
   if (!Array.isArray(exercises) || exercises.length < MIN_EXERCISES) {
     report(`a lesson needs at least ${MIN_EXERCISES} exercises`);
@@ -120,7 +154,33 @@ function checkExercises(exercises, report) {
     if (!isFilledString(exercise.explanation)) {
       report(`exercises[${index}].explanation must be a non-empty string`);
     }
+    const checker = Object.hasOwn(EXERCISE_CHECKERS, exercise.type) ? EXERCISE_CHECKERS[exercise.type] : null;
+    if (checker) checker(exercise, `exercises[${index}]`, report);
+    else report(`exercises[${index}].type "${exercise.type}" is not supported`);
   });
+}
+
+/**
+ * Normalizes a typed answer for comparison: trimmed, lower case,
+ * single inner spaces, and straight apostrophes.
+ *
+ * @param {string} text - The typed or expected answer.
+ * @returns {string} The normalized answer.
+ */
+export function normalizeAnswer(text) {
+  return text.trim().toLowerCase().replace(/\s+/g, ' ').replace(/[’‘]/g, "'");
+}
+
+/**
+ * Tells whether a typed answer matches one of the accepted answers of a fill-blank exercise.
+ *
+ * @param {string} typed - What the learner typed.
+ * @param {string[]} accepted - The exercise's accepted answers.
+ * @returns {boolean} True when the normalized answer is accepted.
+ */
+export function isAcceptedAnswer(typed, accepted) {
+  const answer = normalizeAnswer(typed);
+  return accepted.some((candidate) => normalizeAnswer(candidate) === answer);
 }
 
 /**
@@ -166,4 +226,91 @@ export function validateLesson(lesson, fileName) {
   checkExercises(lesson.exercises, report);
 
   return errors;
+}
+
+/** Returns every lesson id listed in the path, in order (duplicates kept). */
+function listPathLessons(path) {
+  if (!isObject(path) || !Array.isArray(path.levels)) return [];
+  return path.levels.flatMap((level) => (isObject(level) && Array.isArray(level.units) ? level.units : []))
+    .flatMap((unit) => (isObject(unit) && Array.isArray(unit.lessons) ? unit.lessons : []));
+}
+
+/**
+ * Checks the learning path against the format and the lesson files that exist.
+ *
+ * @param {unknown} path - The parsed content/path.json.
+ * @param {Record<string, { level: string }>} lessons - Lesson files on disk, by id.
+ * @returns {string[]} Human-readable errors; empty when the path is valid.
+ */
+export function validatePath(path, lessons) {
+  const errors = [];
+  const report = (message) => errors.push(`path.json: ${message}`);
+
+  if (!isObject(path)) {
+    report('path must be an object');
+    return errors;
+  }
+  if (path.schemaVersion !== SCHEMA_VERSION) report(`schemaVersion must be ${SCHEMA_VERSION}`);
+  if (!Array.isArray(path.levels)) {
+    report('levels must be a list');
+    return errors;
+  }
+
+  const seenLevels = new Set();
+  const seenUnits = new Set();
+  const seenLessons = new Set();
+
+  path.levels.forEach((entry, levelIndex) => {
+    const at = `levels[${levelIndex}]`;
+    if (!isObject(entry) || !LEVELS.includes(entry.level)) {
+      report(`${at}.level must be one of ${LEVELS.join(', ')}`);
+      return;
+    }
+    if (seenLevels.has(entry.level)) report(`level "${entry.level}" is listed twice`);
+    seenLevels.add(entry.level);
+
+    if (!Array.isArray(entry.units)) {
+      report(`${at}.units must be a list`);
+      return;
+    }
+    entry.units.forEach((unit, unitIndex) => {
+      const unitAt = isObject(unit) && isFilledString(unit.id) ? `unit ${unit.id}` : `${at}.units[${unitIndex}]`;
+      if (!isObject(unit) || typeof unit.id !== 'string' || !KEBAB_CASE.test(unit.id)) {
+        report(`${unitAt}: id must be a kebab-case string`);
+      } else if (seenUnits.has(unit.id)) {
+        report(`duplicate unit id "${unit.id}"`);
+      } else {
+        seenUnits.add(unit.id);
+      }
+      if (!isObject(unit) || !isFilledString(unit.title)) report(`${unitAt}: title must be a non-empty string`);
+      if (!isObject(unit) || !isFilledStringList(unit.lessons)) {
+        report(`${unitAt}: lessons must be a non-empty list of lesson ids`);
+        return;
+      }
+
+      unit.lessons.forEach((lessonId) => {
+        if (seenLessons.has(lessonId)) report(`lesson "${lessonId}" is listed twice`);
+        seenLessons.add(lessonId);
+        if (!Object.hasOwn(lessons, lessonId)) {
+          report(`lesson "${lessonId}" has no file in content/lessons/`);
+        } else if (lessons[lessonId].level !== entry.level) {
+          report(`lesson "${lessonId}" is ${lessons[lessonId].level} but listed under ${entry.level}`);
+        }
+      });
+    });
+  });
+
+  return errors;
+}
+
+/**
+ * Lists lesson files that the path does not mention (drafts).
+ *
+ * @param {unknown} path - The parsed content/path.json.
+ * @param {Record<string, unknown>} lessons - Lesson files on disk, by id.
+ * @returns {string[]} The draft lesson ids, sorted.
+ */
+export function findDraftLessons(path, lessons) {
+  const listed = new Set(listPathLessons(path));
+  return Object.keys(lessons).filter((id) => !listed.has(id)).sort();
 }

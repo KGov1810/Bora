@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { validateLesson } from '../js/content/validate.js';
+import { validateLesson, normalizeAnswer, isAcceptedAnswer } from '../js/content/validate.js';
 
 const FILE = 'a2-past-simple-weekend.json';
 
@@ -195,4 +195,126 @@ test('rejects an exercise without an explanation', () => {
   const lesson = validLesson();
   delete lesson.exercises[0].explanation;
   assertError(validateLesson(lesson, FILE), 'exercises[0].explanation');
+});
+
+// ---- Exercise types (Task 3) ----
+
+/** Returns a valid lesson whose first exercise is replaced by the given one. */
+function lessonWithExercise(exercise) {
+  const lesson = validLesson();
+  lesson.exercises[0] = { id: 'q1', explanation: 'Explicação.', ...exercise };
+  return lesson;
+}
+
+test('rejects an unknown exercise type', () => {
+  const errors = validateLesson(lessonWithExercise({ type: 'essay', prompt: 'Escreva.' }), FILE);
+  assertError(errors, 'exercises[0].type "essay" is not supported');
+});
+
+test('accepts a valid choice exercise', () => {
+  const lesson = lessonWithExercise({ type: 'choice', prompt: 'Qual?', options: ['A', 'B', 'C'], answer: 2 });
+  assert.deepEqual(validateLesson(lesson, FILE), []);
+});
+
+test('rejects a choice exercise with only one option', () => {
+  const lesson = lessonWithExercise({ type: 'choice', prompt: 'Qual?', options: ['A'], answer: 0 });
+  assertError(validateLesson(lesson, FILE), 'exercises[0].options must have 2 to 5');
+});
+
+test('rejects a choice exercise with more than five options', () => {
+  const lesson = lessonWithExercise({ type: 'choice', prompt: 'Qual?', options: ['A', 'B', 'C', 'D', 'E', 'F'], answer: 0 });
+  assertError(validateLesson(lesson, FILE), 'exercises[0].options must have 2 to 5');
+});
+
+test('rejects a choice answer outside the options', () => {
+  const lesson = lessonWithExercise({ type: 'choice', prompt: 'Qual?', options: ['A', 'B'], answer: 2 });
+  assertError(validateLesson(lesson, FILE), 'exercises[0].answer must be the index of an option');
+});
+
+test('rejects a choice exercise without a prompt', () => {
+  const lesson = lessonWithExercise({ type: 'choice', options: ['A', 'B'], answer: 0 });
+  assertError(validateLesson(lesson, FILE), 'exercises[0].prompt');
+});
+
+test('accepts a valid true-false exercise', () => {
+  const lesson = lessonWithExercise({ type: 'true-false', statement: 'It rained.', answer: true });
+  assert.deepEqual(validateLesson(lesson, FILE), []);
+});
+
+test('rejects a true-false answer that is not a boolean', () => {
+  const lesson = lessonWithExercise({ type: 'true-false', statement: 'It rained.', answer: 'true' });
+  assertError(validateLesson(lesson, FILE), 'exercises[0].answer must be true or false');
+});
+
+test('rejects a true-false exercise without a statement', () => {
+  const lesson = lessonWithExercise({ type: 'true-false', answer: true });
+  assertError(validateLesson(lesson, FILE), 'exercises[0].statement');
+});
+
+test('accepts a valid fill-blank exercise with a hint', () => {
+  const lesson = lessonWithExercise({ type: 'fill-blank', prompt: 'Complete.', sentence: 'I ___ tired.', answers: ['was'], hint: 'be' });
+  assert.deepEqual(validateLesson(lesson, FILE), []);
+});
+
+test('rejects a fill-blank sentence without a blank', () => {
+  const lesson = lessonWithExercise({ type: 'fill-blank', prompt: 'Complete.', sentence: 'I was tired.', answers: ['was'] });
+  assertError(validateLesson(lesson, FILE), 'exactly one ___');
+});
+
+test('rejects a fill-blank sentence with two blanks', () => {
+  const lesson = lessonWithExercise({ type: 'fill-blank', prompt: 'Complete.', sentence: 'I ___ very ___.', answers: ['was'] });
+  assertError(validateLesson(lesson, FILE), 'exactly one ___');
+});
+
+test('rejects a fill-blank exercise without accepted answers', () => {
+  const lesson = lessonWithExercise({ type: 'fill-blank', prompt: 'Complete.', sentence: 'I ___ tired.', answers: [] });
+  assertError(validateLesson(lesson, FILE), 'exercises[0].answers');
+});
+
+test('rejects an empty fill-blank hint', () => {
+  const lesson = lessonWithExercise({ type: 'fill-blank', prompt: 'Complete.', sentence: 'I ___ tired.', answers: ['was'], hint: '' });
+  assertError(validateLesson(lesson, FILE), 'exercises[0].hint');
+});
+
+test('accepts a valid reorder exercise', () => {
+  const lesson = lessonWithExercise({ type: 'reorder', prompt: 'Ordene.', words: ['They', 'walked', 'a', 'lot'] });
+  assert.deepEqual(validateLesson(lesson, FILE), []);
+});
+
+test('rejects a reorder exercise with one word', () => {
+  const lesson = lessonWithExercise({ type: 'reorder', prompt: 'Ordene.', words: ['Hello'] });
+  assertError(validateLesson(lesson, FILE), 'exercises[0].words must have 2 to 12');
+});
+
+test('rejects a reorder exercise with more than twelve words', () => {
+  const words = 'one two three four five six seven eight nine ten eleven twelve thirteen'.split(' ');
+  const lesson = lessonWithExercise({ type: 'reorder', prompt: 'Ordene.', words });
+  assertError(validateLesson(lesson, FILE), 'exercises[0].words must have 2 to 12');
+});
+
+// ---- Answer normalization ----
+
+test('normalizeAnswer ignores case', () => {
+  assert.equal(normalizeAnswer('Visited'), 'visited');
+});
+
+test('normalizeAnswer trims outer spaces', () => {
+  assert.equal(normalizeAnswer('  visited '), 'visited');
+});
+
+test('normalizeAnswer collapses inner spaces', () => {
+  assert.equal(normalizeAnswer('did   not'), 'did not');
+});
+
+test('normalizeAnswer turns curly apostrophes into straight ones', () => {
+  assert.equal(normalizeAnswer('didn’t'), "didn't");
+});
+
+test('isAcceptedAnswer accepts any listed answer after normalization', () => {
+  assert.equal(isAcceptedAnswer(' Didn’t ', ["didn't", 'did not']), true);
+  assert.equal(isAcceptedAnswer('did not', ["didn't", 'did not']), true);
+});
+
+test('isAcceptedAnswer rejects an answer that is not listed', () => {
+  assert.equal(isAcceptedAnswer('visit', ['visited']), false);
 });

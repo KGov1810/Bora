@@ -47,12 +47,12 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Description:** Add the per-type rules for `choice`, `true-false`, `fill-blank` and `reorder`, and the `normalizeAnswer` function used to grade `fill-blank`, test first.
 
 **Acceptance criteria:**
-- [ ] Each exercise type has a valid sample and a failing sample for each of its rules.
-- [ ] An unknown exercise type is reported.
-- [ ] `normalizeAnswer` handles case, outer and inner spaces, and curly apostrophes.
+- [x] Each exercise type has a valid sample and a failing sample for each of its rules.
+- [x] An unknown exercise type is reported.
+- [x] `normalizeAnswer` handles case, outer and inner spaces, and curly apostrophes.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
+- [x] Tests pass: `node --test`
 
 **Dependencies:** Task 2
 
@@ -63,7 +63,7 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Estimated scope:** Small (2 files)
 
 ## Checkpoint 1: Format ready
-- [ ] Unit tests pass
+- [x] Unit tests pass
 - [x] Owner approved the A2 outline
 
 ## Task 4: Path validator and content files test
@@ -71,19 +71,20 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Description:** Write `validatePath`, test first, and a test that loads `content/path.json` and every lesson file and runs both validators on them.
 
 **Acceptance criteria:**
-- [ ] Duplicate unit ids, duplicate lessons, missing lesson files and level mismatches are reported.
-- [ ] A lesson file missing from the path is reported as a draft (test output), without failing.
-- [ ] A broken content file makes `node --test` fail with the validator's errors.
+- [x] Duplicate unit ids, duplicate lessons, missing lesson files and level mismatches are reported.
+- [x] A lesson file missing from the path is reported as a draft (test output), without failing.
+- [x] A broken content file makes `node --test` fail with the validator's errors.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
+- [x] Tests pass: `node --test`
 
 **Dependencies:** Task 3
 
 **Files likely touched:**
 - `js/content/validate.js`
-- `tests/content-validate.test.js`
+- `tests/content-path.test.js` (path validator tests, split from content-validate for readability)
 - `tests/content-files.test.js`
+- `content/path.json` (empty until Task 5)
 
 **Estimated scope:** Small to medium (3 files)
 
