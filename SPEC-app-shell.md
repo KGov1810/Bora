@@ -139,16 +139,16 @@ export function resolveRoute(hash, routes, defaultRoute = 'home') {
 ## Brand
 
 - **App name:** **Bora!** (Brazilian Portuguese for "let's go!"). It is used as the manifest `name` and `short_name`, and as the home-screen label.
-- **Icon:** an "EN" monogram in cream on an orange rounded square, with a short ink-colored bar underneath (option C on the design canvas). The icon is exported as PNG files at 180×180 (apple-touch-icon), 192×192 and 512×512.
+- **Icon:** a "BR" monogram in cream on an orange rounded square, with a short ink-colored bar underneath (option C on the design canvas). The icon is exported as PNG files at 180×180 (apple-touch-icon), 192×192 and 512×512.
 
 The color tokens are defined in `css/base.css`:
 
 | Token | Light | Dark | Usage |
 |---|---|---|---|
-| `--color-brand` | `#E8613C` | `#E8613C` | Icon, large surfaces, manifest `theme_color` |
+| `--color-brand` | `#E8613C` | `#E8613C` | Icon, large surfaces |
 | `--color-primary` | `#C2410C` | `#FF8A5B` | Active tab, links, primary text accents |
 | `--color-accent` | `#2B2D42` | `#FFF4E6` | Secondary emphasis |
-| `--color-bg` | `#FFF8F2` | `#1D1B22` | Page background, `theme-color` per scheme |
+| `--color-bg` | `#FFF8F2` | `#1D1B22` | Page background, `theme-color` per scheme, manifest `theme_color` (light value) |
 | `--color-text` | `#18181B` | `#F4F4F5` | Body text |
 | `--color-muted` | `#52525B` | `#A1A1AA` | Inactive tabs, secondary text |
 

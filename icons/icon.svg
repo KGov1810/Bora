@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Bora! app icon: "BR" monogram drawn as shapes, so rendering never depends on installed fonts. -->
+  <!-- Full-bleed square: iOS and Android apply their own corner mask. -->
+  <rect width="512" height="512" fill="#E8613C"/>
+  <g fill="#FFF4E6">
+    <!-- B: stem and two bowls -->
+    <path d="M130 150H186A42.5 42.5 0 0 1 186 235H130Z"/>
+    <path d="M130 207H190A46.5 46.5 0 0 1 190 300H130Z"/>
+    <!-- R: bowl and leg -->
+    <rect x="266" y="150" width="34" height="150"/>
+    <path d="M266 150H322A42.5 42.5 0 0 1 322 235H266Z"/>
+    <polygon points="306,228 342,228 380,300 342,300"/>
+  </g>
+  <g fill="#E8613C">
+    <!-- Counters, cut out in the background color -->
+    <path d="M164 180H186A13.5 13.5 0 0 1 186 207H164Z"/>
+    <path d="M164 235H190A17.5 17.5 0 0 1 190 270H164Z"/>
+    <path d="M300 180H322A13.5 13.5 0 0 1 322 207H300Z"/>
+  </g>
+  <rect x="160" y="345" width="192" height="23" rx="11.5" fill="#2B2D42"/>
+</svg>

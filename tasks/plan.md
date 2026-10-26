@@ -35,12 +35,12 @@ Before the shell, a small speech test page goes online first. It checks the main
 
 ### Phase 1: Shell
 - [x] Task 2: Router and i18n logic, with unit tests
-- [ ] Task 3: Shell with tab bar and the Início screen
-- [ ] Task 4: Placeholder screens for Lições, Exercícios and Progresso
+- [x] Task 3: Shell with tab bar and the Início screen
+- [x] Task 4: Placeholder screens for Lições, Exercícios and Progresso
 
 ### Checkpoint 1: Navigation
-- [ ] Unit tests pass
-- [ ] All four tabs work on her iPhone in Safari, in light and dark mode
+- [x] Unit tests pass
+- [x] All four tabs work on her iPhone in Safari, in light and dark mode
 
 ### Phase 2: Installable app
 - [ ] Task 5: App icon and web app manifest

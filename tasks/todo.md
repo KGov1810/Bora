@@ -59,12 +59,12 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 **Acceptance criteria:**
 - [x] Tapping a tab changes the hash and highlights the active tab in `--color-primary`.
 - [x] Every visible string comes from `locales/pt-BR.json`.
-- [ ] Light and dark themes follow the iPhone setting; content clears the notch and the home indicator.
+- [x] Light and dark themes follow the iPhone setting; content clears the notch and the home indicator.
 
 **Verification:**
 - [x] Tests pass: `node --test`
 - [x] Manual check (Claude): local server, no console errors, tabs work.
-- [ ] Manual check (owner): tabs and both themes on the iPhone in Safari.
+- [x] Manual check (owner): tabs and both themes on the iPhone in Safari.
 
 **Dependencies:** Task 2
 
@@ -104,9 +104,9 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 **Estimated scope:** Small (4 files)
 
 ## Checkpoint 1: Navigation
-- [ ] Unit tests pass
-- [ ] All four tabs work on her iPhone in Safari, in light and dark mode
-- [ ] Review with the owner
+- [x] Unit tests pass
+- [x] All four tabs work on her iPhone in Safari, in light and dark mode
+- [x] Review with the owner
 
 ## Task 5: App icon and web app manifest
 
@@ -118,7 +118,7 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 - [ ] The status bar color matches the page in both themes.
 
 **Verification:**
-- [ ] Manual check (Claude): the manifest is valid JSON and every icon path resolves locally.
+- [x] Manual check (Claude): the manifest is valid JSON and every icon path resolves locally.
 - [ ] Manual check (owner): install on the iPhone and open from the home screen.
 
 **Dependencies:** Task 3
