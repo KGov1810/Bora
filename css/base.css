@@ -1,0 +1,81 @@
+/* Color tokens (see SPEC-app-shell.md, Brand) and the mobile baseline. */
+
+:root {
+  color-scheme: light dark;
+  --color-brand: #E8613C;
+  --color-primary: #C2410C;
+  --color-on-primary: #FFFFFF;
+  --color-accent: #2B2D42;
+  --color-bg: #FFF8F2;
+  --color-surface: #FFFFFF;
+  --color-border: #EADFD5;
+  --color-text: #18181B;
+  --color-muted: #52525B;
+
+  --font-body: -apple-system, system-ui, sans-serif;
+  --font-display: ui-rounded, -apple-system, system-ui, sans-serif;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #FF8A5B;
+    --color-on-primary: #18181B;
+    --color-accent: #FFF4E6;
+    --color-bg: #1D1B22;
+    --color-surface: #28252F;
+    --color-border: #3F3B47;
+    --color-text: #F4F4F5;
+    --color-muted: #A1A1AA;
+  }
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.5;
+  overscroll-behavior: none;
+}
+
+input,
+textarea,
+select {
+  font-size: 16px;
+}
+
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+button,
+[role="button"],
+.tab-bar a {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

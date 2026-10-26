@@ -57,13 +57,13 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 **Description:** Replace the placeholder page with the real shell: header, view area, and a bottom tab bar with four tabs. Only the Início screen exists yet; the other tabs fall back to it. Includes the color tokens of the Brand section and the full mobile baseline of the spec.
 
 **Acceptance criteria:**
-- [ ] Tapping a tab changes the hash and highlights the active tab in `--color-primary`.
-- [ ] Every visible string comes from `locales/pt-BR.json`.
+- [x] Tapping a tab changes the hash and highlights the active tab in `--color-primary`.
+- [x] Every visible string comes from `locales/pt-BR.json`.
 - [ ] Light and dark themes follow the iPhone setting; content clears the notch and the home indicator.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
-- [ ] Manual check (Claude): local server, no console errors, tabs work.
+- [x] Tests pass: `node --test`
+- [x] Manual check (Claude): local server, no console errors, tabs work.
 - [ ] Manual check (owner): tabs and both themes on the iPhone in Safari.
 
 **Dependencies:** Task 2
@@ -73,6 +73,7 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 - `css/base.css`
 - `css/layout.css`
 - `js/app.js`
+- `js/dom.js` (small DOM helper, added during implementation)
 - `js/views/home.js`
 - `locales/pt-BR.json`
 

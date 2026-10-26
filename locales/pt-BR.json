@@ -1,0 +1,14 @@
+{
+  "app.name": "Bora!",
+  "nav.label": "Navegação principal",
+  "tabs.home": "Início",
+  "tabs.lessons": "Lições",
+  "tabs.exercises": "Exercícios",
+  "tabs.progress": "Progresso",
+  "home.greeting": "Olá!",
+  "home.intro": "Aqui você aprende inglês no seu ritmo: primeiro a teoria, depois os exercícios e, por fim, ouvir e falar.",
+  "home.path.label": "Seu caminho",
+  "home.path.current": "Você está aqui",
+  "home.path.next": "Próxima meta",
+  "home.soon": "As primeiras lições chegam em breve."
+}

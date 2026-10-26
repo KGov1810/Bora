@@ -7,49 +7,42 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1D1B22">
   <meta name="color-scheme" content="light dark">
   <title>Bora!</title>
-  <!-- Temporary placeholder page (Task 1). Replaced by the real shell in Task 3. -->
-  <style>
-    :root {
-      --color-primary: #C2410C;
-      --color-bg: #FFF8F2;
-      --color-text: #18181B;
-      --color-muted: #52525B;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --color-primary: #FF8A5B;
-        --color-bg: #1D1B22;
-        --color-text: #F4F4F5;
-        --color-muted: #A1A1AA;
-      }
-    }
-    html {
-      -webkit-tap-highlight-color: transparent;
-      -webkit-text-size-adjust: 100%;
-    }
-    body {
-      margin: 0;
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: env(safe-area-inset-top, 0px) 16px env(safe-area-inset-bottom, 0px);
-      box-sizing: border-box;
-      background: var(--color-bg);
-      color: var(--color-text);
-      font-family: -apple-system, system-ui, sans-serif;
-      text-align: center;
-    }
-    h1 { margin: 0; font-size: 48px; color: var(--color-primary); }
-    p { margin: 0; color: var(--color-muted); }
-    a { color: var(--color-primary); font-weight: 600; touch-action: manipulation; }
-  </style>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <script type="module" src="js/app.js"></script>
 </head>
 <body>
-  <h1>Bora!</h1>
-  <p>Em construção.</p>
-  <a href="spikes/speech-test.html">Testar a voz</a>
+  <div class="app">
+    <main id="view" class="view" tabindex="-1"></main>
+
+    <nav class="tab-bar" data-i18n-aria-label="nav.label">
+      <a href="#/home" data-route="home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 10.5 12 4l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1z"/>
+        </svg>
+        <span data-i18n="tabs.home"></span>
+      </a>
+      <a href="#/lessons" data-route="lessons">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 6.5C10.5 5 8 4.5 4 4.5v13c4 0 6.5.5 8 2 1.5-1.5 4-2 8-2v-13c-4 0-6.5.5-8 2z"/>
+          <path d="M12 6.5v13"/>
+        </svg>
+        <span data-i18n="tabs.lessons"></span>
+      </a>
+      <a href="#/exercises" data-route="exercises">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15.5 4.5 19.5 8.5 9 19H5v-4z"/>
+          <path d="M13 7l4 4"/>
+        </svg>
+        <span data-i18n="tabs.exercises"></span>
+      </a>
+      <a href="#/progress" data-route="progress">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 19.5V14M10 19.5V10M15 19.5V12.5M20 19.5V6"/>
+        </svg>
+        <span data-i18n="tabs.progress"></span>
+      </a>
+    </nav>
+  </div>
 </body>
 </html>
