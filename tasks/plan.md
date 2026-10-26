@@ -17,13 +17,13 @@ Make lessons pure data: a documented JSON format, a validator that checks every 
 ## Task List
 
 ### Phase 1: Curriculum and validator
-- [ ] Task 1: A2 curriculum outline
-- [ ] Task 2: Lesson validator: fields and glossary marks
+- [x] Task 1: A2 curriculum outline
+- [x] Task 2: Lesson validator: fields and glossary marks
 - [ ] Task 3: Exercise validation and answer normalization
 
 ### Checkpoint 1: Format ready
 - [ ] Unit tests pass
-- [ ] Owner approved the A2 outline
+- [x] Owner approved the A2 outline
 
 ### Phase 2: Real content
 - [ ] Task 4: Path validator and content files test

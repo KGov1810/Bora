@@ -7,12 +7,12 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Description:** Write `docs/curriculum.md`: the planned A2 lessons, grouped into units, in teaching order. Each line gives the lesson id, the grammar point, the text's theme, and a one-line pt-BR title. Themes follow her goals: travel, series, articles, daily life.
 
 **Acceptance criteria:**
-- [ ] The A2 outline covers the core A2 grammar points, one per lesson.
-- [ ] Every planned id follows the spec's naming rule.
-- [ ] The owner approves the outline (order and themes).
+- [x] The A2 outline covers the core A2 grammar points, one per lesson.
+- [x] Every planned id follows the spec's naming rule.
+- [x] The owner approves the outline (order and themes).
 
 **Verification:**
-- [ ] Manual check (owner): reads the outline in chat or on GitHub.
+- [x] Manual check (owner): reads the outline in chat or on GitHub.
 
 **Dependencies:** None
 
@@ -26,12 +26,12 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Description:** Write `validateLesson` for every lesson-level rule of the spec, test first: schema version, id and file name, level, required strings, minutes, text, glossary marks and entries, grammar section, and the minimum number of exercises with unique ids.
 
 **Acceptance criteria:**
-- [ ] The spec's example lesson is valid.
-- [ ] Every lesson rule has a failing sample that produces a readable error naming the field.
-- [ ] A mark without a glossary entry, and an entry never marked, are both reported.
+- [x] The spec's example lesson is valid.
+- [x] Every lesson rule has a failing sample that produces a readable error naming the field.
+- [x] A mark without a glossary entry, and an entry never marked, are both reported.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
+- [x] Tests pass: `node --test`
 
 **Dependencies:** None
 
@@ -64,7 +64,7 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 
 ## Checkpoint 1: Format ready
 - [ ] Unit tests pass
-- [ ] Owner approved the A2 outline
+- [x] Owner approved the A2 outline
 
 ## Task 4: Path validator and content files test
 
