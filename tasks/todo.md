@@ -7,13 +7,13 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 **Description:** Put a minimal page online at `https://kgov1810.github.io/Bora/` and add the speech test page from the spec. The test page has its own small manifest, so it can also be added to the home screen and tested in installed mode.
 
 **Acceptance criteria:**
-- [ ] `index.html` loads on GitHub Pages and shows "Bora!" with a link to the speech test page.
-- [ ] The speech test page offers four tests: read a sentence aloud in `en-US` and `en-GB`, speech recognition in `en-US` with the transcript shown, a text field for iOS dictation, and an environment panel (Safari or installed, which APIs exist).
-- [ ] Every visible text on the test page is in pt-BR.
+- [x] `index.html` loads on GitHub Pages and shows "Bora!" with a link to the speech test page.
+- [x] The speech test page offers four tests: read a sentence aloud in `en-US` and `en-GB`, speech recognition in `en-US` with the transcript shown, a text field for iOS dictation, and an environment panel (Safari or installed, which APIs exist).
+- [x] Every visible text on the test page is in pt-BR.
 
 **Verification:**
-- [ ] Manual check (Claude): both pages open locally with `python3 -m http.server 8000`, with no console errors.
-- [ ] Manual check (owner): after the push, both pages open on the iPhone over HTTPS.
+- [x] Manual check (Claude): both pages open locally with `python3 -m http.server 8000`, with no console errors.
+- [x] Manual check (owner): after the push, both pages open on the iPhone over HTTPS.
 
 **Dependencies:** None. The owner enables GitHub Pages before the first check.
 
@@ -26,9 +26,9 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 **Estimated scope:** Small to medium (4 files)
 
 ## Checkpoint 0: Speech feasibility
-- [ ] Speech test run on her iPhone, in Safari and from the home screen
-- [ ] Results recorded in `docs/spikes/speech-results.md`
-- [ ] Decision noted: native recognition, or iOS dictation, for the `speech` module
+- [x] Speech test run on her iPhone, in Safari and from the home screen
+- [x] Results recorded in `docs/spikes/speech-results.md`
+- [x] Decision noted: native recognition, with iOS dictation as fallback
 
 ## Task 2: Router and i18n logic, with unit tests
 

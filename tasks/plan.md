@@ -27,11 +27,11 @@ Before the shell, a small speech test page goes online first. It checks the main
 ## Task List
 
 ### Phase 0: Risk first
-- [ ] Task 1: Deployable placeholder page and speech test page
+- [x] Task 1: Deployable placeholder page and speech test page
 
 ### Checkpoint 0: Speech feasibility
-- [ ] The owner and the learner run the speech test on her iPhone, in Safari and from the home screen
-- [ ] Results recorded in `docs/spikes/speech-results.md`
+- [x] The owner and the learner run the speech test on her iPhone, in Safari and from the home screen
+- [x] Results recorded in `docs/spikes/speech-results.md`
 
 ### Phase 1: Shell
 - [ ] Task 2: Router and i18n logic, with unit tests
