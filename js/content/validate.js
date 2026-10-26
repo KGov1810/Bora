@@ -1,11 +1,12 @@
 // Validators for lesson and path content files (see SPEC-content-format.md).
 // Pure functions: no DOM, no file access. They return readable errors instead of throwing.
 
+import { GLOSSARY_MARK } from './text.js';
+
 const LEVELS = ['A2', 'B1', 'B2'];
 const SCHEMA_VERSION = 1;
 const MIN_EXERCISES = 3;
 const KEBAB_CASE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const GLOSSARY_MARK = /\[\[([^[\]]*)\]\]/g;
 
 /** True when the value is a string with visible characters. */
 function isFilledString(value) {

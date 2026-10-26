@@ -1,4 +1,4 @@
-import { resolveRoute } from './router.js';
+import { parseRoute } from './router.js';
 import { createTranslator } from './i18n.js';
 import * as homeView from './views/home.js';
 import * as lessonsView from './views/lessons.js';
@@ -36,22 +36,44 @@ function applyStaticStrings(t) {
   });
 }
 
-/** Renders the view for the current hash and highlights its tab. */
-function renderRoute(t) {
-  const route = resolveRoute(window.location.hash, TABS);
-  const view = VIEWS[route];
-  const container = document.getElementById('view');
+let renderCount = 0;
+let cleanupView = null;
 
-  view.render(container, t);
+/**
+ * Renders the view for the current hash and highlights its tab.
+ * Views receive a context: the route parameter, a way to know whether they are
+ * still on screen after an await, and a way to set the page title. A view may
+ * return a cleanup function, called before the next view renders.
+ */
+function renderRoute(t) {
+  const { name, param } = parseRoute(window.location.hash, TABS);
+  const container = document.getElementById('view');
+  const renderId = ++renderCount;
+
+  if (cleanupView) cleanupView();
+  cleanupView = null;
+
+  const setTitle = (title) => {
+    document.title = title ? `${title} · ${t('app.name')}` : t('app.name');
+  };
+  setTitle(name === 'home' ? '' : t(`tabs.${name}`));
+
+  const result = VIEWS[name].render(container, t, {
+    param,
+    isCurrent: () => renderId === renderCount,
+    setTitle,
+  });
+  Promise.resolve(result).then((cleanup) => {
+    if (typeof cleanup !== 'function') return;
+    if (renderId === renderCount) cleanupView = cleanup;
+    else cleanup();
+  });
   container.scrollTop = 0;
 
   document.querySelectorAll('.tab-bar a').forEach((link) => {
-    if (link.dataset.route === route) link.setAttribute('aria-current', 'page');
+    if (link.dataset.route === name) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
   });
-
-  const tabName = t(`tabs.${route}`);
-  document.title = route === 'home' ? t('app.name') : `${tabName} · ${t('app.name')}`;
 }
 
 /**

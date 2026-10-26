@@ -18,12 +18,12 @@ Make lessons readable on her iPhone: the list of units and lessons in the Liçõ
 ## Task List
 
 ### Phase 1: Reading a lesson
-- [ ] Task 1: Route parameter and glossary splitting
-- [ ] Task 2: Lessons list screen
-- [ ] Task 3: Lesson screen with glossary, grammar and vocabulary
+- [x] Task 1: Route parameter and glossary splitting
+- [x] Task 2: Lessons list screen
+- [x] Task 3: Lesson screen with glossary, grammar and vocabulary
 
 ### Checkpoint 1: Readable lesson
-- [ ] Unit tests pass
+- [x] Unit tests pass
 - [ ] Owner reads the first lesson on the iPhone, in both themes
 
 ### Phase 2: Listening and offline

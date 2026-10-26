@@ -7,12 +7,12 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Description:** Add `parseRoute()` to the router and write `splitGlossaryMarks()`, test first. `parseRoute('#/lessons/a2-x')` gives `{ name: 'lessons', param: 'a2-x' }`. `splitGlossaryMarks()` turns a paragraph into plain text and term segments, keeping the displayed case and lower-casing the key.
 
 **Acceptance criteria:**
-- [ ] `parseRoute` handles a bare tab, a tab with a parameter, unknown routes and extra segments.
-- [ ] `splitGlossaryMarks` handles no mark, one mark, several marks, and marks at the start or end.
-- [ ] The existing `resolveRoute` tests still pass.
+- [x] `parseRoute` handles a bare tab, a tab with a parameter, unknown routes and extra segments.
+- [x] `splitGlossaryMarks` handles no mark, one mark, several marks, and marks at the start or end.
+- [x] The existing `resolveRoute` tests still pass.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
+- [x] Tests pass: `node --test`
 
 **Dependencies:** None
 
@@ -29,13 +29,13 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Description:** Replace the Lições placeholder with the list of units and lessons from `content/path.json`, each lesson showing its pt-BR title and duration and linking to `#/lessons/<id>`. Includes the content loader with validation and the loading and error states.
 
 **Acceptance criteria:**
-- [ ] The list shows unit a2-u1 and the first lesson, with title and duration.
-- [ ] A loading state shows while fetching; an invalid or unreachable path shows a pt-BR error message.
-- [ ] The Lições tab stays highlighted on `#/lessons/<id>`.
+- [x] The list shows unit a2-u1 and the first lesson, with title and duration.
+- [x] A loading state shows while fetching; an invalid or unreachable path shows a pt-BR error message.
+- [x] The Lições tab stays highlighted on `#/lessons/<id>`.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
-- [ ] Headless check (Claude): list renders in both themes, no console errors.
+- [x] Tests pass: `node --test`
+- [x] Headless check (Claude): list renders in both themes, no console errors.
 
 **Dependencies:** Task 1
 
@@ -46,6 +46,7 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 - `css/lesson.css`
 - `locales/pt-BR.json`
 - `sw.js`
+- `index.html` (stylesheet link)
 
 **Estimated scope:** Medium (6 files, mostly small)
 
@@ -54,19 +55,20 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Description:** Render one lesson: back link, level and duration, pt-BR title, English text with glossary terms as buttons, the glossary card pinned above the tab bar, the grammar section, the vocabulary list and the disabled "Fazer os exercícios" button.
 
 **Acceptance criteria:**
-- [ ] Tapping a term opens its card with `pt` and `note`; tapping elsewhere or another term closes or replaces it.
-- [ ] The grammar section shows the title, the explanation and the examples in English and pt-BR.
-- [ ] An unknown lesson id shows a pt-BR message and a link back to the list.
+- [x] Tapping a term opens its card with `pt` and `note`; tapping elsewhere or another term closes or replaces it.
+- [x] The grammar section shows the title, the explanation and the examples in English and pt-BR.
+- [x] An unknown lesson id shows a pt-BR message and a link back to the list.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
-- [ ] Headless check (Claude): open a lesson, open and close a glossary card, back link, unknown id, both themes, no console errors.
+- [x] Tests pass: `node --test`
+- [x] Headless check (Claude): open a lesson, open and close a glossary card, back link, unknown id, both themes, no console errors.
 
 **Dependencies:** Task 2
 
 **Files likely touched:**
 - `js/views/lesson.js`
 - `js/views/lessons.js`
+- `js/app.js` (route parameter, view context and cleanup)
 - `css/lesson.css`
 - `locales/pt-BR.json`
 - `sw.js`
@@ -74,7 +76,7 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Estimated scope:** Medium (5 files)
 
 ## Checkpoint 1: Readable lesson
-- [ ] Unit tests pass
+- [x] Unit tests pass
 - [ ] Owner reads the first lesson on the iPhone, in both themes
 
 ## Task 4: "Ouvir" button with voice allow-list

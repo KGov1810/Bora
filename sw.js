@@ -1,7 +1,7 @@
 // Service worker for Bora!: caches the app shell so it opens fast.
 // Bump CACHE_VERSION on every deployment, or the installed app keeps the old files.
 
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v5';
 const CACHE_NAME = `bora-shell-${CACHE_VERSION}`;
 
 // Paths are relative to the service worker's scope (/Bora/ on GitHub Pages).
@@ -11,7 +11,10 @@ const SHELL_FILES = [
   'manifest.webmanifest?v=3',
   'css/base.css',
   'css/layout.css',
+  'css/lesson.css',
   'js/app.js',
+  'js/content/load.js',
+  'js/content/text.js',
   'js/content/validate.js',
   'js/dom.js',
   'js/i18n.js',
@@ -19,6 +22,7 @@ const SHELL_FILES = [
   'js/views/coming-soon.js',
   'js/views/exercises.js',
   'js/views/home.js',
+  'js/views/lesson.js',
   'js/views/lessons.js',
   'js/views/progress.js',
   'locales/pt-BR.json',
