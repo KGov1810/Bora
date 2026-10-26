@@ -113,18 +113,18 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 **Description:** Draw the option C icon as an SVG source with the letters as paths, export the PNG sizes, and add the manifest and the iOS meta tags, so that "Adicionar à Tela de Início" gives the "Bora!" icon and a full-screen launch.
 
 **Acceptance criteria:**
-- [ ] The icon PNGs (180, 192, 512) match the chosen design; the owner approves a preview before the commit.
-- [ ] From the home screen, the app opens full screen with the name "Bora!".
-- [ ] The status bar color matches the page in both themes.
+- [x] The icon PNGs (180, 192, 512) match the chosen design; the owner approves a preview before the commit.
+- [x] From the home screen, the app opens full screen with the name "Bora!".
+- [x] The status bar color matches the page in both themes.
 
 **Verification:**
 - [x] Manual check (Claude): the manifest is valid JSON and every icon path resolves locally.
-- [ ] Manual check (owner): install on the iPhone and open from the home screen.
+- [x] Manual check (owner): install on the iPhone and open from the home screen.
 
 **Dependencies:** Task 3
 
 **Files likely touched:**
-- `icons/icon.svg`
+- `icons/icon.svg` (letters changed from EN to BR at the owner's request)
 - `icons/apple-touch-icon.png`, `icons/icon-192.png`, `icons/icon-512.png`
 - `manifest.webmanifest`
 - `index.html`
@@ -138,11 +138,11 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 **Acceptance criteria:**
 - [ ] The app opens from the home screen with no network delay on the second launch.
 - [ ] After a deployment with a new version number, the next launch shows the new version.
-- [ ] Old caches are deleted when the new service worker activates.
+- [x] Old caches are deleted when the new service worker activates.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
-- [ ] Manual check (Claude): local server, the service worker registers with no console errors.
+- [x] Tests pass: `node --test`
+- [x] Manual check (Claude): local server, the service worker registers with no console errors.
 - [ ] Manual check (owner): deploy a visible change and confirm it appears on the iPhone.
 
 **Dependencies:** Tasks 4 and 5
@@ -150,6 +150,7 @@ Plan: `tasks/plan.md`. Definition of done for every task: unit tests pass (`node
 **Files likely touched:**
 - `sw.js`
 - `js/app.js`
+- `tests/sw.test.js` (checks the cached file list, added during implementation)
 
 **Estimated scope:** Small (2 files)
 

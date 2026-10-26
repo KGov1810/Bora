@@ -43,7 +43,7 @@ Before the shell, a small speech test page goes online first. It checks the main
 - [x] All four tabs work on her iPhone in Safari, in light and dark mode
 
 ### Phase 2: Installable app
-- [ ] Task 5: App icon and web app manifest
+- [x] Task 5: App icon and web app manifest
 - [ ] Task 6: Service worker with versioned cache
 
 ### Checkpoint 2: Complete

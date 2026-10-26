@@ -54,11 +54,39 @@ function renderRoute(t) {
   document.title = route === 'home' ? t('app.name') : `${tabName} · ${t('app.name')}`;
 }
 
+/**
+ * Registers the service worker and reloads once when a new version takes over,
+ * so a deployment shows up without closing the app.
+ */
+function registerServiceWorker() {
+  if (!('serviceWorker' in navigator)) return;
+
+  // A first install has no previous controller: no reload needed then.
+  const hadController = Boolean(navigator.serviceWorker.controller);
+  let reloading = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!hadController || reloading) return;
+    reloading = true;
+    window.location.reload();
+  });
+
+  navigator.serviceWorker
+    .register(new URL('../sw.js', import.meta.url))
+    .then((registration) => {
+      // Installed iPhone apps resume without reloading: check for updates on return.
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') registration.update();
+      });
+    })
+    .catch((error) => console.error('Service worker registration failed:', error));
+}
+
 async function start() {
   const t = createTranslator(await loadStrings());
   applyStaticStrings(t);
   renderRoute(t);
   window.addEventListener('hashchange', () => renderRoute(t));
+  registerServiceWorker();
 }
 
 start();
