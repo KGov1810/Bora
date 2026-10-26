@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Bora Teste">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFF8F2">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1D1B22">
+  <meta name="color-scheme" content="light dark">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>Bora! Teste de voz</title>
+  <!--
+    Temporary speech feasibility spike (Task 1).
+    Visible strings are inline on purpose: this page is deleted once the
+    `speech` module is specified, so it does not use the i18n system.
+  -->
+  <style>
+    :root {
+      --color-brand: #E8613C;
+      --color-primary: #C2410C;
+      --color-on-primary: #FFFFFF;
+      --color-bg: #FFF8F2;
+      --color-surface: #FFFFFF;
+      --color-border: #E4E4E7;
+      --color-text: #18181B;
+      --color-muted: #52525B;
+      --color-ok: #15803D;
+      --color-error: #B91C1C;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-primary: #FF8A5B;
+        --color-on-primary: #18181B;
+        --color-bg: #1D1B22;
+        --color-surface: #28252F;
+        --color-border: #3F3B47;
+        --color-text: #F4F4F5;
+        --color-muted: #A1A1AA;
+        --color-ok: #4ADE80;
+        --color-error: #F87171;
+      }
+    }
+    html {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-text-size-adjust: 100%;
+      overscroll-behavior: none;
+    }
+    body {
+      margin: 0;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: -apple-system, system-ui, sans-serif;
+      line-height: 1.45;
+      overscroll-behavior: none;
+    }
+    main {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: calc(16px + env(safe-area-inset-top, 0px)) 16px calc(32px + env(safe-area-inset-bottom, 0px));
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    h1 { margin: 0; font-size: 28px; color: var(--color-primary); }
+    h2 { margin: 0 0 8px; font-size: 18px; }
+    p { margin: 0 0 8px; }
+    .muted { color: var(--color-muted); font-size: 14px; }
+    section {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .sentence {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 8px 0 12px;
+      user-select: text;
+    }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; }
+    button {
+      min-height: 44px;
+      padding: 0 16px;
+      border: 0;
+      border-radius: 12px;
+      background: var(--color-primary);
+      color: var(--color-on-primary);
+      font: inherit;
+      font-weight: 600;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      transition: transform 100ms ease-out, opacity 100ms;
+    }
+    button.secondary {
+      background: transparent;
+      color: var(--color-primary);
+      border: 1.5px solid var(--color-primary);
+    }
+    button:active { transform: scale(0.97); opacity: 0.85; }
+    button:disabled { opacity: 0.4; }
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      min-height: 88px;
+      padding: 12px;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font: inherit;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    label { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 15px; }
+    input[type="checkbox"] { width: 20px; height: 20px; }
+    .output { margin-top: 10px; font-size: 15px; min-height: 22px; overflow-wrap: anywhere; }
+    .ok { color: var(--color-ok); font-weight: 600; }
+    .error { color: var(--color-error); font-weight: 600; }
+    dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; font-size: 14px; }
+    dt { color: var(--color-muted); }
+    dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Teste de voz</h1>
+    <p class="muted">Faça os 3 testes abaixo e depois toque em "Copiar resultados".</p>
+  </header>
+
+  <section aria-labelledby="env-title">
+    <h2 id="env-title">Ambiente</h2>
+    <dl id="env"></dl>
+  </section>
+
+  <section aria-labelledby="tts-title">
+    <h2 id="tts-title">1. Ouvir (síntese de voz)</h2>
+    <p class="sentence" lang="en" id="tts-sentence">Hello! How are you today? Let's learn English together.</p>
+    <div class="row">
+      <button type="button" data-tts-lang="en-US">Ouvir (EUA)</button>
+      <button type="button" data-tts-lang="en-GB">Ouvir (Reino Unido)</button>
+    </div>
+    <label><input type="checkbox" id="tts-slow"> Mais devagar</label>
+    <p class="output" id="tts-output" aria-live="polite"></p>
+  </section>
+
+  <section aria-labelledby="sr-title">
+    <h2 id="sr-title">2. Falar (reconhecimento de voz)</h2>
+    <p>Toque em "Falar" e diga a frase em inglês:</p>
+    <p class="sentence" lang="en" id="sr-target">I would like a coffee, please.</p>
+    <div class="row">
+      <button type="button" id="sr-start">Falar</button>
+      <button type="button" class="secondary" id="sr-stop" disabled>Parar</button>
+    </div>
+    <p class="output" id="sr-output" aria-live="polite"></p>
+  </section>
+
+  <section aria-labelledby="dict-title">
+    <h2 id="dict-title">3. Ditado do teclado</h2>
+    <p>Mude o teclado para inglês, toque no campo e use o microfone do teclado para dizer:</p>
+    <p class="sentence" lang="en" id="dict-target">Where is the train station?</p>
+    <label for="dict-input" class="muted" style="margin-top: 0">Sua frase</label>
+    <textarea id="dict-input" lang="en" autocapitalize="off" autocomplete="off" spellcheck="false"></textarea>
+    <button type="button" id="dict-check">Verificar</button>
+    <p class="output" id="dict-output" aria-live="polite"></p>
+  </section>
+
+  <section aria-labelledby="report-title">
+    <h2 id="report-title">Resultados</h2>
+    <p class="muted">Copie o texto e envie para quem criou o app.</p>
+    <button type="button" id="report-copy">Copiar resultados</button>
+    <textarea id="report" readonly aria-label="Resultados" style="margin-top: 10px; min-height: 160px; font-size: 13px"></textarea>
+  </section>
+</main>
+
+<script type="module">
+  const events = [];
+
+  /** Records a timestamped test event and refreshes the report. */
+  function log(test, message) {
+    const time = new Date().toISOString().slice(11, 19);
+    events.push(`[${time}] ${test}: ${message}`);
+    renderReport();
+  }
+
+  /** Lowercases and strips punctuation so spoken and target sentences can be compared. */
+  function normalize(text) {
+    return text.toLowerCase().replace(/[^a-z0-9' ]+/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+
+  /** Shows a match result for a transcript against its target sentence. */
+  function showMatch(outputEl, transcript, target) {
+    const isMatch = normalize(transcript) === normalize(target);
+    outputEl.innerHTML = '';
+    const heard = document.createElement('div');
+    heard.textContent = `Ouvido: "${transcript}"`;
+    const verdict = document.createElement('div');
+    verdict.className = isMatch ? 'ok' : 'error';
+    verdict.textContent = isMatch ? 'Correto!' : 'Diferente da frase esperada';
+    outputEl.append(heard, verdict);
+    return isMatch;
+  }
+
+  // ---- Environment ----
+  const SpeechRecognitionApi = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const isStandalone = window.navigator.standalone === true
+    || window.matchMedia('(display-mode: standalone)').matches;
+  const environment = {
+    'Modo': isStandalone ? 'App instalado (tela de início)' : 'Navegador (Safari)',
+    'HTTPS': window.isSecureContext ? 'sim' : 'não',
+    'Síntese de voz': 'speechSynthesis' in window ? 'disponível' : 'indisponível',
+    'Reconhecimento de voz': SpeechRecognitionApi ? 'disponível' : 'indisponível',
+    'Navegador': navigator.userAgent,
+  };
+  const envList = document.getElementById('env');
+  for (const [key, value] of Object.entries(environment)) {
+    const dt = document.createElement('dt');
+    dt.textContent = key;
+    const dd = document.createElement('dd');
+    dd.textContent = value;
+    envList.append(dt, dd);
+  }
+
+  // ---- 1. Text-to-speech ----
+  const ttsOutput = document.getElementById('tts-output');
+  const ttsSentence = document.getElementById('tts-sentence').textContent;
+
+  /** Returns the best available voice for a language, preferring exact matches. */
+  function pickVoice(lang) {
+    const voices = window.speechSynthesis.getVoices();
+    return voices.find((v) => v.lang === lang)
+      || voices.find((v) => v.lang.replace('_', '-').startsWith(lang))
+      || null;
+  }
+
+  document.querySelectorAll('[data-tts-lang]').forEach((button) => {
+    button.addEventListener('click', () => {
+      if (!('speechSynthesis' in window)) {
+        ttsOutput.textContent = 'Síntese de voz indisponível.';
+        log('TTS', 'unavailable');
+        return;
+      }
+      const lang = button.dataset.ttsLang;
+      const utterance = new SpeechSynthesisUtterance(ttsSentence);
+      utterance.lang = lang;
+      utterance.rate = document.getElementById('tts-slow').checked ? 0.7 : 0.95;
+      const voice = pickVoice(lang);
+      if (voice) utterance.voice = voice;
+      const voiceName = voice ? voice.name : 'voz padrão';
+      utterance.onstart = () => {
+        ttsOutput.textContent = `Falando com: ${voiceName}`;
+        log('TTS', `${lang} started, voice="${voiceName}", rate=${utterance.rate}`);
+      };
+      utterance.onend = () => log('TTS', `${lang} ended`);
+      utterance.onerror = (event) => {
+        ttsOutput.textContent = `Erro: ${event.error}`;
+        log('TTS', `${lang} error=${event.error}`);
+      };
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(utterance);
+    });
+  });
+
+  if ('speechSynthesis' in window) {
+    const logVoices = () => {
+      const english = window.speechSynthesis.getVoices().filter((v) => v.lang.startsWith('en'));
+      log('TTS', `${english.length} English voices: ${english.map((v) => `${v.name} (${v.lang})`).join(', ')}`);
+    };
+    window.speechSynthesis.addEventListener('voiceschanged', logVoices, { once: true });
+    setTimeout(logVoices, 1500);
+  }
+
+  // ---- 2. Speech recognition ----
+  const srStart = document.getElementById('sr-start');
+  const srStop = document.getElementById('sr-stop');
+  const srOutput = document.getElementById('sr-output');
+  const srTarget = document.getElementById('sr-target').textContent;
+  let recognition = null;
+
+  if (!SpeechRecognitionApi) {
+    srStart.disabled = true;
+    srOutput.textContent = 'Reconhecimento de voz indisponível neste modo.';
+    log('SR', 'unavailable');
+  } else {
+    srStart.addEventListener('click', () => {
+      recognition = new SpeechRecognitionApi();
+      recognition.lang = 'en-US';
+      recognition.interimResults = true;
+      recognition.continuous = false;
+      recognition.maxAlternatives = 1;
+      let finalTranscript = '';
+
+      recognition.onstart = () => {
+        srOutput.textContent = 'Ouvindo...';
+        srStart.disabled = true;
+        srStop.disabled = false;
+        log('SR', 'started');
+      };
+      recognition.onresult = (event) => {
+        let interim = '';
+        for (let i = event.resultIndex; i < event.results.length; i += 1) {
+          const text = event.results[i][0].transcript;
+          if (event.results[i].isFinal) finalTranscript += text;
+          else interim += text;
+        }
+        srOutput.textContent = finalTranscript || interim;
+      };
+      recognition.onerror = (event) => {
+        srOutput.innerHTML = '';
+        const error = document.createElement('span');
+        error.className = 'error';
+        error.textContent = `Erro: ${event.error}`;
+        srOutput.append(error);
+        log('SR', `error=${event.error}`);
+      };
+      recognition.onend = () => {
+        srStart.disabled = false;
+        srStop.disabled = true;
+        if (finalTranscript) {
+          const isMatch = showMatch(srOutput, finalTranscript, srTarget);
+          log('SR', `transcript="${finalTranscript}", match=${isMatch}`);
+        } else {
+          log('SR', 'ended without final transcript');
+        }
+      };
+
+      try {
+        recognition.start();
+      } catch (error) {
+        srOutput.textContent = `Erro: ${error.message}`;
+        log('SR', `start threw: ${error.message}`);
+      }
+    });
+
+    srStop.addEventListener('click', () => {
+      if (recognition) recognition.stop();
+    });
+  }
+
+  // ---- 3. Keyboard dictation ----
+  const dictInput = document.getElementById('dict-input');
+  const dictOutput = document.getElementById('dict-output');
+  const dictTarget = document.getElementById('dict-target').textContent;
+
+  document.getElementById('dict-check').addEventListener('click', () => {
+    const text = dictInput.value.trim();
+    if (!text) {
+      dictOutput.textContent = 'O campo está vazio.';
+      return;
+    }
+    const isMatch = showMatch(dictOutput, text, dictTarget);
+    log('DICTATION', `text="${text}", match=${isMatch}`);
+  });
+
+  // ---- Report ----
+  const reportEl = document.getElementById('report');
+
+  /** Rebuilds the plain-text report from the environment and the event log. */
+  function renderReport() {
+    const lines = ['Bora! speech spike report', ''];
+    for (const [key, value] of Object.entries(environment)) lines.push(`${key}: ${value}`);
+    lines.push('', ...events);
+    reportEl.value = lines.join('\n');
+  }
+
+  document.getElementById('report-copy').addEventListener('click', async () => {
+    renderReport();
+    try {
+      await navigator.clipboard.writeText(reportEl.value);
+      log('REPORT', 'copied');
+      document.getElementById('report-copy').textContent = 'Copiado!';
+    } catch {
+      reportEl.focus();
+      reportEl.select();
+      document.getElementById('report-copy').textContent = 'Selecione e copie o texto';
+    }
+  });
+
+  renderReport();
+</script>
+</body>
+</html>

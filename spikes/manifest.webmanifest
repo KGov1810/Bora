@@ -1,0 +1,9 @@
+{
+  "name": "Bora! Teste de voz",
+  "short_name": "Bora Teste",
+  "start_url": "./speech-test.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FFF8F2",
+  "theme_color": "#E8613C"
+}
