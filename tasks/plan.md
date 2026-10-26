@@ -1,65 +1,46 @@
-# Implementation Plan: app-shell (Bora!)
+# Implementation Plan: content-format (Bora!)
 
-Source spec: `SPEC-app-shell.md` (approved 2026-10-26). Module map: `CAPABILITY-MAP.md`.
-Tasks are tracked in `tasks/todo.md`.
+Source spec: `SPEC-content-format.md` (approved 2026-10-26). Module map: `CAPABILITY-MAP.md`.
+Tasks are tracked in `tasks/todo.md`. Completed plans are in `tasks/done/`.
 
 ## Overview
 
-Build the empty but installable shell of **Bora!**: a PWA for iPhone with four tabs labelled in pt-BR, light and dark themes, an app icon, and a service worker. It is hosted on GitHub Pages from `KGov1810/Bora` at `https://kgov1810.github.io/Bora/`.
-
-Before the shell, a small speech test page goes online first. It checks the main technical risk of the whole project on her real iPhone.
+Make lessons pure data: a documented JSON format, a validator that checks every lesson before it is pushed, the learning path file, the A2 curriculum outline, and the first real A2 lesson. No screen is built in this module.
 
 ## Architecture Decisions
 
-- **No build step, no dependencies.** The files in the repository are exactly what GitHub Pages serves. This keeps deployment to a single push.
-- **Hash routing (`#/lessons`).** GitHub Pages has no server-side rewrites. Hash routes never produce a 404, including after a reload of the installed app.
-- **Pure logic kept apart from the DOM.** `router.js` and `i18n.js` have no DOM access, so they can be unit-tested with `node --test`. The DOM code stays thin and is checked on the real device.
-- **Relative paths everywhere.** The site lives under `/Bora/`, so absolute paths like `/css/...` would break.
-- **Service worker last.** Caching is added after everything else works, because a wrong cache makes every later test harder to trust.
-- **Icon drawn with paths, not text.** The "EN" letters in the icon are drawn as vector shapes. Rasterizing to PNG then does not depend on which fonts are installed.
-
-## Deployment and approvals
-
-- Claude runs `node --test` in its own workspace before proposing each commit.
-- Every commit and push needs the owner's explicit approval and a commit message (English). Pushes go to `main`, which needs no extra branch for a single-developer project.
-- The owner enables GitHub Pages once, in Settings › Pages, source: `main` branch, root folder. Claude guides this at Task 1.
+- **One validator, used by the tests and later by the app.** `js/content/validate.js` is pure and has no DOM access. Because it lives in `js/`, it is also listed in the service worker cache (the `sw.js` test enforces this), with a cache version bump.
+- **Errors are returned, not thrown.** Each rule adds a readable message naming the file and the field, so a failing test says exactly what to fix.
+- **Content is checked automatically.** A test loads every file in `content/`. Adding a lesson needs no new test.
+- **Curriculum first, in parallel with the code.** The A2 outline needs the owner's review, so it is written first; the validator is built while the owner reads it.
 
 ## Task List
 
-### Phase 0: Risk first
-- [x] Task 1: Deployable placeholder page and speech test page
+### Phase 1: Curriculum and validator
+- [ ] Task 1: A2 curriculum outline
+- [ ] Task 2: Lesson validator: fields and glossary marks
+- [ ] Task 3: Exercise validation and answer normalization
 
-### Checkpoint 0: Speech feasibility
-- [x] The owner and the learner run the speech test on her iPhone, in Safari and from the home screen
-- [x] Results recorded in `docs/spikes/speech-results.md`
+### Checkpoint 1: Format ready
+- [ ] Unit tests pass
+- [ ] Owner approved the A2 outline
 
-### Phase 1: Shell
-- [x] Task 2: Router and i18n logic, with unit tests
-- [x] Task 3: Shell with tab bar and the Início screen
-- [x] Task 4: Placeholder screens for Lições, Exercícios and Progresso
-
-### Checkpoint 1: Navigation
-- [x] Unit tests pass
-- [x] All four tabs work on her iPhone in Safari, in light and dark mode
-
-### Phase 2: Installable app
-- [x] Task 5: App icon and web app manifest
-- [x] Task 6: Service worker with versioned cache
+### Phase 2: Real content
+- [ ] Task 4: Path validator and content files test
+- [ ] Task 5: First A2 lesson and learning path
 
 ### Checkpoint 2: Complete
-- [x] The full real-device checklist of the spec passes
-- [x] Every success criterion of the spec is met
-- [x] Review with the owner before starting the next module
+- [ ] Every success criterion of the spec is met
+- [ ] Review with the owner before starting the `lessons` module
 
 ## Risks and Mitigations
 
 | Risk | Impact | Mitigation |
 |---|---|---|
-| Speech recognition does not work in installed mode on iOS | High | Tested first (Task 1). Fallback already planned: iOS keyboard dictation. |
-| Stale cache: the installed app keeps showing an old version | Medium | Service worker added last; cache version bumped on every deployment; "new version loads" is on the checklist. |
-| Wrong path or case breaks the site under `/Bora/` | Medium | Relative paths only; checked on the live URL at every checkpoint. |
-| Only the owner can test on the iPhone, so feedback is slower | Medium | Few, short checkpoints with an explicit checklist. |
-| Icon PNG export differs from the design canvas | Low | Letters drawn as paths; the PNG is shown to the owner before it is committed. |
+| The validator is too strict and blocks useful content | Medium | Rules come from the spec only; any new rule is discussed first. |
+| Text level does not match her real A2 level | Medium | The owner reviews the first lesson; she gives feedback once the `lessons` screen exists. |
+| The first lesson cannot be seen in the app yet | Low | Expected: the screen is the next module. The owner reviews the text in chat. |
+| A new `js/` file is forgotten in the service worker cache | Low | Already caught by the `sw.js` test. |
 
 ## Open Questions
 
