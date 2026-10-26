@@ -1,114 +1,128 @@
-# Tasks: content-format (Bora!)
+# Tasks: lessons (Bora!)
 
-Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (run by Claude), the owner approved the commit.
+Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (run by Claude), no console error in the headless check, new files listed in `sw.js` with a version bump, the owner approved the commit.
 
-## Task 1: A2 curriculum outline
+## Task 1: Route parameter and glossary splitting
 
-**Description:** Write `docs/curriculum.md`: the planned A2 lessons, grouped into units, in teaching order. Each line gives the lesson id, the grammar point, the text's theme, and a one-line pt-BR title. Themes follow her goals: travel, series, articles, daily life.
+**Description:** Add `parseRoute()` to the router and write `splitGlossaryMarks()`, test first. `parseRoute('#/lessons/a2-x')` gives `{ name: 'lessons', param: 'a2-x' }`. `splitGlossaryMarks()` turns a paragraph into plain text and term segments, keeping the displayed case and lower-casing the key.
 
 **Acceptance criteria:**
-- [x] The A2 outline covers the core A2 grammar points, one per lesson.
-- [x] Every planned id follows the spec's naming rule.
-- [x] The owner approves the outline (order and themes).
+- [ ] `parseRoute` handles a bare tab, a tab with a parameter, unknown routes and extra segments.
+- [ ] `splitGlossaryMarks` handles no mark, one mark, several marks, and marks at the start or end.
+- [ ] The existing `resolveRoute` tests still pass.
 
 **Verification:**
-- [x] Manual check (owner): reads the outline in chat or on GitHub.
+- [ ] Tests pass: `node --test`
 
 **Dependencies:** None
 
 **Files likely touched:**
-- `docs/curriculum.md`
+- `js/router.js`
+- `js/content/text.js`
+- `tests/router.test.js`
+- `tests/content-text.test.js`
 
-**Estimated scope:** Small (1 file)
+**Estimated scope:** Small (4 files)
 
-## Task 2: Lesson validator: fields and glossary marks
+## Task 2: Lessons list screen
 
-**Description:** Write `validateLesson` for every lesson-level rule of the spec, test first: schema version, id and file name, level, required strings, minutes, text, glossary marks and entries, grammar section, and the minimum number of exercises with unique ids.
+**Description:** Replace the Lições placeholder with the list of units and lessons from `content/path.json`, each lesson showing its pt-BR title and duration and linking to `#/lessons/<id>`. Includes the content loader with validation and the loading and error states.
 
 **Acceptance criteria:**
-- [x] The spec's example lesson is valid.
-- [x] Every lesson rule has a failing sample that produces a readable error naming the field.
-- [x] A mark without a glossary entry, and an entry never marked, are both reported.
+- [ ] The list shows unit a2-u1 and the first lesson, with title and duration.
+- [ ] A loading state shows while fetching; an invalid or unreachable path shows a pt-BR error message.
+- [ ] The Lições tab stays highlighted on `#/lessons/<id>`.
 
 **Verification:**
-- [x] Tests pass: `node --test`
+- [ ] Tests pass: `node --test`
+- [ ] Headless check (Claude): list renders in both themes, no console errors.
 
-**Dependencies:** None
+**Dependencies:** Task 1
 
 **Files likely touched:**
-- `js/content/validate.js`
-- `tests/content-validate.test.js`
-- `sw.js` (list the new file, bump `CACHE_VERSION`)
+- `js/content/load.js`
+- `js/views/lessons.js`
+- `js/app.js`
+- `css/lesson.css`
+- `locales/pt-BR.json`
+- `sw.js`
 
-**Estimated scope:** Medium (3 files)
+**Estimated scope:** Medium (6 files, mostly small)
 
-## Task 3: Exercise validation and answer normalization
+## Task 3: Lesson screen with glossary, grammar and vocabulary
 
-**Description:** Add the per-type rules for `choice`, `true-false`, `fill-blank` and `reorder`, and the `normalizeAnswer` function used to grade `fill-blank`, test first.
+**Description:** Render one lesson: back link, level and duration, pt-BR title, English text with glossary terms as buttons, the glossary card pinned above the tab bar, the grammar section, the vocabulary list and the disabled "Fazer os exercícios" button.
 
 **Acceptance criteria:**
-- [x] Each exercise type has a valid sample and a failing sample for each of its rules.
-- [x] An unknown exercise type is reported.
-- [x] `normalizeAnswer` handles case, outer and inner spaces, and curly apostrophes.
+- [ ] Tapping a term opens its card with `pt` and `note`; tapping elsewhere or another term closes or replaces it.
+- [ ] The grammar section shows the title, the explanation and the examples in English and pt-BR.
+- [ ] An unknown lesson id shows a pt-BR message and a link back to the list.
 
 **Verification:**
-- [x] Tests pass: `node --test`
+- [ ] Tests pass: `node --test`
+- [ ] Headless check (Claude): open a lesson, open and close a glossary card, back link, unknown id, both themes, no console errors.
 
 **Dependencies:** Task 2
 
 **Files likely touched:**
-- `js/content/validate.js`
-- `tests/content-validate.test.js`
+- `js/views/lesson.js`
+- `js/views/lessons.js`
+- `css/lesson.css`
+- `locales/pt-BR.json`
+- `sw.js`
 
-**Estimated scope:** Small (2 files)
+**Estimated scope:** Medium (5 files)
 
-## Checkpoint 1: Format ready
-- [x] Unit tests pass
-- [x] Owner approved the A2 outline
+## Checkpoint 1: Readable lesson
+- [ ] Unit tests pass
+- [ ] Owner reads the first lesson on the iPhone, in both themes
 
-## Task 4: Path validator and content files test
+## Task 4: "Ouvir" button with voice allow-list
 
-**Description:** Write `validatePath`, test first, and a test that loads `content/path.json` and every lesson file and runs both validators on them.
+**Description:** Write `pickVoice()`, test first, from the spike results. Add the "Ouvir" / "Parar" button and the slow-speed toggle to the lesson screen. Stop speaking when leaving the lesson.
 
 **Acceptance criteria:**
-- [x] Duplicate unit ids, duplicate lessons, missing lesson files and level mismatches are reported.
-- [x] A lesson file missing from the path is reported as a draft (test output), without failing.
-- [x] A broken content file makes `node --test` fail with the validator's errors.
+- [ ] `pickVoice` prefers Samantha, follows the allow-list order, never returns a novelty voice, and returns null when nothing suitable exists.
+- [ ] The button is hidden when no suitable voice is available.
+- [ ] Navigating away stops the voice.
 
 **Verification:**
-- [x] Tests pass: `node --test`
+- [ ] Tests pass: `node --test`
+- [ ] Manual check (owner): "Ouvir" at both speeds on the iPhone.
 
 **Dependencies:** Task 3
 
 **Files likely touched:**
-- `js/content/validate.js`
-- `tests/content-path.test.js` (path validator tests, split from content-validate for readability)
-- `tests/content-files.test.js`
-- `content/path.json` (empty until Task 5)
+- `js/speech/voices.js`
+- `tests/speech-voices.test.js`
+- `js/views/lesson.js`
+- `locales/pt-BR.json`
+- `css/lesson.css`
+- `sw.js`
 
-**Estimated scope:** Small to medium (3 files)
+**Estimated scope:** Medium (6 files)
 
-## Task 5: First A2 lesson and learning path
+## Task 5: Offline lessons
 
-**Description:** Write the first lesson of the approved outline as a real content file, in American English, with its pt-BR glossary, grammar explanation and at least 6 exercises, and list it in `content/path.json`.
+**Description:** Cache `content/` files in the service worker with a network-first strategy and a cache fallback.
 
 **Acceptance criteria:**
-- [x] The lesson and the path pass the content files test.
-- [x] The text is original, at A2 level, about 120 to 180 words.
-- [x] The owner reviews the text, the explanation and the exercises.
+- [ ] A lesson opened once opens again offline.
+- [ ] With a connection, an updated lesson file is shown, not the cached one.
 
 **Verification:**
-- [x] Tests pass: `node --test`
-- [x] Manual check (owner): reads the lesson in chat.
+- [ ] Tests pass: `node --test`
+- [ ] Headless check (Claude): open a lesson online, go offline, reopen it; change the file, go online, see the change.
+- [ ] Manual check (owner): airplane mode on the iPhone.
 
-**Dependencies:** Tasks 1 and 4
+**Dependencies:** Task 3
 
 **Files likely touched:**
-- `content/lessons/a2-present-simple-routine.json`
-- `content/path.json`
+- `sw.js`
 
-**Estimated scope:** Small (2 files)
+**Estimated scope:** Small (1 file)
 
 ## Checkpoint 2: Complete
-- [x] Every success criterion of the spec is met
-- [x] Review with the owner before starting the `lessons` module
+- [ ] The real-iPhone checklist of the spec passes
+- [ ] Every success criterion of the spec is met
+- [ ] Review with the owner before starting the `exercises` module
