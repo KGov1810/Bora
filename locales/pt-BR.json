@@ -33,5 +33,8 @@
   "lesson.glossary.hint": "Toque nas palavras sublinhadas para ver a tradução.",
   "lesson.glossary.close": "Fechar",
   "lesson.exercises": "Fazer os exercícios",
-  "lesson.exercises.soon": "Os exercícios chegam em breve."
+  "lesson.exercises.soon": "Os exercícios chegam em breve.",
+  "lesson.listen.play": "Ouvir",
+  "lesson.listen.stop": "Parar",
+  "lesson.listen.slow": "Mais devagar"
 }

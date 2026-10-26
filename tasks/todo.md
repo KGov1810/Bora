@@ -77,19 +77,19 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 
 ## Checkpoint 1: Readable lesson
 - [x] Unit tests pass
-- [ ] Owner reads the first lesson on the iPhone, in both themes
+- [x] Owner reads the first lesson on the iPhone, in both themes
 
 ## Task 4: "Ouvir" button with voice allow-list
 
 **Description:** Write `pickVoice()`, test first, from the spike results. Add the "Ouvir" / "Parar" button and the slow-speed toggle to the lesson screen. Stop speaking when leaving the lesson.
 
 **Acceptance criteria:**
-- [ ] `pickVoice` prefers Samantha, follows the allow-list order, never returns a novelty voice, and returns null when nothing suitable exists.
-- [ ] The button is hidden when no suitable voice is available.
-- [ ] Navigating away stops the voice.
+- [x] `pickVoice` prefers Samantha, follows the allow-list order, never returns a novelty voice, and returns null when nothing suitable exists.
+- [x] The button is hidden when no suitable voice is available.
+- [x] Navigating away stops the voice.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
+- [x] Tests pass: `node --test`
 - [ ] Manual check (owner): "Ouvir" at both speeds on the iPhone.
 
 **Dependencies:** Task 3
@@ -97,6 +97,7 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Files likely touched:**
 - `js/speech/voices.js`
 - `tests/speech-voices.test.js`
+- `js/speech/read-aloud.js` (the controls, added during implementation)
 - `js/views/lesson.js`
 - `locales/pt-BR.json`
 - `css/lesson.css`
@@ -109,12 +110,12 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Description:** Cache `content/` files in the service worker with a network-first strategy and a cache fallback.
 
 **Acceptance criteria:**
-- [ ] A lesson opened once opens again offline.
-- [ ] With a connection, an updated lesson file is shown, not the cached one.
+- [x] A lesson opened once opens again offline.
+- [x] With a connection, an updated lesson file is shown, not the cached one.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
-- [ ] Headless check (Claude): open a lesson online, go offline, reopen it; change the file, go online, see the change.
+- [x] Tests pass: `node --test`
+- [x] Headless check (Claude): open a lesson online, go offline, reopen it; change the file, go online, see the change.
 - [ ] Manual check (owner): airplane mode on the iPhone.
 
 **Dependencies:** Task 3

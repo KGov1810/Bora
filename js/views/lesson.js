@@ -1,6 +1,7 @@
 import { h } from '../dom.js';
 import { loadLesson, ContentError } from '../content/load.js';
 import { splitGlossaryMarks } from '../content/text.js';
+import { createReadAloud } from '../speech/read-aloud.js';
 
 /**
  * Shows a pt-BR message with a link back to the list, and logs the details.
@@ -137,6 +138,12 @@ export async function renderLesson(container, t, context) {
 
   context.setTitle(lesson.title);
 
+  // Plain text for text-to-speech: title and paragraphs without glossary marks.
+  const spokenText = [lesson.text.title, ...lesson.text.paragraphs]
+    .map((text) => splitGlossaryMarks(text).map((segment) => segment.text ?? segment.term).join(''))
+    .join('\n');
+  const readAloud = createReadAloud(spokenText, t);
+
   container.replaceChildren(h(
     'article',
     { class: 'lesson' },
@@ -152,6 +159,7 @@ export async function renderLesson(container, t, context) {
       'section',
       { class: 'reading', 'aria-labelledby': 'text-title' },
       h('div', { class: 'reading-header' }, h('h2', { id: 'text-title', lang: 'en' }, lesson.text.title)),
+      readAloud.element,
       ...lesson.text.paragraphs.map(paragraph),
       h('p', { class: 'reading-hint' }, t('lesson.glossary.hint')),
     ),
@@ -166,5 +174,9 @@ export async function renderLesson(container, t, context) {
     glossaryCard(t),
   ));
 
-  return wireGlossary(container, lesson.glossary);
+  const unwireGlossary = wireGlossary(container, lesson.glossary);
+  return () => {
+    unwireGlossary();
+    readAloud.cleanup();
+  };
 }

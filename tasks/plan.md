@@ -24,7 +24,7 @@ Make lessons readable on her iPhone: the list of units and lessons in the Liçõ
 
 ### Checkpoint 1: Readable lesson
 - [x] Unit tests pass
-- [ ] Owner reads the first lesson on the iPhone, in both themes
+- [x] Owner reads the first lesson on the iPhone, in both themes
 
 ### Phase 2: Listening and offline
 - [ ] Task 4: "Ouvir" button with voice allow-list
