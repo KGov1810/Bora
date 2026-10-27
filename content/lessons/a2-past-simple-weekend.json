@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "id": "a2-past-simple-weekend",
+  "level": "A2",
+  "title": "Um fim de semana em Chicago",
+  "grammarPoint": "Past simple, regular verbs (-ed)",
+  "theme": "travel",
+  "estimatedMinutes": 10,
+  "text": {
+    "title": "A Weekend in Chicago",
+    "paragraphs": [
+      "Last month, Ana and her sister Bia visited Chicago for the first time. They [[booked]] a small hotel near the river and arrived on Friday night.",
+      "On Saturday morning, they walked [[along]] the lake for two hours. The weather was cold, but the [[view]] was amazing. In the afternoon, they visited an art museum and watched a short film about the history of the city.",
+      "In the evening, they tried a [[deep-dish pizza]]. Bia loved it, but Ana preferred her salad! After dinner, they listened to [[live]] jazz in a small bar. They stayed there until midnight.",
+      "On Sunday, it rained all day, so they stayed at the hotel. They played cards, talked and laughed a lot. Before they [[checked out]] on Monday, they planned their next trip: New York!"
+    ]
+  },
+  "glossary": {
+    "booked": { "pt": "reservaram", "note": "to book = reservar (hotel, voo, mesa)" },
+    "along": { "pt": "ao longo de, pela beira de" },
+    "view": { "pt": "vista" },
+    "deep-dish pizza": { "pt": "pizza de massa alta", "note": "A pizza típica de Chicago, alta como uma torta." },
+    "live": { "pt": "ao vivo", "note": "Aqui, live se pronuncia /laɪv/, como \"laiv\"." },
+    "checked out": { "pt": "fizeram o check-out, saíram do hotel" }
+  },
+  "grammar": {
+    "title": "Past simple: verbos regulares",
+    "explanation": [
+      "Usamos o past simple para ações que começaram e terminaram no passado. Ele aparece com expressões como yesterday, last weekend, last month e two days ago.",
+      "Nos verbos regulares, basta acrescentar -ed: walk → walked, visit → visited. E a forma é a mesma para todas as pessoas: I walked, she walked, they walked. Bem mais fácil que em português!",
+      "Atenção à ortografia: verbos que terminam em -e ganham só -d (arrive → arrived, love → loved). Consoante + y vira -ied (try → tried), mas vogal + y fica com -ed (play → played). Verbos curtos que terminam em consoante + vogal + consoante dobram a última letra (plan → planned, stop → stopped, prefer → preferred).",
+      "Na pronúncia, o -ed quase nunca é uma sílaba a mais: walked soa como \"wokt\" e played como \"pleid\". Ele só vira uma sílaba extra (/ɪd/) depois de t ou d: visited, wanted, needed.",
+      "O verbo to be é irregular no passado: I, he, she e it usam was; you, we e they usam were. Veremos outros verbos irregulares na próxima lição."
+    ],
+    "examples": [
+      { "en": "They visited Chicago last month.", "pt": "Elas visitaram Chicago no mês passado." },
+      { "en": "Bia tried a deep-dish pizza.", "pt": "A Bia provou uma pizza de massa alta." },
+      { "en": "They planned their next trip.", "pt": "Elas planejaram a próxima viagem." },
+      { "en": "The weather was cold.", "pt": "O tempo estava frio." }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "prompt": "Quando a Ana e a Bia chegaram a Chicago?",
+      "options": ["Na sexta à noite", "No sábado de manhã", "Na segunda-feira"],
+      "answer": 0,
+      "explanation": "O texto diz: \"They booked a small hotel near the river and arrived on Friday night.\""
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "statement": "The weather was warm on Saturday.",
+      "answer": false,
+      "explanation": "Falso: \"The weather was cold, but the view was amazing.\""
+    },
+    {
+      "id": "q3",
+      "type": "choice",
+      "prompt": "Quem gostou da pizza?",
+      "options": ["A Bia", "A Ana", "As duas"],
+      "answer": 0,
+      "explanation": "O texto diz: \"Bia loved it, but Ana preferred her salad!\""
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "statement": "They stayed at the hotel on Sunday because it rained.",
+      "answer": true,
+      "explanation": "Verdadeiro: \"On Sunday, it rained all day, so they stayed at the hotel.\""
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "Complete com o past simple.",
+      "sentence": "Last night, we ___ a movie at home.",
+      "answers": ["watched"],
+      "hint": "watch",
+      "explanation": "Verbo regular: watch + -ed = watched."
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "prompt": "Complete com o past simple. Atenção à ortografia!",
+      "sentence": "Bia ___ deep-dish pizza for the first time.",
+      "answers": ["tried"],
+      "hint": "try",
+      "explanation": "Try termina em consoante + y, então o y vira -ied: tried."
+    },
+    {
+      "id": "q7",
+      "type": "fill-blank",
+      "prompt": "Complete com o past simple. Atenção à ortografia!",
+      "sentence": "They ___ their next trip on Monday.",
+      "answers": ["planned"],
+      "hint": "plan",
+      "explanation": "Plan termina em consoante + vogal + consoante, então dobramos o n: planned."
+    },
+    {
+      "id": "q8",
+      "type": "choice",
+      "prompt": "Em qual verbo o -ed é pronunciado como uma sílaba a mais (/ɪd/)?",
+      "options": ["visited", "walked", "played"],
+      "answer": 0,
+      "explanation": "O -ed só vira uma sílaba extra depois de t ou d: vis-i-ted. Walked soa como \"wokt\" e played como \"pleid\"."
+    },
+    {
+      "id": "q9",
+      "type": "reorder",
+      "prompt": "Coloque as palavras na ordem certa.",
+      "words": ["Last", "month,", "they", "visited", "Chicago."],
+      "explanation": "A expressão de tempo pode vir no começo da frase: Last month, they visited Chicago."
+    }
+  ]
+}

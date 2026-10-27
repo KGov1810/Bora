@@ -12,6 +12,14 @@
             "a2-present-continuous-scene",
             "a2-there-is-are-neighborhood"
           ]
+        },
+        {
+          "id": "a2-u2",
+          "title": "Falar do passado",
+          "lessons": [
+            "a2-past-simple-weekend",
+            "a2-past-simple-irregular"
+          ]
         }
       ]
     }

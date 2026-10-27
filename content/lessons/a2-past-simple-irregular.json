@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "id": "a2-past-simple-irregular",
+  "level": "A2",
+  "title": "A mala perdida",
+  "grammarPoint": "Past simple, common irregular verbs",
+  "theme": "travel",
+  "estimatedMinutes": 12,
+  "text": {
+    "title": "The Lost Suitcase",
+    "paragraphs": [
+      "Last summer, Carla flew from São Paulo to Miami for a conference. The flight was long, but she slept for six hours and felt great when the plane landed.",
+      "At the airport, she went to the [[baggage claim]] and waited. She saw a lot of suitcases, but not hers. After forty minutes, she went to the airline desk. A woman took her name and gave her a [[form]].",
+      "Carla had a big problem: her dress for the conference was in the suitcase! So she took a taxi to a mall, bought a new dress and a toothbrush, and [[spent]] two hundred dollars.",
+      "The next morning, the phone [[rang]]. It was the airline: \"We found your suitcase! It went to Chicago [[by mistake]].\" They brought it to her hotel that afternoon.",
+      "Carla [[wore]] her new dress at the conference anyway. Now she always packs a change of clothes in her [[carry-on bag]]."
+    ]
+  },
+  "glossary": {
+    "baggage claim": { "pt": "esteira de bagagens, retirada de bagagem" },
+    "form": { "pt": "formulário" },
+    "spent": { "pt": "gastou", "note": "to spend → spent = gastar (dinheiro) ou passar (tempo)" },
+    "rang": { "pt": "tocou", "note": "to ring → rang = tocar (telefone, campainha)" },
+    "by mistake": { "pt": "por engano" },
+    "wore": { "pt": "usou, vestiu", "note": "to wear → wore = usar (roupa, óculos)" },
+    "carry-on bag": { "pt": "bagagem de mão" }
+  },
+  "grammar": {
+    "title": "Past simple: verbos irregulares",
+    "explanation": [
+      "Muitos verbos comuns são irregulares: no passado, eles não ganham -ed, mas mudam de forma. Por exemplo: go → went, have → had, take → took, see → saw.",
+      "Não existe uma regra, então é preciso memorizar. A boa notícia: os mais usados são poucos, e aparecem o tempo todo em séries e conversas. Alguns deste texto: fly → flew, sleep → slept, feel → felt, give → gave, buy → bought, find → found, bring → brought, wear → wore.",
+      "Uma dica: buy, bring e think terminam todos em -ought no passado: bought, brought, thought.",
+      "Como nos verbos regulares, a forma é a mesma para todas as pessoas: I went, she went, they went.",
+      "Nas frases negativas e nas perguntas, usamos did e o verbo volta para a forma básica: She didn't go, Did she go? Isso é o tema da lição 6."
+    ],
+    "examples": [
+      { "en": "Carla flew to Miami.", "pt": "A Carla voou para Miami." },
+      { "en": "She bought a new dress.", "pt": "Ela comprou um vestido novo." },
+      { "en": "They found her suitcase.", "pt": "Eles encontraram a mala dela." },
+      { "en": "The suitcase went to Chicago by mistake.", "pt": "A mala foi para Chicago por engano." }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "prompt": "Para onde a Carla viajou?",
+      "options": ["Miami", "Chicago", "São Paulo"],
+      "answer": 0,
+      "explanation": "Ela voou de São Paulo para Miami: \"Carla flew from São Paulo to Miami\". Foi a mala que foi para Chicago."
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "statement": "Carla slept on the plane.",
+      "answer": true,
+      "explanation": "Verdadeiro: \"she slept for six hours\"."
+    },
+    {
+      "id": "q3",
+      "type": "choice",
+      "prompt": "Por que a Carla comprou um vestido novo?",
+      "options": [
+        "Porque o vestido da conferência estava na mala",
+        "Porque ela não gostava do vestido dela",
+        "Porque a loja estava em promoção"
+      ],
+      "answer": 0,
+      "explanation": "O texto diz: \"her dress for the conference was in the suitcase!\""
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "statement": "The airline found the suitcase in Miami.",
+      "answer": false,
+      "explanation": "Falso: a mala foi para Chicago por engano (\"It went to Chicago by mistake\")."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "Complete com o past simple.",
+      "sentence": "Carla ___ a taxi to a mall.",
+      "answers": ["took"],
+      "hint": "take",
+      "explanation": "Take é irregular: take → took."
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "prompt": "Complete com o past simple.",
+      "sentence": "She ___ a new dress and a toothbrush.",
+      "answers": ["bought"],
+      "hint": "buy",
+      "explanation": "Buy é irregular: buy → bought (como brought e thought)."
+    },
+    {
+      "id": "q7",
+      "type": "fill-blank",
+      "prompt": "Complete com o past simple.",
+      "sentence": "Yesterday, I ___ to the airport by train.",
+      "answers": ["went"],
+      "hint": "go",
+      "explanation": "Go é irregular: go → went."
+    },
+    {
+      "id": "q8",
+      "type": "choice",
+      "prompt": "Qual é o passado de \"find\"?",
+      "options": ["found", "finded", "fand"],
+      "answer": 0,
+      "explanation": "Find é irregular: find → found. Verbos irregulares nunca ganham -ed."
+    },
+    {
+      "id": "q9",
+      "type": "reorder",
+      "prompt": "Coloque as palavras na ordem certa.",
+      "words": ["The", "airline", "found", "her", "suitcase."],
+      "explanation": "Sujeito (The airline) + verbo (found) + complemento (her suitcase)."
+    }
+  ]
+}
