@@ -1,6 +1,6 @@
 # Tasks: exercises (Bora!)
 
-Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (run by Claude), no console error in the headless check, new files listed in `sw.js` with a version bump, the owner approved the commit.
+Plan: `tasks/done/exercises-plan.md`. Definition of done for every task: `node --test` passes (run by Claude), no console error in the headless check, new files listed in `sw.js` with a version bump, the owner approved the commit.
 
 ## Task 1: Grading and shuffling
 
@@ -121,5 +121,5 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 
 ## Checkpoint 2: Complete
 - [x] The owner's real-iPhone check passes (keyboard, chips, feedback). Follow-up: the keyboard pushed the instruction off screen; fixed by scrolling the instruction back into view on focus and hiding the field label visually.
-- [ ] Every success criterion of the spec is met
-- [ ] Review with the owner before starting the `access` module
+- [x] Every success criterion of the spec is met
+- [x] Review with the owner before starting the `access` module

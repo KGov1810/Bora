@@ -1,7 +1,7 @@
 # Implementation Plan: exercises (Bora!)
 
 Source spec: `SPEC-exercises.md` (approved 2026-10-26). Module map: `CAPABILITY-MAP.md`.
-Tasks are tracked in `tasks/todo.md`. Completed plans are in `tasks/done/`.
+Tasks were tracked in `tasks/done/exercises-todo.md`. Status: complete.
 
 ## Overview
 
@@ -30,8 +30,8 @@ Let the learner do each lesson's exercises one at a time, with immediate correct
 
 ### Checkpoint 2: Complete
 - [x] The owner's real-iPhone check passes (keyboard, chips, feedback)
-- [ ] Every success criterion of the spec is met
-- [ ] Review with the owner before starting the `access` module
+- [x] Every success criterion of the spec is met
+- [x] Review with the owner before starting the `access` module
 
 ## Risks and Mitigations
 
