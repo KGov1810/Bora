@@ -60,5 +60,6 @@
   "exercises.summary.review": "Revise as respostas abaixo e tente de novo.",
   "exercises.summary.mistakes": "Para revisar",
   "exercises.summary.retry": "Refazer os erros",
-  "exercises.summary.backToLesson": "Voltar para a lição"
+  "exercises.summary.backToLesson": "Voltar para a lição",
+  "exercises.answer.placeholder": "Escreva aqui"
 }

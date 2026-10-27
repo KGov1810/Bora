@@ -139,6 +139,7 @@ function fillBlankBody(exercise, submit, t) {
     autocorrect: 'off',
     spellcheck: 'false',
     enterkeyhint: 'done',
+    placeholder: t('exercises.answer.placeholder'),
   });
   const checkButton = h('button', { type: 'submit', class: 'primary-button', disabled: '' }, t('exercises.check'));
   input.addEventListener('input', () => {
@@ -147,7 +148,7 @@ function fillBlankBody(exercise, submit, t) {
   const form = h(
     'form',
     { class: 'answer-form' },
-    h('label', { for: 'fill-answer', class: 'answer-label' }, t('exercises.answer.label')),
+    h('label', { for: 'fill-answer', class: 'visually-hidden' }, t('exercises.answer.label')),
     input,
     checkButton,
   );
@@ -155,11 +156,23 @@ function fillBlankBody(exercise, submit, t) {
     event.preventDefault();
     if (input.value.trim() !== '') submit(input.value);
   });
+
+  // When the keyboard opens, iOS scrolls the field into view and can push the
+  // instruction off screen. Once the keyboard is up, bring the instruction back
+  // to the top: the whole exercise fits above the keyboard on an iPhone.
+  const prompt = h('h2', { class: 'exercise-prompt' }, exercise.prompt);
+  input.addEventListener('focus', () => {
+    const showPrompt = () => prompt.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    const viewport = window.visualViewport;
+    if (viewport) viewport.addEventListener('resize', showPrompt, { once: true });
+    setTimeout(showPrompt, 400); // fallback when no resize event fires
+  });
+
   return {
     element: h(
       'div',
       {},
-      h('h2', { class: 'exercise-prompt' }, exercise.prompt),
+      prompt,
       h('p', { class: 'exercise-sentence', lang: 'en' }, before, h('span', { class: 'blank', 'aria-label': '___' }, '_____'), after),
       exercise.hint ? h('p', { class: 'exercise-hint' }, format(t('exercises.hint'), { hint: exercise.hint })) : null,
       form,
@@ -167,9 +180,6 @@ function fillBlankBody(exercise, submit, t) {
     lock() {
       input.disabled = true;
       checkButton.hidden = true;
-    },
-    focus() {
-      input.focus();
     },
   };
 }
@@ -312,7 +322,6 @@ export async function renderExerciseSession(container, t, context) {
 
     container.replaceChildren(h('div', { class: 'session' }, sessionHeader(lesson.id, current, t), area));
     container.scrollTop = 0;
-    body.focus?.();
   };
 
   const show = () => (session.isFinished() ? showSummary() : showExercise());

@@ -29,7 +29,7 @@ Let the learner do each lesson's exercises one at a time, with immediate correct
 - [x] Task 5: Summary and redo mistakes
 
 ### Checkpoint 2: Complete
-- [ ] The owner's real-iPhone check passes (keyboard, chips, feedback)
+- [x] The owner's real-iPhone check passes (keyboard, chips, feedback)
 - [ ] Every success criterion of the spec is met
 - [ ] Review with the owner before starting the `access` module
 

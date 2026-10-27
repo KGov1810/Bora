@@ -120,6 +120,6 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Estimated scope:** Small (4 files)
 
 ## Checkpoint 2: Complete
-- [ ] The owner's real-iPhone check passes (keyboard, chips, feedback)
+- [x] The owner's real-iPhone check passes (keyboard, chips, feedback). Follow-up: the keyboard pushed the instruction off screen; fixed by scrolling the instruction back into view on focus and hiding the field label visually.
 - [ ] Every success criterion of the spec is met
 - [ ] Review with the owner before starting the `access` module

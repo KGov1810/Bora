@@ -1,7 +1,7 @@
 // Service worker for Bora!: caches the app shell so it opens fast.
 // Bump CACHE_VERSION on every deployment, or the installed app keeps the old files.
 
-const CACHE_VERSION = 'v8';
+const CACHE_VERSION = 'v9';
 const CACHE_NAME = `bora-shell-${CACHE_VERSION}`;
 
 // Lesson files: network first, then this cache as a fallback. Not versioned,
