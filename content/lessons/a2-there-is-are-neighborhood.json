@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "id": "a2-there-is-are-neighborhood",
+  "level": "A2",
+  "title": "O bairro do hotel",
+  "grammarPoint": "There is / there are; some / any",
+  "theme": "travel",
+  "estimatedMinutes": 10,
+  "text": {
+    "title": "Welcome to the Maple Street Hotel",
+    "paragraphs": [
+      "The Maple Street Hotel is in a quiet neighborhood in Portland, Oregon, ten minutes from [[downtown]]. Here is a short guide to the area around the hotel.",
+      "There is a big park [[across the street]]. In the morning, there are always people running or walking their dogs. There is also a small [[farmers market]] in the park every Saturday.",
+      "On Maple Street, there are some great places to eat. There's a Mexican restaurant, a pizza place and two coffee shops. There isn't a supermarket on our street, but there is one [[two blocks away]].",
+      "Are there any museums [[nearby]]? Yes, there are! The Art Museum is a fifteen-minute walk from the hotel. There aren't any big shopping malls in the neighborhood, but there are some cute little shops on Pine Street.",
+      "Do you need help? There is always someone at the [[front desk]], day and night."
+    ]
+  },
+  "glossary": {
+    "downtown": { "pt": "centro da cidade", "note": "Nos EUA, downtown é o centro comercial da cidade." },
+    "across the street": { "pt": "do outro lado da rua" },
+    "farmers market": { "pt": "feira (de produtores)" },
+    "two blocks away": { "pt": "a dois quarteirões daqui", "note": "block = quarteirão; nos EUA, as distâncias na cidade são contadas em blocks." },
+    "nearby": { "pt": "perto, por perto" },
+    "front desk": { "pt": "recepção (do hotel)" }
+  },
+  "grammar": {
+    "title": "There is / there are: dizer o que tem em um lugar",
+    "explanation": [
+      "Em português dizemos \"tem um parque\" ou \"há um parque\". Em inglês, usamos there is ou there are. Cuidado: não usamos have para isso. \"Tem um parque aqui\" é There is a park here, e não It has a park here.",
+      "There is (ou a contração there's) vem com uma coisa no singular: there is a big park. There are vem com várias coisas, no plural: there are two coffee shops.",
+      "Na negativa: there isn't a supermarket, there aren't any malls. Na pergunta, is ou are vêm antes de there: Is there a pharmacy? Are there any museums? Respostas curtas: Yes, there is. / No, there aren't.",
+      "Some e any significam \"alguns\" ou \"algumas\". Usamos some em frases afirmativas (there are some great places) e any em frases negativas e perguntas (there aren't any malls, are there any museums?)."
+    ],
+    "examples": [
+      { "en": "There is a big park across the street.", "pt": "Tem um parque grande do outro lado da rua." },
+      { "en": "There are some great places to eat.", "pt": "Tem alguns lugares ótimos para comer." },
+      { "en": "There isn't a supermarket on our street.", "pt": "Não tem supermercado na nossa rua." },
+      { "en": "Are there any museums nearby?", "pt": "Tem algum museu por perto?" }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "prompt": "O que tem do outro lado da rua do hotel?",
+      "options": ["Um parque grande", "Um supermercado", "Um museu"],
+      "answer": 0,
+      "explanation": "O texto diz: \"There is a big park across the street.\""
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "statement": "There is a supermarket on Maple Street.",
+      "answer": false,
+      "explanation": "Falso: \"There isn't a supermarket on our street\". O supermercado fica a dois quarteirões."
+    },
+    {
+      "id": "q3",
+      "type": "choice",
+      "prompt": "Quando tem feira no parque?",
+      "options": ["Todo sábado", "Todo domingo", "Todos os dias"],
+      "answer": 0,
+      "explanation": "O texto diz: \"a small farmers market in the park every Saturday\"."
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "statement": "There are some small shops on Pine Street.",
+      "answer": true,
+      "explanation": "Verdadeiro: \"there are some cute little shops on Pine Street\"."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "Complete com is ou are.",
+      "sentence": "There ___ two coffee shops on Maple Street.",
+      "answers": ["are"],
+      "explanation": "Two coffee shops está no plural, então usamos there are."
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "prompt": "Complete com some ou any.",
+      "sentence": "There aren't ___ big shopping malls in the neighborhood.",
+      "answers": ["any"],
+      "explanation": "Em frases negativas, usamos any: there aren't any malls."
+    },
+    {
+      "id": "q7",
+      "type": "fill-blank",
+      "prompt": "Complete a pergunta.",
+      "sentence": "___ there a pharmacy near the hotel?",
+      "answers": ["Is"],
+      "explanation": "Na pergunta, is vem antes de there. A pharmacy está no singular, então: Is there...?"
+    },
+    {
+      "id": "q8",
+      "type": "choice",
+      "prompt": "Como se diz \"Tem um restaurante mexicano na rua\"?",
+      "options": [
+        "There is a Mexican restaurant on the street.",
+        "It has a Mexican restaurant on the street.",
+        "Have a Mexican restaurant on the street."
+      ],
+      "answer": 0,
+      "explanation": "Para dizer que algo existe em um lugar, usamos there is. Em inglês, \"tem\" nesse sentido não é have."
+    },
+    {
+      "id": "q9",
+      "type": "reorder",
+      "prompt": "Coloque as palavras na ordem certa.",
+      "words": ["Are", "there", "any", "museums", "nearby?"],
+      "explanation": "Na pergunta, are vem antes de there, e usamos any: Are there any museums nearby?"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "id": "a2-present-continuous-scene",
+  "level": "A2",
+  "title": "O que está acontecendo na cena?",
+  "grammarPoint": "Present continuous; present simple vs continuous",
+  "theme": "TV series",
+  "estimatedMinutes": 10,
+  "text": {
+    "title": "Scene 12: The Surprise Party",
+    "paragraphs": [
+      "It is Friday evening in a small apartment in Los Angeles. Five friends are [[getting ready]] for a surprise party. Today is Tom's birthday, but he doesn't know about the party.",
+      "Right now, Jess is putting balloons in the living room. Her brother Leo is standing on a chair, and he is holding a big [[sign]] that says \"Happy Birthday, Tom!\" Priya is in the kitchen. She isn't cooking. She is [[ordering]] pizza on her phone.",
+      "Suddenly, someone is [[knocking]] at the door. Everybody is [[whispering]]: \"Is it Tom? Is he coming in?\" Leo is trying to get down from the chair, but the chair is moving.",
+      "Jess is walking to the door. She is opening it slowly. It isn't Tom. It's the pizza [[delivery guy]]! Now everybody is laughing. Tom usually gets home at eight, so they still have twenty minutes."
+    ]
+  },
+  "glossary": {
+    "getting ready": { "pt": "se preparando", "note": "to get ready = preparar-se, aprontar-se" },
+    "sign": { "pt": "cartaz, placa" },
+    "ordering": { "pt": "pedindo", "note": "to order = pedir (comida, num restaurante ou app)" },
+    "knocking": { "pt": "batendo (na porta)", "note": "to knock at the door = bater na porta" },
+    "whispering": { "pt": "cochichando, sussurrando" },
+    "delivery guy": { "pt": "entregador", "note": "delivery = entrega; guy = cara (informal)" }
+  },
+  "grammar": {
+    "title": "Present continuous: o que está acontecendo agora",
+    "explanation": [
+      "Usamos o present continuous para ações que estão acontecendo agora, neste momento. Ele combina com palavras como now, right now e at the moment.",
+      "A forma é am, is ou are + o verbo com -ing: I am working, she is cooking, they are waiting. Na fala, usamos muito as contrações: I'm, she's, they're.",
+      "Atenção à ortografia do -ing: verbos que terminam em -e perdem o e (make → making, move → moving). Verbos curtos que terminam em consoante + vogal + consoante dobram a última letra (sit → sitting, get → getting).",
+      "Na negativa, usamos isn't, aren't ou 'm not: she isn't cooking. Na pergunta, am, is ou are vêm antes do sujeito: Is he coming in?",
+      "Compare com o present simple, que fala de rotina e hábito: Tom usually gets home at eight (todo dia) e Now everybody is laughing (agora). Alguns verbos de estado, como know, like e want, normalmente não vão para o -ing: he doesn't know, e não he isn't knowing."
+    ],
+    "examples": [
+      { "en": "Five friends are getting ready for a party.", "pt": "Cinco amigos estão se preparando para uma festa." },
+      { "en": "She isn't cooking.", "pt": "Ela não está cozinhando." },
+      { "en": "Is he coming in?", "pt": "Ele está entrando?" },
+      { "en": "Tom usually gets home at eight.", "pt": "O Tom normalmente chega em casa às oito." }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "prompt": "Onde a Priya está?",
+      "options": ["Na cozinha", "Na sala", "Na porta"],
+      "answer": 0,
+      "explanation": "O texto diz: \"Priya is in the kitchen.\""
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "statement": "Priya is cooking dinner.",
+      "answer": false,
+      "explanation": "Falso: \"She isn't cooking. She is ordering pizza on her phone.\""
+    },
+    {
+      "id": "q3",
+      "type": "choice",
+      "prompt": "Quem está batendo na porta?",
+      "options": ["O entregador de pizza", "O Tom", "Um vizinho"],
+      "answer": 0,
+      "explanation": "Não é o Tom: \"It's the pizza delivery guy!\""
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "statement": "Tom knows about the party.",
+      "answer": false,
+      "explanation": "Falso: é uma festa surpresa, e o texto diz \"he doesn't know about the party\"."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "Complete com o present continuous.",
+      "sentence": "Right now, Leo ___ on a chair.",
+      "answers": ["is standing", "'s standing"],
+      "hint": "stand",
+      "explanation": "Ação acontecendo agora (right now): is + standing."
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "prompt": "Complete com a forma -ing correta.",
+      "sentence": "Look! The cat is ___ on the sofa.",
+      "answers": ["sitting"],
+      "hint": "sit",
+      "explanation": "Sit termina em consoante + vogal + consoante, então dobramos o t: sitting."
+    },
+    {
+      "id": "q7",
+      "type": "fill-blank",
+      "prompt": "Present simple ou continuous? Complete.",
+      "sentence": "Tom usually ___ home at eight.",
+      "answers": ["gets"],
+      "hint": "get",
+      "explanation": "Usually indica rotina, então usamos o present simple. Com he (Tom): gets."
+    },
+    {
+      "id": "q8",
+      "type": "choice",
+      "prompt": "Qual frase descreve uma ação que está acontecendo agora?",
+      "options": ["She is ordering pizza now.", "She orders pizza now.", "She ordering pizza now."],
+      "answer": 0,
+      "explanation": "Para algo acontecendo agora: is + ordering. Sem o is, a frase fica incorreta."
+    },
+    {
+      "id": "q9",
+      "type": "reorder",
+      "prompt": "Coloque as palavras na ordem certa.",
+      "words": ["Is", "he", "coming", "in?"],
+      "explanation": "Na pergunta, is vem antes do sujeito: Is he coming in?"
+    }
+  ]
+}

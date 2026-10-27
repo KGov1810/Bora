@@ -7,7 +7,11 @@
         {
           "id": "a2-u1",
           "title": "O dia a dia",
-          "lessons": ["a2-present-simple-routine"]
+          "lessons": [
+            "a2-present-simple-routine",
+            "a2-present-continuous-scene",
+            "a2-there-is-are-neighborhood"
+          ]
         }
       ]
     }
