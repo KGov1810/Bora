@@ -1,0 +1,6 @@
+# Cloudflare Worker for Bora! (see SPEC-access.md).
+# Deployed by Workers Builds with "worker/" as root directory.
+# The ACCESS_CODE secret is set in the Cloudflare dashboard, never here.
+name = "bora-api"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
