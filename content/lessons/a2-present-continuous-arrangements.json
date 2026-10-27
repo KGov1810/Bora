@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "id": "a2-present-continuous-arrangements",
+  "level": "A2",
+  "title": "Combinando o fim de semana",
+  "grammarPoint": "Present continuous for fixed arrangements",
+  "theme": "daily life",
+  "estimatedMinutes": 10,
+  "text": {
+    "title": "Weekend Plans",
+    "paragraphs": [
+      "Mia: Hi Rafa! What are you doing this weekend?",
+      "Rafa: Hi! On Saturday morning, I'm playing soccer with some friends from work. In the evening, I'm having dinner with my cousin. She's visiting from Brazil!",
+      "Mia: Nice! Are you doing anything on Sunday? Sara and I are going to a [[food festival]] downtown. We're [[meeting]] at the [[subway]] station at noon.",
+      "Rafa: [[Sounds fun]]! But I'm not sure. I'm [[taking]] my cousin to the airport on Sunday. Her flight is at three.",
+      "Mia: No problem! The festival ends at eight. Come after the airport! I'm sending you the address now.",
+      "Rafa: Perfect, [[count me in]]! What time are you leaving? I'm working early on Monday.",
+      "Mia: Around seven. Sara is starting a new job on Monday, so we aren't staying late either.",
+      "Rafa: Great. See you on Sunday!"
+    ]
+  },
+  "glossary": {
+    "food festival": {
+      "pt": "festival de comida"
+    },
+    "meeting": {
+      "pt": "nos encontrando",
+      "note": "to meet = encontrar-se (com alguém, num lugar combinado)"
+    },
+    "subway": {
+      "pt": "metrô",
+      "note": "Nos EUA, subway; na Inglaterra, underground ou tube."
+    },
+    "sounds fun": {
+      "pt": "parece divertido"
+    },
+    "taking": {
+      "pt": "levando",
+      "note": "to take someone to = levar alguém a algum lugar"
+    },
+    "count me in": {
+      "pt": "pode contar comigo, tô dentro"
+    }
+  },
+  "grammar": {
+    "title": "Present continuous para compromissos marcados",
+    "explanation": [
+      "Na lição 2, vimos o present continuous para o que está acontecendo agora. Ele também serve para o futuro: para compromissos já combinados, com dia, hora ou pessoas marcadas, como numa agenda. I'm having dinner with my cousin on Saturday.",
+      "Nesse uso, sempre aparece uma expressão de futuro: this weekend, on Sunday, tomorrow, next week. É ela que mostra que não é agora.",
+      "A pergunta mais comum para combinar planos é What are you doing this weekend? Ela equivale ao nosso \"O que você vai fazer no fim de semana?\".",
+      "E a diferença com going to? Going to mostra uma intenção ou decisão (I'm going to learn to cook). O present continuous mostra algo já organizado com outras pessoas (I'm meeting Sara at noon). Muitas vezes, os dois são possíveis."
+    ],
+    "examples": [
+      {
+        "en": "What are you doing this weekend?",
+        "pt": "O que você vai fazer neste fim de semana?"
+      },
+      {
+        "en": "I'm playing soccer on Saturday morning.",
+        "pt": "Vou jogar futebol no sábado de manhã."
+      },
+      {
+        "en": "We're meeting at the subway station at noon.",
+        "pt": "Vamos nos encontrar na estação de metrô ao meio-dia."
+      },
+      {
+        "en": "I'm taking my cousin to the airport on Sunday.",
+        "pt": "Vou levar minha prima ao aeroporto no domingo."
+      }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "prompt": "O que o Rafa vai fazer no sábado de manhã?",
+      "options": [
+        "Jogar futebol",
+        "Jantar com a prima",
+        "Ir ao aeroporto"
+      ],
+      "answer": 0,
+      "explanation": "Ele diz: \"On Saturday morning, I'm playing soccer with some friends from work.\""
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "statement": "Rafa's cousin is visiting from Brazil.",
+      "answer": true,
+      "explanation": "Verdadeiro: \"She's visiting from Brazil!\""
+    },
+    {
+      "id": "q3",
+      "type": "choice",
+      "prompt": "Onde a Mia e a Sara vão se encontrar?",
+      "options": [
+        "Na estação de metrô",
+        "No aeroporto",
+        "No festival"
+      ],
+      "answer": 0,
+      "explanation": "Mia diz: \"We're meeting at the subway station at noon.\""
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "statement": "Rafa is going to the festival in the morning.",
+      "answer": false,
+      "explanation": "Falso: ele vai ao aeroporto primeiro e encontra as amigas no festival depois."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "Complete com o present continuous.",
+      "sentence": "On Saturday evening, I ___ dinner with my cousin.",
+      "answers": [
+        "am having",
+        "'m having"
+      ],
+      "hint": "have",
+      "explanation": "Compromisso marcado: am + having. Have dinner = jantar."
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "prompt": "Complete a pergunta.",
+      "sentence": "What ___ you doing this weekend?",
+      "answers": [
+        "are"
+      ],
+      "explanation": "Pergunta no present continuous: What are you doing...?"
+    },
+    {
+      "id": "q7",
+      "type": "fill-blank",
+      "prompt": "Complete com o present continuous.",
+      "sentence": "Sara and I ___ to a food festival on Sunday.",
+      "answers": [
+        "are going",
+        "'re going"
+      ],
+      "hint": "go",
+      "explanation": "Sara and I = we, então: are going."
+    },
+    {
+      "id": "q8",
+      "type": "choice",
+      "prompt": "Qual é o jeito natural de perguntar \"O que você vai fazer amanhã?\"",
+      "options": [
+        "What are you doing tomorrow?",
+        "What do you do tomorrow?",
+        "What you do tomorrow?"
+      ],
+      "answer": 0,
+      "explanation": "Para perguntar sobre planos, usamos o present continuous: What are you doing tomorrow?"
+    },
+    {
+      "id": "q9",
+      "type": "reorder",
+      "prompt": "Coloque as palavras na ordem certa.",
+      "words": [
+        "I'm",
+        "taking",
+        "my",
+        "cousin",
+        "to",
+        "the",
+        "airport."
+      ],
+      "explanation": "Sujeito + am + verbo com -ing + complemento: I'm taking my cousin to the airport."
+    }
+  ]
+}

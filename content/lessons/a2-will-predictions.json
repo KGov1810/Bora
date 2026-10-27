@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "id": "a2-will-predictions",
+  "level": "A2",
+  "title": "Como vamos viajar no futuro",
+  "grammarPoint": "Will for predictions, offers and quick decisions",
+  "theme": "articles",
+  "estimatedMinutes": 10,
+  "text": {
+    "title": "How Will We Travel in 2040?",
+    "paragraphs": [
+      "What will travel look like in 2040? Nobody knows for sure, but experts have some interesting ideas.",
+      "First, planes will probably be [[quieter]] and cleaner. Some experts think small electric planes will fly short routes, like São Paulo to Rio.",
+      "At the airport, you won't need a passport or a [[boarding pass]]. A camera will [[recognize]] your face, and you will walk straight to the plane. No more long [[lines]]!",
+      "Hotels will change too. Robots will probably carry your bags, and your phone will open the door of your room. Some people say we will even stay in hotels in space, but I don't think that will happen soon. It will be too expensive.",
+      "And what about you? Will you travel more or less in the future? Maybe [[virtual reality]] trips will be [[good enough]] for some people!"
+    ]
+  },
+  "glossary": {
+    "quieter": { "pt": "mais silenciosos", "note": "quiet = silencioso; quieter = mais silencioso" },
+    "boarding pass": { "pt": "cartão de embarque" },
+    "recognize": { "pt": "reconhecer" },
+    "lines": { "pt": "filas", "note": "Nos EUA, line; na Inglaterra, queue." },
+    "virtual reality": { "pt": "realidade virtual" },
+    "good enough": { "pt": "bom o suficiente" }
+  },
+  "grammar": {
+    "title": "Will: previsões, ofertas e decisões na hora",
+    "explanation": [
+      "Usamos will + verbo básico para fazer previsões, ou seja, dizer o que achamos que vai acontecer: planes will be quieter. Ele aparece muito com I think, probably e maybe.",
+      "A forma é a mesma para todas as pessoas: I will, she will, they will. Na fala, usamos a contração: I'll, you'll, it'll. A negativa é won't (will not): you won't need a passport.",
+      "Na pergunta, will vem antes do sujeito: Will hotels change? Respostas curtas: Yes, they will. / No, they won't.",
+      "Também usamos will para decisões tomadas na hora (I'll have a coffee, please) e para oferecer ajuda (I'll carry your bag!).",
+      "Will ou going to? Going to é para planos já decididos (lição 8). Will é para opiniões sobre o futuro e decisões do momento. E repare na posição de probably: will probably be, mas probably won't be."
+    ],
+    "examples": [
+      { "en": "Planes will probably be quieter.", "pt": "Os aviões provavelmente vão ser mais silenciosos." },
+      { "en": "You won't need a passport.", "pt": "Você não vai precisar de passaporte." },
+      { "en": "I don't think that will happen soon.", "pt": "Eu não acho que isso vai acontecer tão cedo." },
+      { "en": "I'll have a coffee, please.", "pt": "Eu vou querer um café, por favor." }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "prompt": "Segundo o texto, como os aviões vão ser em 2040?",
+      "options": ["Mais silenciosos e mais limpos", "Maiores e mais rápidos", "Mais baratos"],
+      "answer": 0,
+      "explanation": "O texto diz: \"planes will probably be quieter and cleaner\"."
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "statement": "In 2040, you will need a boarding pass at the airport.",
+      "answer": false,
+      "explanation": "Falso: \"you won't need a passport or a boarding pass\". Uma câmera vai reconhecer seu rosto."
+    },
+    {
+      "id": "q3",
+      "type": "choice",
+      "prompt": "O que o autor pensa sobre hotéis no espaço?",
+      "options": ["Que não vão existir tão cedo", "Que vão ser baratos", "Que já existem"],
+      "answer": 0,
+      "explanation": "Ele diz: \"I don't think that will happen soon. It will be too expensive.\""
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "statement": "Robots will probably carry your bags.",
+      "answer": true,
+      "explanation": "Verdadeiro: \"Robots will probably carry your bags\"."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "Complete com will.",
+      "sentence": "A camera ___ recognize your face.",
+      "answers": ["will"],
+      "explanation": "Previsão: will + verbo básico (recognize)."
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "prompt": "Complete com a negativa de will.",
+      "sentence": "You ___ need a passport.",
+      "answers": ["won't", "will not"],
+      "explanation": "A negativa de will é won't (will not)."
+    },
+    {
+      "id": "q7",
+      "type": "fill-blank",
+      "prompt": "Depois de will, use o verbo na forma básica.",
+      "sentence": "Small electric planes will ___ short routes.",
+      "answers": ["fly"],
+      "hint": "flies",
+      "explanation": "Depois de will, o verbo fica sempre na forma básica: will fly, e não will flies."
+    },
+    {
+      "id": "q8",
+      "type": "choice",
+      "prompt": "Você está num café e decide o que pedir na hora. O que você diz?",
+      "options": ["I'll have a coffee, please.", "I have a coffee, please.", "I will to have a coffee, please."],
+      "answer": 0,
+      "explanation": "Para uma decisão tomada na hora, usamos will: I'll have a coffee, please. Depois de will, não usamos to."
+    },
+    {
+      "id": "q9",
+      "type": "reorder",
+      "prompt": "Coloque as palavras na ordem certa.",
+      "words": ["Hotels", "will", "probably", "change", "too."],
+      "explanation": "Probably fica entre will e o verbo: will probably change."
+    }
+  ]
+}

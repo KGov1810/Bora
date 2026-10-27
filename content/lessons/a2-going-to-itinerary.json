@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "id": "a2-going-to-itinerary",
+  "level": "A2",
+  "title": "O roteiro da viagem",
+  "grammarPoint": "Be going to for plans and predictions",
+  "theme": "travel",
+  "estimatedMinutes": 10,
+  "text": {
+    "title": "Our Week in California",
+    "paragraphs": [
+      "Next month, my wife Julia and I are going to spend a week in California. It's our first [[road trip]] in the United States, so we planned everything carefully. Here is our itinerary.",
+      "We're going to land in San Francisco on Saturday. On Sunday, we're going to ride a [[cable car]] and walk across the Golden Gate Bridge. Julia is going to take a lot of photos, I'm sure!",
+      "On Monday, we're going to [[rent]] a car and drive south along the coast. We aren't going to drive at night, because the road has a lot of [[curves]]. We're going to stop in small towns and eat fresh seafood.",
+      "On Thursday, we're going to arrive in Los Angeles. Are we going to visit Hollywood? Of course! But we're also going to relax on the beach.",
+      "The [[weather forecast]] says sunny days all week, so it's going to be hot. We're packing [[sunscreen]], hats and sunglasses. I think it's going to be the trip of our lives!"
+    ]
+  },
+  "glossary": {
+    "road trip": { "pt": "viagem de carro" },
+    "cable car": { "pt": "bondinho", "note": "Os bondinhos de São Francisco são famosos no mundo todo." },
+    "rent": { "pt": "alugar" },
+    "curves": { "pt": "curvas" },
+    "weather forecast": { "pt": "previsão do tempo" },
+    "sunscreen": { "pt": "protetor solar" }
+  },
+  "grammar": {
+    "title": "Be going to: planos e previsões",
+    "explanation": [
+      "Usamos be going to + verbo básico para falar de planos e intenções: coisas que já decidimos fazer. We're going to rent a car (vamos alugar um carro). É muito parecido com o nosso \"vou fazer\".",
+      "A forma é am, is ou are + going to + verbo básico: I'm going to travel, she's going to take photos, we're going to land.",
+      "Na negativa: we aren't going to drive at night, she isn't going to work. Na pergunta, am, is ou are vêm antes do sujeito: Are we going to visit Hollywood?",
+      "Também usamos going to para previsões quando vemos uma evidência agora: a previsão diz sol, então it's going to be hot. Look at those clouds! It's going to rain.",
+      "Nas séries, você vai ouvir gonna: \"I'm gonna call you\". É a pronúncia informal de going to. Na escrita, use going to."
+    ],
+    "examples": [
+      { "en": "We're going to spend a week in California.", "pt": "Nós vamos passar uma semana na Califórnia." },
+      { "en": "We aren't going to drive at night.", "pt": "Nós não vamos dirigir à noite." },
+      { "en": "Are we going to visit Hollywood?", "pt": "Nós vamos visitar Hollywood?" },
+      { "en": "It's going to be hot.", "pt": "Vai fazer calor." }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "prompt": "Em que cidade eles vão chegar de avião?",
+      "options": ["São Francisco", "Los Angeles", "Hollywood"],
+      "answer": 0,
+      "explanation": "O texto diz: \"We're going to land in San Francisco on Saturday.\""
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "statement": "They are going to drive at night.",
+      "answer": false,
+      "explanation": "Falso: \"We aren't going to drive at night\"."
+    },
+    {
+      "id": "q3",
+      "type": "choice",
+      "prompt": "Por que eles não vão dirigir à noite?",
+      "options": ["Porque a estrada tem muitas curvas", "Porque vão estar cansados", "Porque não vão ter carro"],
+      "answer": 0,
+      "explanation": "O texto diz: \"because the road has a lot of curves\"."
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "statement": "Julia is going to take a lot of photos.",
+      "answer": true,
+      "explanation": "Verdadeiro: \"Julia is going to take a lot of photos, I'm sure!\""
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "Complete com be going to.",
+      "sentence": "On Monday, we ___ rent a car.",
+      "answers": ["are going to", "'re going to"],
+      "hint": "we + be going to",
+      "explanation": "Com we, usamos are going to (ou a contração we're going to)."
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "prompt": "Complete a negativa.",
+      "sentence": "Julia ___ going to work during the trip.",
+      "answers": ["isn't", "is not"],
+      "explanation": "Com she (Julia), a negativa é isn't going to."
+    },
+    {
+      "id": "q7",
+      "type": "fill-blank",
+      "prompt": "Complete a pergunta.",
+      "sentence": "___ you going to visit Hollywood?",
+      "answers": ["Are"],
+      "explanation": "Na pergunta, are vem antes do sujeito: Are you going to...?"
+    },
+    {
+      "id": "q8",
+      "type": "choice",
+      "prompt": "Você vê nuvens escuras no céu. O que você diz?",
+      "options": ["It's going to rain.", "It rains.", "It's raining going."],
+      "answer": 0,
+      "explanation": "Previsão com evidência (as nuvens): it's going to rain."
+    },
+    {
+      "id": "q9",
+      "type": "reorder",
+      "prompt": "Coloque as palavras na ordem certa.",
+      "words": ["We're", "going", "to", "relax", "on", "the", "beach."],
+      "explanation": "Sujeito + be going to + verbo básico: We're going to relax on the beach."
+    }
+  ]
+}
