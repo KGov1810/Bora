@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "id": "a2-past-continuous-episode",
+  "level": "A2",
+  "title": "O resumo do episódio",
+  "grammarPoint": "Past continuous; when / while",
+  "theme": "TV series",
+  "estimatedMinutes": 12,
+  "text": {
+    "title": "Episode Recap: The Missing Painting",
+    "paragraphs": [
+      "In last night's episode of Harbor Town, a famous painting disappeared from the city museum. Detective Kim Park started the [[investigation]] right away.",
+      "At nine o'clock, the museum guard was watching the cameras, but he didn't see anything strange. While he was drinking his coffee, the lights suddenly [[went out]].",
+      "Kim talked to everybody. At the time of the [[theft]], the director was having dinner with a friend, and the two cleaners were working on the second floor. Everybody had an [[alibi]].",
+      "Then Kim noticed something. When the lights went out, it was raining hard, but the guard's shoes were completely dry. He wasn't sitting in his office: he was [[hiding]] the painting in his car!",
+      "The episode ended with a [[cliffhanger]]: while Kim was arresting the guard, someone was watching her from a black car."
+    ]
+  },
+  "glossary": {
+    "investigation": { "pt": "investigação" },
+    "went out": { "pt": "apagaram", "note": "to go out → went out = apagar (luz, fogo)" },
+    "theft": { "pt": "roubo, furto" },
+    "alibi": { "pt": "álibi" },
+    "hiding": { "pt": "escondendo", "note": "to hide = esconder" },
+    "cliffhanger": { "pt": "final em suspense, gancho", "note": "O final que deixa você querendo ver o próximo episódio." }
+  },
+  "grammar": {
+    "title": "Past continuous: o que estava acontecendo",
+    "explanation": [
+      "O past continuous mostra uma ação em andamento num momento do passado. É o nosso \"estava fazendo\": At nine o'clock, the guard was watching the cameras (às nove horas, o guarda estava olhando as câmeras).",
+      "A forma é was ou were + o verbo com -ing. I, he, she e it usam was; you, we e they usam were: the director was having dinner, the cleaners were working.",
+      "Ele aparece muito em histórias e resumos de séries, para descrever o cenário: it was raining hard. E combina com o past simple: uma ação longa, em andamento (past continuous), é interrompida por uma ação curta (past simple). While he was drinking his coffee, the lights went out.",
+      "Normalmente, while vem com a ação longa (while he was drinking) e when com a ação curta (when the lights went out).",
+      "Na negativa: wasn't ou weren't + -ing (he wasn't sitting in his office). Na pergunta: Was he sitting in his office? Were they working?"
+    ],
+    "examples": [
+      { "en": "The guard was watching the cameras.", "pt": "O guarda estava olhando as câmeras." },
+      { "en": "While he was drinking his coffee, the lights went out.", "pt": "Enquanto ele estava tomando café, as luzes apagaram." },
+      { "en": "When the lights went out, it was raining hard.", "pt": "Quando as luzes apagaram, estava chovendo forte." },
+      { "en": "He wasn't sitting in his office.", "pt": "Ele não estava sentado no escritório." }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "prompt": "O que desapareceu do museu?",
+      "options": ["Um quadro famoso", "Uma câmera", "O carro do diretor"],
+      "answer": 0,
+      "explanation": "O texto diz: \"a famous painting disappeared from the city museum\"."
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "statement": "The director was having dinner at the time of the theft.",
+      "answer": true,
+      "explanation": "Verdadeiro: \"the director was having dinner with a friend\"."
+    },
+    {
+      "id": "q3",
+      "type": "choice",
+      "prompt": "O que a Kim percebeu sobre o guarda?",
+      "options": ["Os sapatos dele estavam secos", "Ele estava tomando café", "Ele estava no segundo andar"],
+      "answer": 0,
+      "explanation": "Estava chovendo forte, mas \"the guard's shoes were completely dry\": ele não estava no escritório."
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "statement": "It was raining when the lights went out.",
+      "answer": true,
+      "explanation": "Verdadeiro: \"When the lights went out, it was raining hard\"."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "Complete com o past continuous.",
+      "sentence": "At nine o'clock, the guard ___ the cameras.",
+      "answers": ["was watching"],
+      "hint": "watch",
+      "explanation": "Ação em andamento num momento do passado: was + watching."
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "prompt": "Complete com was ou were.",
+      "sentence": "The two cleaners ___ working on the second floor.",
+      "answers": ["were"],
+      "explanation": "The two cleaners está no plural (they), então usamos were."
+    },
+    {
+      "id": "q7",
+      "type": "fill-blank",
+      "prompt": "Past simple ou continuous? Complete.",
+      "sentence": "While he was drinking his coffee, the lights suddenly ___ out.",
+      "answers": ["went"],
+      "hint": "go",
+      "explanation": "A ação curta que interrompe a outra fica no past simple: the lights went out."
+    },
+    {
+      "id": "q8",
+      "type": "choice",
+      "prompt": "Qual frase está correta?",
+      "options": [
+        "When the phone rang, I was taking a shower.",
+        "When the phone rang, I taking a shower.",
+        "When the phone ringing, I was take a shower."
+      ],
+      "answer": 0,
+      "explanation": "Ação curta no past simple (rang) e ação longa no past continuous (was taking)."
+    },
+    {
+      "id": "q9",
+      "type": "reorder",
+      "prompt": "Coloque as palavras na ordem certa.",
+      "words": ["Someone", "was", "watching", "her", "from", "a", "black", "car."],
+      "explanation": "Sujeito + was + verbo com -ing + complemento: Someone was watching her from a black car."
+    }
+  ]
+}

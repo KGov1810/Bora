@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "id": "a2-past-simple-questions",
+  "level": "A2",
+  "title": "Entrevista com um ator",
+  "grammarPoint": "Past simple negatives and questions (did / didn't)",
+  "theme": "TV series",
+  "estimatedMinutes": 10,
+  "text": {
+    "title": "Four Questions for Jake Rivera",
+    "paragraphs": [
+      "Jake Rivera plays a young doctor in the hit series Night Shift. We talked to him about his first big [[role]] and his life before TV.",
+      "Did you always want to be an actor? \"No, I didn't! As a kid, I wanted to be a soccer player. I started acting in high school, almost [[by accident]].\"",
+      "How did you get the role in Night Shift? \"My agent called me on a Monday, and the [[audition]] was on Tuesday. I didn't have time to prepare, so I was really nervous. But I got the part!\"",
+      "What did you do before the show? \"I worked as a [[waiter]] in New York for three years. I didn't [[earn]] much money, but I met a lot of interesting people.\"",
+      "Did you watch the first episode with your family? \"Yes, I did. We watched it at my parents' house. My mom cried, and my dad didn't say anything. He was too [[proud]]!\""
+    ]
+  },
+  "glossary": {
+    "role": { "pt": "papel (num filme ou série)", "note": "Também se diz part: \"I got the part\" = \"consegui o papel\"." },
+    "by accident": { "pt": "por acaso" },
+    "audition": { "pt": "teste de elenco" },
+    "waiter": { "pt": "garçom" },
+    "earn": { "pt": "ganhar (dinheiro)", "note": "to earn money = ganhar dinheiro trabalhando; to win = ganhar um jogo ou prêmio" },
+    "proud": { "pt": "orgulhoso" }
+  },
+  "grammar": {
+    "title": "Past simple: negativa e pergunta com did",
+    "explanation": [
+      "Na negativa e na pergunta do past simple, usamos o auxiliar did, e o verbo principal volta para a forma básica. O did já mostra que é passado, então o verbo não precisa mostrar de novo.",
+      "Negativa: sujeito + didn't (did not) + verbo básico. I didn't have time, e não I didn't had time. My dad didn't say anything, e não didn't said.",
+      "Pergunta: Did + sujeito + verbo básico? Did you watch the first episode? Respostas curtas: Yes, I did. / No, I didn't.",
+      "Com palavras de pergunta (what, where, how, when, why), a ordem é: palavra + did + sujeito + verbo básico. What did you do? How did you get the role?",
+      "Exceção: o verbo to be não usa did. Na negativa: I wasn't nervous, they weren't at home. Na pergunta: Were you nervous? Was it hard?"
+    ],
+    "examples": [
+      { "en": "I didn't have time to prepare.", "pt": "Eu não tive tempo para me preparar." },
+      { "en": "Did you always want to be an actor?", "pt": "Você sempre quis ser ator?" },
+      { "en": "No, I didn't.", "pt": "Não, não quis." },
+      { "en": "What did you do before the show?", "pt": "O que você fazia antes da série?" }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "prompt": "O que o Jake queria ser quando era criança?",
+      "options": ["Jogador de futebol", "Médico", "Garçom"],
+      "answer": 0,
+      "explanation": "Ele diz: \"As a kid, I wanted to be a soccer player.\" Nos EUA, futebol é soccer."
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "statement": "Jake had a lot of time to prepare for the audition.",
+      "answer": false,
+      "explanation": "Falso: \"I didn't have time to prepare, so I was really nervous.\""
+    },
+    {
+      "id": "q3",
+      "type": "choice",
+      "prompt": "O que o Jake fazia antes da série?",
+      "options": ["Trabalhava como garçom", "Estudava medicina", "Jogava futebol"],
+      "answer": 0,
+      "explanation": "Ele diz: \"I worked as a waiter in New York for three years.\""
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "statement": "Jake's dad cried when they watched the first episode.",
+      "answer": false,
+      "explanation": "Falso: quem chorou foi a mãe. O pai não disse nada: \"my dad didn't say anything\"."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "Complete a negativa.",
+      "sentence": "I ___ have time to prepare.",
+      "answers": ["didn't", "did not"],
+      "explanation": "Negativa no passado: didn't + verbo básico (have)."
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "prompt": "Complete a pergunta.",
+      "sentence": "___ you watch the first episode with your family?",
+      "answers": ["Did"],
+      "explanation": "Pergunta no passado: Did + sujeito + verbo básico."
+    },
+    {
+      "id": "q7",
+      "type": "fill-blank",
+      "prompt": "Depois de did, use o verbo na forma básica.",
+      "sentence": "Where did you ___ before the show?",
+      "answers": ["work"],
+      "hint": "worked",
+      "explanation": "Did já indica o passado, então o verbo fica na forma básica: did you work, e não did you worked."
+    },
+    {
+      "id": "q8",
+      "type": "choice",
+      "prompt": "Qual pergunta está correta?",
+      "options": ["Did you get the part?", "Did you got the part?", "You did get the part?"],
+      "answer": 0,
+      "explanation": "Did + sujeito + verbo básico: Did you get the part? Depois de did, nunca usamos o passado (got)."
+    },
+    {
+      "id": "q9",
+      "type": "reorder",
+      "prompt": "Coloque as palavras na ordem certa.",
+      "words": ["What", "did", "you", "do", "before", "the", "show?"],
+      "explanation": "Palavra de pergunta + did + sujeito + verbo básico: What did you do before the show?"
+    }
+  ]
+}
