@@ -168,8 +168,7 @@ export async function renderLesson(container, t, context) {
     h(
       'div',
       { class: 'lesson-actions' },
-      h('button', { type: 'button', class: 'primary-button', disabled: '' }, t('lesson.exercises')),
-      h('p', { class: 'soon' }, t('lesson.exercises.soon')),
+      h('a', { class: 'primary-button', href: `#/exercises/${encodeURIComponent(lesson.id)}` }, t('lesson.exercises')),
     ),
     glossaryCard(t),
   ));

@@ -17,16 +17,16 @@ Let the learner do each lesson's exercises one at a time, with immediate correct
 ## Task List
 
 ### Phase 1: Logic
-- [ ] Task 1: Grading and shuffling
-- [ ] Task 2: Exercise session
+- [x] Task 1: Grading and shuffling
+- [x] Task 2: Exercise session
 
 ### Checkpoint 1: Logic ready
-- [ ] Unit tests pass
+- [x] Unit tests pass
 
 ### Phase 2: Screens
-- [ ] Task 3: Session screen with multiple choice and true or false
-- [ ] Task 4: Fill in the blank and word reordering
-- [ ] Task 5: Summary and redo mistakes
+- [x] Task 3: Session screen with multiple choice and true or false
+- [x] Task 4: Fill in the blank and word reordering
+- [x] Task 5: Summary and redo mistakes
 
 ### Checkpoint 2: Complete
 - [ ] The owner's real-iPhone check passes (keyboard, chips, feedback)

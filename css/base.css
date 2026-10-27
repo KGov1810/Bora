@@ -11,6 +11,8 @@
   --color-border: #EADFD5;
   --color-text: #18181B;
   --color-muted: #52525B;
+  --color-ok: #15803D;
+  --color-error: #B91C1C;
 
   --font-body: -apple-system, system-ui, sans-serif;
   --font-display: ui-rounded, -apple-system, system-ui, sans-serif;
@@ -27,6 +29,8 @@
     --color-border: #3F3B47;
     --color-text: #F4F4F5;
     --color-muted: #A1A1AA;
+    --color-ok: #4ADE80;
+    --color-error: #F87171;
   }
 }
 
