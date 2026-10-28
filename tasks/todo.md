@@ -29,11 +29,11 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Description:** The owner creates the D1 database `bora-db` and sends its ID; Claude adds the `[[d1_databases]]` binding `DB` to `worker/wrangler.toml`; the push deploys it.
 
 **Acceptance criteria:**
-- [ ] The Worker deploys with the binding.
-- [ ] `/progress/summary` answers an empty summary with the right code.
+- [x] The Worker deploys with the binding.
+- [x] `/progress/summary` answers an empty summary with the right code.
 
 **Verification:**
-- [ ] Manual check (owner): the build succeeds; the app check comes at Task 5.
+- [x] Manual check (owner): the build succeeds; the app check comes at Task 5.
 
 **Dependencies:** Task 1
 
@@ -71,17 +71,18 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Description:** After each answer, build the attempt (ids, right or wrong, response as text, date, session id) and add it to the queue, then try a sync. Also sync when the app opens and when it comes back online.
 
 **Acceptance criteria:**
-- [ ] Every answered exercise produces exactly one queued attempt.
-- [ ] The exercise flow is unchanged when offline or not connected.
+- [x] Every answered exercise produces exactly one queued attempt.
+- [x] The exercise flow is unchanged when offline or not connected.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
-- [ ] Headless check (Claude): a full round offline, then online with a fake Worker; the queue empties.
+- [x] Tests pass: `node --test`
+- [x] Headless check (Claude): a full round offline, then online with a fake Worker; the queue empties.
 
 **Dependencies:** Task 3
 
 **Files likely touched:**
 - `js/progress/record.js`
+- `js/progress/recorder.js` (the app's recorder, wired to storage and the Worker)
 - `js/views/exercise-session.js`
 - `js/app.js`
 - `tests/progress-record.test.js`
@@ -94,13 +95,13 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Description:** Test first for the rules and the summary text (`js/progress/summary.js`): practiced lessons (full round, at least 75 %), best score, Para revisar (last answer wrong). Then the screen: counts, best scores, Para revisar links, pending count, last update date, Copiar resumo with fallback, cached summary offline.
 
 **Acceptance criteria:**
-- [ ] A 6 out of 9 round does not mark the lesson practiced; 7 out of 9 does; a retry round never does.
-- [ ] An exercise leaves Para revisar after one right answer.
-- [ ] The summary text lists lessons, scores and the most missed exercises with her wrong answers.
+- [x] A 6 out of 9 round does not mark the lesson practiced; 7 out of 9 does; a retry round never does.
+- [x] An exercise leaves Para revisar after one right answer.
+- [x] The summary text lists lessons, scores and the most missed exercises with her wrong answers.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
-- [ ] Headless check (Claude): each state, both themes, no console errors.
+- [x] Tests pass: `node --test`
+- [x] Headless check (Claude): each state, both themes, no console errors.
 - [ ] Manual check (owner): the real-iPhone checklist.
 
 **Dependencies:** Tasks 2 and 4

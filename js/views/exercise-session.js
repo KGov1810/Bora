@@ -3,6 +3,8 @@ import { loadLesson } from '../content/load.js';
 import { createSession } from '../exercises/session.js';
 import { shuffle } from '../exercises/shuffle.js';
 import { renderContentError } from './lesson.js';
+import { buildAttempt, makeId } from '../progress/record.js';
+import { recorder } from '../progress/recorder.js';
 
 const CHECK_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const CROSS_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>';
@@ -261,6 +263,7 @@ export async function renderExerciseSession(container, t, context) {
   context.setTitle(lesson.title);
 
   let session = createSession(lesson.exercises);
+  let sessionId = makeId(); // one id per round, to score rounds on the server
 
   const showSummary = () => {
     const { correct, total } = session.score();
@@ -268,6 +271,7 @@ export async function renderExerciseSession(container, t, context) {
     const retryButton = mistakes.length > 0 ? h('button', { type: 'button', class: 'primary-button' }, t('exercises.summary.retry')) : null;
     retryButton?.addEventListener('click', () => {
       session = session.retryMistakes();
+      sessionId = makeId();
       show();
     });
 
@@ -306,6 +310,8 @@ export async function renderExerciseSession(container, t, context) {
 
     const submit = (response) => {
       const result = session.answer(response);
+      // Saved in the background: the exercise never waits for the network.
+      recorder.record(buildAttempt({ lessonId: lesson.id, exercise, response, result, sessionId }));
       body.lock(response);
       const { panel, continueButton } = feedbackPanel(exercise, result, isLast, t, () => {
         session.next();

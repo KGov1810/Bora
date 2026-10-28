@@ -1,7 +1,7 @@
 // Service worker for Bora!: caches the app shell so it opens fast.
 // Bump CACHE_VERSION on every deployment, or the installed app keeps the old files.
 
-const CACHE_VERSION = 'v11';
+const CACHE_VERSION = 'v13';
 const CACHE_NAME = `bora-shell-${CACHE_VERSION}`;
 
 // Lesson files: network first, then this cache as a fallback. Not versioned,
@@ -31,6 +31,9 @@ const SHELL_FILES = [
   'js/exercises/shuffle.js',
   'js/i18n.js',
   'js/progress/queue.js',
+  'js/progress/record.js',
+  'js/progress/recorder.js',
+  'js/progress/summary.js',
   'js/progress/sync.js',
   'js/router.js',
   'js/speech/read-aloud.js',

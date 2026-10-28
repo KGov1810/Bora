@@ -1,5 +1,6 @@
 import { parseRoute } from './router.js';
 import { createTranslator } from './i18n.js';
+import { recorder } from './progress/recorder.js';
 import * as homeView from './views/home.js';
 import * as lessonsView from './views/lessons.js';
 import * as exercisesView from './views/exercises.js';
@@ -109,6 +110,13 @@ async function start() {
   renderRoute(t);
   window.addEventListener('hashchange', () => renderRoute(t));
   registerServiceWorker();
+
+  // Send answers saved offline: now, when the network comes back, and when the app is reopened.
+  recorder.sync();
+  window.addEventListener('online', () => recorder.sync());
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') recorder.sync();
+  });
 }
 
 start();

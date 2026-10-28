@@ -19,7 +19,7 @@ Save every exercise answer in a D1 database through `bora-api`, with an offline 
 
 ### Phase 1: Server
 - [x] Task 1: Attempts storage and summary routes in the Worker
-- [ ] Task 2: D1 database and binding (owner, guided)
+- [x] Task 2: D1 database and binding (owner, guided)
 
 ### Checkpoint 1: Server ready
 - [x] Unit tests pass
@@ -27,8 +27,8 @@ Save every exercise answer in a D1 database through `bora-api`, with an offline 
 
 ### Phase 2: App
 - [x] Task 3: Local queue, sync and API calls
-- [ ] Task 4: Record answers during exercise sessions
-- [ ] Task 5: Progresso screen with stats, Para revisar and Copiar resumo
+- [x] Task 4: Record answers during exercise sessions
+- [x] Task 5: Progresso screen with stats, Para revisar and Copiar resumo
 
 ### Checkpoint 2: Complete
 - [ ] The real-iPhone check passes (answers saved online and offline, stats shown, summary copied)
