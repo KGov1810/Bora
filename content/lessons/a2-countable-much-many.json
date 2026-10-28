@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "id": "a2-countable-much-many",
+  "level": "A2",
+  "title": "O mercado de comida",
+  "grammarPoint": "Countable and uncountable nouns; much / many / a lot of",
+  "theme": "travel",
+  "estimatedMinutes": 10,
+  "text": {
+    "title": "A Morning at a Market in Mexico City",
+    "paragraphs": [
+      "Yesterday, I visited a big food market in Mexico City. There were a lot of people and a lot of noise, but I loved every minute.",
+      "There are many [[stalls]] with fresh fruit: mangoes, papayas and some fruits I didn't know. I bought a few mangoes and a little [[honey]] for my hotel room.",
+      "I wanted to try everything, but I didn't have much money, and I didn't have much time. So I asked a [[vendor]]: \"How much are these tacos?\" \"Twenty pesos for three,\" she said. Very cheap!",
+      "How many tacos did I eat? Too many! The salsa had a lot of [[chili]], so I drank a lot of water. My friend doesn't eat much meat, so she had [[quesadillas]] with cheese and mushrooms.",
+      "My tip: go early. In the afternoon, there isn't much space to walk, and the best stalls don't have many tacos [[left]]."
+    ]
+  },
+  "glossary": {
+    "stalls": { "pt": "barracas, bancas (de feira)" },
+    "honey": { "pt": "mel" },
+    "vendor": { "pt": "vendedor, vendedora (de rua ou de feira)" },
+    "chili": { "pt": "pimenta" },
+    "quesadillas": { "pt": "quesadillas", "note": "Tortilhas dobradas e recheadas com queijo, típicas do México." },
+    "left": { "pt": "sobrando", "note": "\"There aren't many tacos left\" = \"não sobraram muitos tacos\"." }
+  },
+  "grammar": {
+    "title": "Contáveis e incontáveis: much, many, a lot of",
+    "explanation": [
+      "Em inglês, alguns substantivos são contáveis: podemos contar (one mango, two mangoes, many stalls). Outros são incontáveis: não têm plural e não usam a ou an (water, money, time, honey, meat, noise).",
+      "Many vem com contáveis no plural (many stalls, many tacos). Much vem com incontáveis (much money, much time). Na prática, much e many aparecem mais em frases negativas e perguntas: I didn't have much money.",
+      "A lot of funciona com os dois e é o mais usado em frases afirmativas: a lot of people, a lot of water.",
+      "Para perguntar quantidade: How many + contável (How many tacos?) e How much + incontável (How much time?). How much também pergunta o preço: How much are these tacos?",
+      "Para \"alguns\" ou \"um pouco\": a few + contável (a few mangoes) e a little + incontável (a little honey). Para \"demais\": too many e too much.",
+      "Cuidado: algumas palavras são contáveis em português e incontáveis em inglês. Information, advice e furniture nunca vão para o plural: some information, e não informations."
+    ],
+    "examples": [
+      { "en": "There are many stalls with fresh fruit.", "pt": "Tem muitas barracas com frutas frescas." },
+      { "en": "I didn't have much money.", "pt": "Eu não tinha muito dinheiro." },
+      { "en": "How much are these tacos?", "pt": "Quanto custam esses tacos?" },
+      { "en": "I bought a few mangoes and a little honey.", "pt": "Comprei algumas mangas e um pouco de mel." }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "prompt": "O que a autora comprou para o quarto do hotel?",
+      "options": ["Algumas mangas e um pouco de mel", "Tacos e água", "Quesadillas com queijo"],
+      "answer": 0,
+      "explanation": "O texto diz: \"I bought a few mangoes and a little honey for my hotel room.\""
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "statement": "The author had a lot of money at the market.",
+      "answer": false,
+      "explanation": "Falso: \"I didn't have much money\"."
+    },
+    {
+      "id": "q3",
+      "type": "choice",
+      "prompt": "Quanto custavam os tacos?",
+      "options": ["Vinte pesos por três", "Três pesos cada um", "Vinte pesos cada um"],
+      "answer": 0,
+      "explanation": "A vendedora diz: \"Twenty pesos for three\"."
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "statement": "The author's friend doesn't eat much meat.",
+      "answer": true,
+      "explanation": "Verdadeiro: \"My friend doesn't eat much meat, so she had quesadillas\"."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "Complete com much ou many.",
+      "sentence": "There are ___ stalls with fresh fruit.",
+      "answers": ["many"],
+      "explanation": "Stalls é contável e está no plural, então usamos many."
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "prompt": "Complete com much ou many.",
+      "sentence": "I didn't have ___ time.",
+      "answers": ["much"],
+      "explanation": "Time é incontável, então usamos much."
+    },
+    {
+      "id": "q7",
+      "type": "fill-blank",
+      "prompt": "Complete a pergunta.",
+      "sentence": "How ___ tacos did you eat?",
+      "answers": ["many"],
+      "explanation": "Tacos é contável (one taco, two tacos): How many tacos?"
+    },
+    {
+      "id": "q8",
+      "type": "choice",
+      "prompt": "Qual frase está correta?",
+      "options": ["Can you give me some information?", "Can you give me some informations?", "Can you give me an information?"],
+      "answer": 0,
+      "explanation": "Information é incontável em inglês: não tem plural e não usa an. Use some information."
+    },
+    {
+      "id": "q9",
+      "type": "reorder",
+      "prompt": "Coloque as palavras na ordem certa.",
+      "words": ["I", "bought", "a", "few", "mangoes", "and", "a", "little", "honey."],
+      "explanation": "A few com contáveis (mangoes) e a little com incontáveis (honey)."
+    }
+  ]
+}

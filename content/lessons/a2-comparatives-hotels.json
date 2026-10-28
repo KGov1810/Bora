@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "id": "a2-comparatives-hotels",
+  "level": "A2",
+  "title": "Qual hotel é melhor?",
+  "grammarPoint": "Comparatives (-er, more, as … as)",
+  "theme": "travel",
+  "estimatedMinutes": 10,
+  "text": {
+    "title": "Two Hotels in Miami Beach",
+    "paragraphs": [
+      "Last month, I spent two nights in two different hotels in Miami Beach. Here is my [[comparison]].",
+      "The Palm Hotel is cheaper than the Sea Breeze: $120 a night [[instead of]] $180. It's also closer to the beach, only two minutes away. But the rooms are smaller, and the beds are less [[comfortable]].",
+      "The Sea Breeze is more expensive, but it's newer and much quieter. The [[staff]] were friendlier, and the breakfast was better: fresh fruit, eggs and great coffee. At the Palm, the breakfast was worse: just bread and juice.",
+      "So, is the Palm as nice as the Sea Breeze? Not really. But it isn't as expensive, [[either]]. If you want to save money and spend all day at the beach, choose the Palm. If you want to rest, the Sea Breeze is the better [[choice]].",
+      "My rating: the Palm, 3 out of 5. The Sea Breeze, 4 out of 5."
+    ]
+  },
+  "glossary": {
+    "comparison": { "pt": "comparação" },
+    "instead of": { "pt": "em vez de" },
+    "comfortable": { "pt": "confortável", "note": "Pronúncia: \"CÂMF-ter-bol\", com três sílabas." },
+    "staff": { "pt": "funcionários, equipe" },
+    "either": { "pt": "também não", "note": "No fim de uma frase negativa: \"it isn't expensive, either\" = \"também não é caro\"." },
+    "choice": { "pt": "escolha" }
+  },
+  "grammar": {
+    "title": "Comparativos: mais barato, mais caro, tão bom quanto",
+    "explanation": [
+      "Para comparar duas coisas, usamos o comparativo + than: The Palm is cheaper than the Sea Breeze (o Palm é mais barato que o Sea Breeze).",
+      "Adjetivos curtos (uma sílaba) ganham -er: cheap → cheaper, small → smaller. Atenção à ortografia: nice → nicer, big → bigger (dobra o g), e os que terminam em -y viram -ier: friendly → friendlier, easy → easier.",
+      "Adjetivos longos (duas sílabas ou mais) usam more antes: more expensive, more comfortable. Para \"menos\", usamos less: less comfortable.",
+      "Alguns são irregulares: good → better, bad → worse, far → farther.",
+      "Para dizer \"tão … quanto\", usamos as … as: Is the Palm as nice as the Sea Breeze? Na negativa: it isn't as expensive as the Sea Breeze.",
+      "Erros comuns: more cheap (o certo é cheaper), more better (o certo é só better) e that no lugar de than (o certo é cheaper than)."
+    ],
+    "examples": [
+      { "en": "The Palm is cheaper than the Sea Breeze.", "pt": "O Palm é mais barato que o Sea Breeze." },
+      { "en": "The Sea Breeze is more expensive.", "pt": "O Sea Breeze é mais caro." },
+      { "en": "The breakfast was better.", "pt": "O café da manhã era melhor." },
+      { "en": "It isn't as expensive as the Sea Breeze.", "pt": "Ele não é tão caro quanto o Sea Breeze." }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "prompt": "Qual hotel é mais barato?",
+      "options": ["O Palm", "O Sea Breeze", "Os dois custam o mesmo"],
+      "answer": 0,
+      "explanation": "O texto diz: \"The Palm Hotel is cheaper than the Sea Breeze: $120 a night instead of $180.\""
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "statement": "The Sea Breeze is closer to the beach than the Palm.",
+      "answer": false,
+      "explanation": "Falso: é o Palm que fica mais perto da praia (\"It's also closer to the beach\")."
+    },
+    {
+      "id": "q3",
+      "type": "choice",
+      "prompt": "Por que o café da manhã do Sea Breeze era melhor?",
+      "options": ["Tinha frutas frescas, ovos e um café ótimo", "Era mais barato", "Era servido na praia"],
+      "answer": 0,
+      "explanation": "O texto diz: \"the breakfast was better: fresh fruit, eggs and great coffee\"."
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "statement": "The author gave the Sea Breeze a better rating.",
+      "answer": true,
+      "explanation": "Verdadeiro: o Palm ganhou 3 de 5 e o Sea Breeze, 4 de 5."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "Complete com o comparativo.",
+      "sentence": "The Palm is ___ than the Sea Breeze.",
+      "answers": ["cheaper"],
+      "hint": "cheap",
+      "explanation": "Cheap tem uma sílaba, então ganha -er: cheaper than."
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "prompt": "Complete com o comparativo.",
+      "sentence": "The Sea Breeze is ___ expensive than the Palm.",
+      "answers": ["more"],
+      "explanation": "Expensive é um adjetivo longo, então usamos more: more expensive than."
+    },
+    {
+      "id": "q7",
+      "type": "fill-blank",
+      "prompt": "Complete com o comparativo irregular.",
+      "sentence": "The breakfast at the Sea Breeze was ___ than at the Palm.",
+      "answers": ["better"],
+      "hint": "good",
+      "explanation": "Good é irregular: good → better. Nunca more good nem more better."
+    },
+    {
+      "id": "q8",
+      "type": "choice",
+      "prompt": "Qual frase está correta?",
+      "options": ["This room is bigger than mine.", "This room is more big than mine.", "This room is bigger that mine."],
+      "answer": 0,
+      "explanation": "Big é curto: bigger (com o g dobrado). E a comparação usa than, não that."
+    },
+    {
+      "id": "q9",
+      "type": "reorder",
+      "prompt": "Coloque as palavras na ordem certa.",
+      "words": ["The", "Palm", "isn't", "as", "expensive", "as", "the", "Sea", "Breeze."],
+      "explanation": "Not as + adjetivo + as: The Palm isn't as expensive as the Sea Breeze."
+    }
+  ]
+}

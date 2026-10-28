@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "id": "a2-superlatives-series",
+  "level": "A2",
+  "title": "As melhores séries do ano",
+  "grammarPoint": "Superlatives (-est, the most)",
+  "theme": "TV series",
+  "estimatedMinutes": 10,
+  "text": {
+    "title": "The Best Series of the Year",
+    "paragraphs": [
+      "It's December, and it's time for our list! These are the five series our [[readers]] loved most this year.",
+      "Number one is Night Shift, the most popular show of the year. This hospital drama is the funniest and the saddest series on our list, sometimes in the same episode.",
+      "Number two is Harbor Town, the best mystery series this year. The last episode had the biggest [[cliffhanger]] of the season.",
+      "Number three is Green Valley, the most [[relaxing]] show on TV. Nothing dramatic happens, and that's why people love it. It's perfect for the end of a long day.",
+      "Number four is Code Red, the [[scariest]] series of the year. Don't watch it alone at night! And number five is Kitchen Kings, the cheapest show to make, but one of the most fun. Ten home cooks [[compete]] to win $50,000.",
+      "And the worst series of the year? We won't say. But it had the longest and most [[boring]] episodes of all!"
+    ]
+  },
+  "glossary": {
+    "readers": { "pt": "leitores" },
+    "cliffhanger": { "pt": "final em suspense, gancho" },
+    "relaxing": { "pt": "relaxante" },
+    "scariest": { "pt": "mais assustadora", "note": "scary = assustador; the scariest = o mais assustador" },
+    "compete": { "pt": "competem" },
+    "boring": { "pt": "chato, entediante", "note": "Cuidado: bored = entediado (a pessoa); boring = entediante (a coisa)." }
+  },
+  "grammar": {
+    "title": "Superlativos: o mais, o melhor, o pior",
+    "explanation": [
+      "Para dizer que algo é \"o mais\" de um grupo, usamos o superlativo, sempre com the: the funniest series, the most popular show.",
+      "Adjetivos curtos ganham -est: big → the biggest (dobra o g), sad → the saddest, long → the longest. Os que terminam em -y viram -iest: funny → the funniest, scary → the scariest.",
+      "Adjetivos longos usam the most: the most popular, the most relaxing. Para \"o menos\", usamos the least: the least boring.",
+      "Os irregulares seguem o comparativo: good → better → the best, bad → worse → the worst.",
+      "Depois do superlativo, usamos of para um período ou grupo (of the year, of all) e in ou on para um lugar (in the world, on TV, on our list).",
+      "Comparativo ou superlativo? O comparativo compara duas coisas (cheaper than). O superlativo destaca uma entre três ou mais (the cheapest)."
+    ],
+    "examples": [
+      { "en": "Night Shift is the most popular show of the year.", "pt": "Night Shift é a série mais popular do ano." },
+      { "en": "It's the funniest series on our list.", "pt": "É a série mais engraçada da nossa lista." },
+      { "en": "Harbor Town is the best mystery series this year.", "pt": "Harbor Town é a melhor série de mistério deste ano." },
+      { "en": "And the worst series of the year?", "pt": "E a pior série do ano?" }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "q1",
+      "type": "choice",
+      "prompt": "Qual é a série mais popular do ano?",
+      "options": ["Night Shift", "Harbor Town", "Kitchen Kings"],
+      "answer": 0,
+      "explanation": "O texto diz: \"Night Shift, the most popular show of the year\"."
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "statement": "Green Valley has a lot of dramatic moments.",
+      "answer": false,
+      "explanation": "Falso: \"Nothing dramatic happens, and that's why people love it.\""
+    },
+    {
+      "id": "q3",
+      "type": "choice",
+      "prompt": "Por que não é bom assistir Code Red sozinho à noite?",
+      "options": ["Porque é a série mais assustadora", "Porque os episódios são muito longos", "Porque é muito engraçada"],
+      "answer": 0,
+      "explanation": "Code Red é \"the scariest series of the year\": a série mais assustadora do ano."
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "statement": "Kitchen Kings was the cheapest show to make.",
+      "answer": true,
+      "explanation": "Verdadeiro: \"Kitchen Kings, the cheapest show to make\"."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "Complete com o superlativo.",
+      "sentence": "Night Shift is the ___ series on our list.",
+      "answers": ["funniest"],
+      "hint": "funny",
+      "explanation": "Funny termina em -y, então vira -iest: the funniest."
+    },
+    {
+      "id": "q6",
+      "type": "fill-blank",
+      "prompt": "Complete com o superlativo.",
+      "sentence": "The last episode had the ___ cliffhanger of the season.",
+      "answers": ["biggest"],
+      "hint": "big",
+      "explanation": "Big é curto e termina em consoante + vogal + consoante: dobramos o g e acrescentamos -est: the biggest."
+    },
+    {
+      "id": "q7",
+      "type": "fill-blank",
+      "prompt": "Complete com o superlativo irregular.",
+      "sentence": "Harbor Town is the ___ mystery series this year.",
+      "answers": ["best"],
+      "hint": "good",
+      "explanation": "Good é irregular: good → better → the best."
+    },
+    {
+      "id": "q8",
+      "type": "choice",
+      "prompt": "Qual frase está correta?",
+      "options": ["It's the most popular show of the year.", "It's the more popular show of the year.", "It's most popular show of the year."],
+      "answer": 0,
+      "explanation": "Popular é longo: the most popular. O superlativo sempre leva the."
+    },
+    {
+      "id": "q9",
+      "type": "reorder",
+      "prompt": "Coloque as palavras na ordem certa.",
+      "words": ["This", "is", "the", "worst", "series", "of", "the", "year."],
+      "explanation": "The + superlativo + substantivo + of the year: This is the worst series of the year."
+    }
+  ]
+}
