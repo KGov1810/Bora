@@ -4,3 +4,10 @@
 name = "bora-api"
 main = "src/index.js"
 compatibility_date = "2026-10-01"
+
+# D1 database for saved exercise answers (see SPEC-progress.md).
+# The ID identifies the database; it is not a secret.
+[[d1_databases]]
+binding = "DB"
+database_name = "bora-db"
+database_id = "8899dd86-69db-4f4e-962b-f6992a2e94ba"
