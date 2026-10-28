@@ -1,7 +1,7 @@
 # Implementation Plan: progress (Bora!)
 
-Source spec: `SPEC-progress.md` (approved 2026-10-28). Module map: `CAPABILITY-MAP.md`.
-Tasks were tracked in `tasks/done/progress-todo.md`. Status: complete (owner check passed, 2026-10-28).
+Source spec: `docs/specs/SPEC-progress.md` (approved 2026-10-28). Module map: `docs/specs/CAPABILITY-MAP.md`.
+Tasks were tracked in `docs/tasks/done/progress-todo.md`. Status: complete (owner check passed, 2026-10-28).
 
 ## Overview
 

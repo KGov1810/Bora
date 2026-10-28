@@ -1,6 +1,6 @@
 # Tasks: app-shell (Bora!)
 
-Plan: `tasks/done/app-shell-plan.md`. Definition of done for every task: unit tests pass (`node --test`, run by Claude), no regression on earlier screens, the owner approved the commit.
+Plan: `docs/tasks/done/app-shell-plan.md`. Definition of done for every task: unit tests pass (`node --test`, run by Claude), no regression on earlier screens, the owner approved the commit.
 
 ## Task 1: Deployable placeholder page and speech test page
 

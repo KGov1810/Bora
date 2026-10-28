@@ -1,7 +1,7 @@
 # Implementation Plan: exercises (Bora!)
 
-Source spec: `SPEC-exercises.md` (approved 2026-10-26). Module map: `CAPABILITY-MAP.md`.
-Tasks were tracked in `tasks/done/exercises-todo.md`. Status: complete.
+Source spec: `docs/specs/SPEC-exercises.md` (approved 2026-10-26). Module map: `docs/specs/CAPABILITY-MAP.md`.
+Tasks were tracked in `docs/tasks/done/exercises-todo.md`. Status: complete.
 
 ## Overview
 

@@ -1,7 +1,7 @@
 # Implementation Plan: access (Bora!)
 
-Source spec: `SPEC-access.md` (approved 2026-10-27). Module map: `CAPABILITY-MAP.md`.
-Tasks were tracked in `tasks/done/access-todo.md`. Status: complete (owner approved moving on, 2026-10-28).
+Source spec: `docs/specs/SPEC-access.md` (approved 2026-10-27). Module map: `docs/specs/CAPABILITY-MAP.md`.
+Tasks were tracked in `docs/tasks/done/access-todo.md`. Status: complete (owner approved moving on, 2026-10-28).
 
 ## Overview
 

@@ -1,4 +1,4 @@
-// Saved exercise answers for Bora! (see SPEC-progress.md).
+// Saved exercise answers for Bora! (see docs/specs/SPEC-progress.md).
 // Uses the D1 binding `DB`. All SQL uses bound parameters.
 
 const MAX_ATTEMPTS = 100;

@@ -1,4 +1,4 @@
-// Validators for lesson and path content files (see SPEC-content-format.md).
+// Validators for lesson and path content files (see docs/specs/SPEC-content-format.md).
 // Pure functions: no DOM, no file access. They return readable errors instead of throwing.
 
 import { GLOSSARY_MARK } from './text.js';

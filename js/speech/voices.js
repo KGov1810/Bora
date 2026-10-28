@@ -1,4 +1,4 @@
-// Chooses a natural American English voice for text-to-speech (see SPEC-lessons.md
+// Chooses a natural American English voice for text-to-speech (see docs/specs/SPEC-lessons.md
 // and docs/spikes/speech-results.md). Pure module: works on a list of voice-like objects.
 
 // Natural en-US voices, in order of preference.

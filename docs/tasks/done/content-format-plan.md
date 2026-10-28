@@ -1,7 +1,7 @@
 # Implementation Plan: content-format (Bora!)
 
-Source spec: `SPEC-content-format.md` (approved 2026-10-26). Module map: `CAPABILITY-MAP.md`.
-Tasks were tracked in `tasks/done/content-format-todo.md`. Status: complete.
+Source spec: `docs/specs/SPEC-content-format.md` (approved 2026-10-26). Module map: `docs/specs/CAPABILITY-MAP.md`.
+Tasks were tracked in `docs/tasks/done/content-format-todo.md`. Status: complete.
 
 ## Overview
 

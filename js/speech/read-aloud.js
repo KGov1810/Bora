@@ -1,4 +1,4 @@
-// "Ouvir" controls: read a text aloud with speechSynthesis (see SPEC-lessons.md).
+// "Ouvir" controls: read a text aloud with speechSynthesis (see docs/specs/SPEC-lessons.md).
 
 import { h } from '../dom.js';
 import { pickVoice } from './voices.js';

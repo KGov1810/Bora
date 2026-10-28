@@ -1,11 +1,11 @@
-# Cloudflare Worker for Bora! (see SPEC-access.md).
+# Cloudflare Worker for Bora! (see docs/specs/SPEC-access.md).
 # Deployed by Workers Builds with "worker/" as root directory.
 # The ACCESS_CODE secret is set in the Cloudflare dashboard, never here.
 name = "bora-api"
 main = "src/index.js"
 compatibility_date = "2026-10-01"
 
-# D1 database for saved exercise answers (see SPEC-progress.md).
+# D1 database for saved exercise answers (see docs/specs/SPEC-progress.md).
 # The ID identifies the database; it is not a secret.
 [[d1_databases]]
 binding = "DB"

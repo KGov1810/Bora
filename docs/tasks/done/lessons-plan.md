@@ -1,7 +1,7 @@
 # Implementation Plan: lessons (Bora!)
 
-Source spec: `SPEC-lessons.md` (approved 2026-10-26). Module map: `CAPABILITY-MAP.md`.
-Tasks were tracked in `tasks/done/lessons-todo.md`. Status: complete.
+Source spec: `docs/specs/SPEC-lessons.md` (approved 2026-10-26). Module map: `docs/specs/CAPABILITY-MAP.md`.
+Tasks were tracked in `docs/tasks/done/lessons-todo.md`. Status: complete.
 
 ## Overview
 

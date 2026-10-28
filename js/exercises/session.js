@@ -1,4 +1,4 @@
-// One round of exercises: current item, answers, score, mistakes (see SPEC-exercises.md).
+// One round of exercises: current item, answers, score, mistakes (see docs/specs/SPEC-exercises.md).
 // Pure module: no DOM access.
 
 import { gradeExercise } from './grade.js';

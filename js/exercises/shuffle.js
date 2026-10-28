@@ -1,4 +1,4 @@
-// Shuffles options and words (see SPEC-exercises.md). Pure module: no DOM access.
+// Shuffles options and words (see docs/specs/SPEC-exercises.md). Pure module: no DOM access.
 
 /** True when both lists hold equal items in the same order. */
 function sameOrder(a, b) {

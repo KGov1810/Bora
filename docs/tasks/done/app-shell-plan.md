@@ -1,7 +1,7 @@
 # Implementation Plan: app-shell (Bora!)
 
-Source spec: `SPEC-app-shell.md` (approved 2026-10-26). Module map: `CAPABILITY-MAP.md`.
-Tasks were tracked in `tasks/done/app-shell-todo.md`. Status: complete.
+Source spec: `docs/specs/SPEC-app-shell.md` (approved 2026-10-26). Module map: `docs/specs/CAPABILITY-MAP.md`.
+Tasks were tracked in `docs/tasks/done/app-shell-todo.md`. Status: complete.
 
 ## Overview
 

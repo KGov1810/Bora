@@ -1,4 +1,4 @@
-// Turns answers into attempts and sends them (see SPEC-progress.md). No DOM access.
+// Turns answers into attempts and sends them (see docs/specs/SPEC-progress.md). No DOM access.
 
 import { syncAttempts } from './sync.js';
 

@@ -1,4 +1,4 @@
-// Progress rules and the owner's summary (see SPEC-progress.md, "Rules"). No DOM access.
+// Progress rules and the owner's summary (see docs/specs/SPEC-progress.md, "Rules"). No DOM access.
 
 /** Share of right answers needed in a full round for a lesson to count as practiced. */
 export const PRACTICED_RATIO = 0.75;

@@ -1,6 +1,6 @@
 # Tasks: lessons (Bora!)
 
-Plan: `tasks/done/lessons-plan.md`. Definition of done for every task: `node --test` passes (run by Claude), no console error in the headless check, new files listed in `sw.js` with a version bump, the owner approved the commit.
+Plan: `docs/tasks/done/lessons-plan.md`. Definition of done for every task: `node --test` passes (run by Claude), no console error in the headless check, new files listed in `sw.js` with a version bump, the owner approved the commit.
 
 ## Task 1: Route parameter and glossary splitting
 

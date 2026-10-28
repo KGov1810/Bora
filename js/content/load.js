@@ -1,4 +1,4 @@
-// Loads and validates content files (see SPEC-lessons.md).
+// Loads and validates content files (see docs/specs/SPEC-lessons.md).
 // No DOM access; results are kept in memory for the session.
 
 import { validateLesson, validatePath } from './validate.js';

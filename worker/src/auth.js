@@ -1,4 +1,4 @@
-// Access code check for the Bora! Worker (see SPEC-access.md).
+// Access code check for the Bora! Worker (see docs/specs/SPEC-access.md).
 
 const encoder = new TextEncoder();
 

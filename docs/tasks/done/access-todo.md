@@ -1,6 +1,6 @@
 # Tasks: access (Bora!)
 
-Plan: `tasks/done/access-plan.md`. Definition of done for every task: `node --test` passes (run by Claude), no secret in the repository, the owner approved the commit.
+Plan: `docs/tasks/done/access-plan.md`. Definition of done for every task: `node --test` passes (run by Claude), no secret in the repository, the owner approved the commit.
 
 ## Task 1: Worker with health check, CORS and access code
 

@@ -1,4 +1,4 @@
-// Remembers the access code on this device (see SPEC-access.md).
+// Remembers the access code on this device (see docs/specs/SPEC-access.md).
 // Storage can be missing or throw (private mode, cleared data), so every access is guarded.
 
 const KEY = 'bora.accessCode';

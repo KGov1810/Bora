@@ -1,6 +1,6 @@
-// Bora! API Worker (see SPEC-access.md).
+// Bora! API Worker (see docs/specs/SPEC-access.md).
 // Routes: GET /health (public); with the access code: GET /auth/check,
-// POST /progress/attempts, GET /progress/summary (see SPEC-progress.md). Everything else: 404.
+// POST /progress/attempts, GET /progress/summary (see docs/specs/SPEC-progress.md). Everything else: 404.
 
 import { codesMatch } from './auth.js';
 import { parseAttempts, saveAttempts, readSummary } from './progress.js';

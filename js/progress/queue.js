@@ -1,4 +1,4 @@
-// Answers waiting to be sent to the server (see SPEC-progress.md).
+// Answers waiting to be sent to the server (see docs/specs/SPEC-progress.md).
 // Storage can be missing or throw, so every access is guarded.
 
 const KEY = 'bora.pendingAttempts';

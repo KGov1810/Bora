@@ -1,4 +1,4 @@
-// Sends waiting answers to the server in batches (see SPEC-progress.md). No DOM access.
+// Sends waiting answers to the server in batches (see docs/specs/SPEC-progress.md). No DOM access.
 
 const BATCH_SIZE = 100;
 

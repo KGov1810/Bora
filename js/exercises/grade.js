@@ -1,4 +1,4 @@
-// Grades exercise answers (see SPEC-exercises.md). Pure module: no DOM access.
+// Grades exercise answers (see docs/specs/SPEC-exercises.md). Pure module: no DOM access.
 
 import { isAcceptedAnswer } from '../content/validate.js';
 

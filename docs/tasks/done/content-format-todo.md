@@ -1,6 +1,6 @@
 # Tasks: content-format (Bora!)
 
-Plan: `tasks/done/content-format-plan.md`. Definition of done for every task: `node --test` passes (run by Claude), the owner approved the commit.
+Plan: `docs/tasks/done/content-format-plan.md`. Definition of done for every task: `node --test` passes (run by Claude), the owner approved the commit.
 
 ## Task 1: A2 curriculum outline
 

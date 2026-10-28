@@ -1,6 +1,6 @@
 # Tasks: progress (Bora!)
 
-Plan: `tasks/done/progress-plan.md`. Definition of done for every task: `node --test` passes (run by Claude), no secret in the repository, new app files listed in `sw.js` with a version bump, the owner approved the commit.
+Plan: `docs/tasks/done/progress-plan.md`. Definition of done for every task: `node --test` passes (run by Claude), no secret in the repository, new app files listed in `sw.js` with a version bump, the owner approved the commit.
 
 ## Task 1: Attempts storage and summary routes in the Worker
 

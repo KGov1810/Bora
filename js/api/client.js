@@ -1,4 +1,4 @@
-// Client for the bora-api Worker (see SPEC-access.md and SPEC-progress.md). No DOM access.
+// Client for the bora-api Worker (see docs/specs/SPEC-access.md and docs/specs/SPEC-progress.md). No DOM access.
 
 const DEFAULT_TIMEOUT_MS = 10000;
 

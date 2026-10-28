@@ -2,7 +2,7 @@
 
 Status: **approved 2026-10-26**.
 
-Planned A2 lessons, in teaching order. Each lesson follows `SPEC-content-format.md`: one short original text in American English, one grammar point explained in pt-BR, a glossary and auto-graded exercises.
+Planned A2 lessons, in teaching order. Each lesson follows `docs/specs/SPEC-content-format.md`: one short original text in American English, one grammar point explained in pt-BR, a glossary and auto-graded exercises.
 
 The themes follow her goals: travel, TV series, short articles, and daily life. B1 and B2 will be outlined later, from what she finds easy or hard at A2.
 

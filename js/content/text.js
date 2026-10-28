@@ -1,4 +1,4 @@
-// Turns lesson text into displayable segments (see SPEC-lessons.md).
+// Turns lesson text into displayable segments (see docs/specs/SPEC-lessons.md).
 // Pure module: no DOM access.
 
 /** Matches one [[term]] glossary mark; shared with the validator. */
