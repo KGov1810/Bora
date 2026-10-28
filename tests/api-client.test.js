@@ -106,3 +106,45 @@ test('the code store works without any storage', () => {
   assert.equal(store.get(), null);
   assert.equal(store.set('x'), false);
 });
+
+// ---- Progress calls ----
+
+/** A fake fetch answering with a status and a JSON body. */
+function jsonFetch(status, body) {
+  const calls = [];
+  const impl = async (url, init) => {
+    calls.push({ url, init });
+    return new Response(body === undefined ? null : JSON.stringify(body), { status });
+  };
+  return { impl, calls };
+}
+
+test('postAttempts posts JSON with the code and returns the saved count', async () => {
+  const { impl, calls } = jsonFetch(200, { saved: 2 });
+  const result = await createApiClient({ baseUrl: BASE, fetchImpl: impl }).postAttempts('my-code', [{ clientId: 'a' }, { clientId: 'b' }]);
+  assert.deepEqual(result, { status: 'ok', saved: 2 });
+  assert.equal(calls[0].url, `${BASE}/progress/attempts`);
+  assert.equal(calls[0].init.method, 'POST');
+  assert.equal(calls[0].init.headers.Authorization, 'Bearer my-code');
+  assert.equal(calls[0].init.headers['Content-Type'], 'application/json');
+  assert.deepEqual(JSON.parse(calls[0].init.body), { attempts: [{ clientId: 'a' }, { clientId: 'b' }] });
+});
+
+test('postAttempts maps errors to statuses', async () => {
+  assert.deepEqual(await createApiClient({ baseUrl: BASE, fetchImpl: jsonFetch(401).impl }).postAttempts('x', []), { status: 'invalid_code' });
+  assert.deepEqual(await createApiClient({ baseUrl: BASE, fetchImpl: jsonFetch(503).impl }).postAttempts('x', []), { status: 'server_error' });
+  const offline = async () => { throw new TypeError('Failed to fetch'); };
+  assert.deepEqual(await createApiClient({ baseUrl: BASE, fetchImpl: offline }).postAttempts('x', []), { status: 'offline' });
+});
+
+test('getSummary returns the summary', async () => {
+  const summary = { rounds: [], exercises: [] };
+  const { impl, calls } = jsonFetch(200, summary);
+  assert.deepEqual(await createApiClient({ baseUrl: BASE, fetchImpl: impl }).getSummary('my-code'), { status: 'ok', summary });
+  assert.equal(calls[0].url, `${BASE}/progress/summary`);
+});
+
+test('getSummary reports a malformed answer as a server error', async () => {
+  const impl = async () => new Response('not json', { status: 200 });
+  assert.deepEqual(await createApiClient({ baseUrl: BASE, fetchImpl: impl }).getSummary('x'), { status: 'server_error' });
+});

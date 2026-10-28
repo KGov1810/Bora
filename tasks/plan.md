@@ -26,7 +26,7 @@ Save every exercise answer in a D1 database through `bora-api`, with an offline 
 - [ ] The deployed Worker answers `/progress/summary` with an empty summary
 
 ### Phase 2: App
-- [ ] Task 3: Local queue, sync and API calls
+- [x] Task 3: Local queue, sync and API calls
 - [ ] Task 4: Record answers during exercise sessions
 - [ ] Task 5: Progresso screen with stats, Para revisar and Copiar resumo
 

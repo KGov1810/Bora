@@ -47,12 +47,12 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Description:** Test first: `js/progress/queue.js` (add, list, remove sent ids; storage injected and guarded), `js/progress/sync.js` (send in batches of 100, remove only what the server confirmed, stop on error), and `postAttempts` / `getSummary` in the API client.
 
 **Acceptance criteria:**
-- [ ] A failed send keeps the queue intact.
-- [ ] Batches never exceed 100 attempts.
-- [ ] Without an access code, nothing is sent and nothing is lost.
+- [x] A failed send keeps the queue intact.
+- [x] Batches never exceed 100 attempts.
+- [x] Without an access code, nothing is sent and nothing is lost.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
+- [x] Tests pass: `node --test`
 
 **Dependencies:** Task 1
 
@@ -61,7 +61,8 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 - `js/progress/sync.js`
 - `js/api/client.js`
 - `tests/progress-queue.test.js`
-- `tests/progress-sync.test.js`
+- `tests/api-client.test.js` (sync tests are in `tests/progress-queue.test.js`)
+- `sw.js`
 
 **Estimated scope:** Medium (5 files)
 
