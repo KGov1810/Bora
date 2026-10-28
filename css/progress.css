@@ -1,0 +1,85 @@
+/* Progresso tab: connection card (see SPEC-access.md). */
+
+.connection-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 18px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+}
+
+.connection-card h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 22px;
+}
+
+.connection-card p {
+  margin: 0;
+}
+
+.connection-help {
+  color: var(--color-muted);
+  font-size: 15px;
+}
+
+.code-row {
+  display: flex;
+  gap: 8px;
+}
+
+.code-row .answer-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.show-toggle {
+  flex: none;
+  min-height: 52px;
+  padding: 0 14px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 14px;
+  background: none;
+  color: var(--color-primary);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.connection-message {
+  min-height: 1.5em;
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
+.connection-message:empty {
+  min-height: 0;
+}
+
+.connection-message.is-error {
+  color: var(--color-error);
+  font-weight: 600;
+}
+
+.connection-note {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--color-ok);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-ok);
+}

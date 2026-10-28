@@ -23,10 +23,10 @@ A Cloudflare Worker (`bora-api`) deployed from `worker/` by Workers Builds, prot
 - [x] Unit tests pass
 
 ### Phase 2: Deployment (owner, guided)
-- [ ] Task 2: Cloudflare account, Workers Builds, `ACCESS_CODE` secret
+- [x] Task 2: Cloudflare account, Workers Builds, `ACCESS_CODE` secret
 
 ### Phase 3: App
-- [ ] Task 3: API client and code storage
+- [x] Task 3: API client and code storage
 - [ ] Task 4: Connection card in the Progresso tab
 
 ### Checkpoint 2: Complete

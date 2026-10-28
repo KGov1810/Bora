@@ -14,8 +14,15 @@ a.primary-button,
   min-height: 52px;
   border: 1.5px solid var(--color-border);
   border-radius: 14px;
+  background: none;
   color: var(--color-primary);
+  font: inherit;
   font-weight: 700;
+  transition: transform 100ms var(--ease-out);
+}
+
+.secondary-button:active {
+  transform: scale(0.97);
 }
 
 .primary-button[hidden] {

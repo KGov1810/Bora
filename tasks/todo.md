@@ -29,12 +29,12 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Description:** The owner creates the Cloudflare account, creates the Worker from the GitHub repository with `worker/` as root directory, adds the `ACCESS_CODE` secret and sends the Worker's address. Claude guides each step.
 
 **Acceptance criteria:**
-- [ ] A push to `main` deploys the Worker.
-- [ ] `/health` answers at the Worker's address.
-- [ ] `/auth/check` answers `401` without the code.
+- [x] A push to `main` deploys the Worker.
+- [x] `/health` answers at the Worker's address.
+- [x] `/auth/check` answers `401` without the code.
 
 **Verification:**
-- [ ] Manual check (owner or Claude): open `/health` in a browser.
+- [x] Manual check (owner or Claude): open `/health` in a browser.
 
 **Dependencies:** Task 1 pushed
 
@@ -47,11 +47,11 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Description:** Write `js/config.js` with the Worker's address, `js/api/storage.js` (code in `localStorage`, inside `try/catch`) and `js/api/client.js` (`checkAccess`, 10-second timeout, results `ok`, `invalid_code`, `offline`, `server_error`), test first with a fake `fetch`.
 
 **Acceptance criteria:**
-- [ ] Each client result is covered by a test, including timeout and network error.
-- [ ] Storage never throws, even when `localStorage` is unavailable.
+- [x] Each client result is covered by a test, including timeout and network error.
+- [x] Storage never throws, even when `localStorage` is unavailable.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
+- [x] Tests pass: `node --test`
 
 **Dependencies:** Task 2 (for the address)
 
@@ -74,8 +74,8 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 - [ ] **Desconectar** forgets the code on this device.
 
 **Verification:**
-- [ ] Tests pass: `node --test`
-- [ ] Headless check (Claude): each state with a fake Worker, both themes, no console errors.
+- [x] Tests pass: `node --test`
+- [x] Headless check (Claude): each state with a fake Worker, both themes, no console errors.
 - [ ] Manual check (owner): the real-iPhone checklist of the spec.
 
 **Dependencies:** Task 3
@@ -85,6 +85,8 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 - `css/progress.css`
 - `locales/pt-BR.json`
 - `index.html`, `sw.js`
+- `css/exercises.css` (secondary button style for real buttons)
+- `js/views/coming-soon.js` removed (no longer used)
 
 **Estimated scope:** Medium (5 files)
 
