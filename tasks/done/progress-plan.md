@@ -1,7 +1,7 @@
 # Implementation Plan: progress (Bora!)
 
 Source spec: `SPEC-progress.md` (approved 2026-10-28). Module map: `CAPABILITY-MAP.md`.
-Tasks are tracked in `tasks/todo.md`. Completed plans are in `tasks/done/`.
+Tasks were tracked in `tasks/done/progress-todo.md`. Status: complete (owner check passed, 2026-10-28).
 
 ## Overview
 
@@ -23,7 +23,7 @@ Save every exercise answer in a D1 database through `bora-api`, with an offline 
 
 ### Checkpoint 1: Server ready
 - [x] Unit tests pass
-- [ ] The deployed Worker answers `/progress/summary` with an empty summary
+- [x] The deployed Worker answers `/progress/summary` with an empty summary
 
 ### Phase 2: App
 - [x] Task 3: Local queue, sync and API calls
@@ -31,9 +31,9 @@ Save every exercise answer in a D1 database through `bora-api`, with an offline 
 - [x] Task 5: Progresso screen with stats, Para revisar and Copiar resumo
 
 ### Checkpoint 2: Complete
-- [ ] The real-iPhone check passes (answers saved online and offline, stats shown, summary copied)
-- [ ] Every success criterion of the spec is met
-- [ ] Review with the owner before starting the `ai-correction` module
+- [x] The real-iPhone check passes (answers saved online and offline, stats shown, summary copied)
+- [x] Every success criterion of the spec is met
+- [x] Review with the owner before starting the `ai-correction` module
 
 ## Risks and Mitigations
 

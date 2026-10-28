@@ -1,6 +1,6 @@
 # Tasks: progress (Bora!)
 
-Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (run by Claude), no secret in the repository, new app files listed in `sw.js` with a version bump, the owner approved the commit.
+Plan: `tasks/done/progress-plan.md`. Definition of done for every task: `node --test` passes (run by Claude), no secret in the repository, new app files listed in `sw.js` with a version bump, the owner approved the commit.
 
 ## Task 1: Attempts storage and summary routes in the Worker
 
@@ -102,7 +102,7 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Verification:**
 - [x] Tests pass: `node --test`
 - [x] Headless check (Claude): each state, both themes, no console errors.
-- [ ] Manual check (owner): the real-iPhone checklist.
+- [x] Manual check (owner): the real-iPhone checklist.
 
 **Dependencies:** Tasks 2 and 4
 
@@ -116,6 +116,6 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Estimated scope:** Medium (5 to 6 files)
 
 ## Checkpoint 2: Complete
-- [ ] The real-iPhone check passes (answers saved online and offline, stats shown, summary copied)
-- [ ] Every success criterion of the spec is met
-- [ ] Review with the owner before starting the `ai-correction` module
+- [x] The real-iPhone check passes (answers saved online and offline, stats shown, summary copied)
+- [x] Every success criterion of the spec is met
+- [x] Review with the owner before starting the `ai-correction` module
