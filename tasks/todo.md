@@ -1,15 +1,15 @@
-# Tasks: access (Bora!)
+# Tasks: progress (Bora!)
 
-Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (run by Claude), no secret in the repository, the owner approved the commit.
+Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (run by Claude), no secret in the repository, new app files listed in `sw.js` with a version bump, the owner approved the commit.
 
-## Task 1: Worker with health check, CORS and access code
+## Task 1: Attempts storage and summary routes in the Worker
 
-**Description:** Write the Worker, test first: `GET /health`, `GET /auth/check` with constant-time comparison, `503` when `ACCESS_CODE` is missing, CORS for the allowed origins only, preflight, `404` otherwise. Add `worker/wrangler.toml`.
+**Description:** Test first: `POST /progress/attempts` (validation, 1 to 100 attempts, response up to 200 characters, `INSERT OR IGNORE` on `client_id`) and `GET /progress/summary` (rounds per session, per-exercise stats with the last answer and the last wrong response). Both behind the access code. Schema created on first use. Fake D1 for tests.
 
 **Acceptance criteria:**
-- [x] Every route and status of the spec's API table is covered by a test.
-- [x] No CORS header is sent to an origin outside the allow-list.
-- [x] The repository contains no code or key.
+- [x] Invalid bodies answer `400` and store nothing.
+- [x] Sending the same attempts twice stores them once.
+- [x] The summary matches the stored attempts, including "last answer right".
 
 **Verification:**
 - [x] Tests pass: `node --test`
@@ -17,80 +17,103 @@ Plan: `tasks/plan.md`. Definition of done for every task: `node --test` passes (
 **Dependencies:** None
 
 **Files likely touched:**
-- `worker/wrangler.toml`
+- `worker/src/progress.js`
 - `worker/src/index.js`
-- `worker/src/auth.js`
-- `tests/worker.test.js`
+- `tests/fake-d1.js` (backed by Node's built-in SQLite, like D1)
+- `tests/worker-progress.test.js`
 
-**Estimated scope:** Small to medium (4 files)
+**Estimated scope:** Medium (4 files)
 
-## Task 2: Cloudflare account, Workers Builds, ACCESS_CODE secret
+## Task 2: D1 database and binding
 
-**Description:** The owner creates the Cloudflare account, creates the Worker from the GitHub repository with `worker/` as root directory, adds the `ACCESS_CODE` secret and sends the Worker's address. Claude guides each step.
-
-**Acceptance criteria:**
-- [x] A push to `main` deploys the Worker.
-- [x] `/health` answers at the Worker's address.
-- [x] `/auth/check` answers `401` without the code.
-
-**Verification:**
-- [x] Manual check (owner or Claude): open `/health` in a browser.
-
-**Dependencies:** Task 1 pushed
-
-**Files likely touched:** none (Cloudflare dashboard)
-
-**Estimated scope:** Owner setup, about 15 minutes
-
-## Task 3: API client and code storage
-
-**Description:** Write `js/config.js` with the Worker's address, `js/api/storage.js` (code in `localStorage`, inside `try/catch`) and `js/api/client.js` (`checkAccess`, 10-second timeout, results `ok`, `invalid_code`, `offline`, `server_error`), test first with a fake `fetch`.
+**Description:** The owner creates the D1 database `bora-db` and sends its ID; Claude adds the `[[d1_databases]]` binding `DB` to `worker/wrangler.toml`; the push deploys it.
 
 **Acceptance criteria:**
-- [x] Each client result is covered by a test, including timeout and network error.
-- [x] Storage never throws, even when `localStorage` is unavailable.
+- [ ] The Worker deploys with the binding.
+- [ ] `/progress/summary` answers an empty summary with the right code.
 
 **Verification:**
-- [x] Tests pass: `node --test`
+- [ ] Manual check (owner): the build succeeds; the app check comes at Task 5.
 
-**Dependencies:** Task 2 (for the address)
+**Dependencies:** Task 1
 
 **Files likely touched:**
-- `js/config.js`
-- `js/api/client.js`
-- `js/api/storage.js`
-- `tests/api-client.test.js`
-- `sw.js`
+- `worker/wrangler.toml`
 
-**Estimated scope:** Small to medium (5 files)
+**Estimated scope:** Owner setup, about 2 minutes
 
-## Task 4: Connection card in the Progresso tab
+## Task 3: Local queue, sync and API calls
 
-**Description:** Replace the Progresso placeholder with the "Conexão" card: code field with a show toggle and **Conectar** when not connected; "Conectado" and **Desconectar** when connected; pt-BR messages for each client result.
+**Description:** Test first: `js/progress/queue.js` (add, list, remove sent ids; storage injected and guarded), `js/progress/sync.js` (send in batches of 100, remove only what the server confirmed, stop on error), and `postAttempts` / `getSummary` in the API client.
 
 **Acceptance criteria:**
-- [ ] The right code connects and is remembered after closing the app.
-- [ ] A wrong code and an offline device each show their own message.
-- [ ] **Desconectar** forgets the code on this device.
+- [ ] A failed send keeps the queue intact.
+- [ ] Batches never exceed 100 attempts.
+- [ ] Without an access code, nothing is sent and nothing is lost.
 
 **Verification:**
-- [x] Tests pass: `node --test`
-- [x] Headless check (Claude): each state with a fake Worker, both themes, no console errors.
-- [ ] Manual check (owner): the real-iPhone checklist of the spec.
+- [ ] Tests pass: `node --test`
+
+**Dependencies:** Task 1
+
+**Files likely touched:**
+- `js/progress/queue.js`
+- `js/progress/sync.js`
+- `js/api/client.js`
+- `tests/progress-queue.test.js`
+- `tests/progress-sync.test.js`
+
+**Estimated scope:** Medium (5 files)
+
+## Task 4: Record answers during exercise sessions
+
+**Description:** After each answer, build the attempt (ids, right or wrong, response as text, date, session id) and add it to the queue, then try a sync. Also sync when the app opens and when it comes back online.
+
+**Acceptance criteria:**
+- [ ] Every answered exercise produces exactly one queued attempt.
+- [ ] The exercise flow is unchanged when offline or not connected.
+
+**Verification:**
+- [ ] Tests pass: `node --test`
+- [ ] Headless check (Claude): a full round offline, then online with a fake Worker; the queue empties.
 
 **Dependencies:** Task 3
 
 **Files likely touched:**
-- `js/views/progress.js`
-- `css/progress.css`
-- `locales/pt-BR.json`
-- `index.html`, `sw.js`
-- `css/exercises.css` (secondary button style for real buttons)
-- `js/views/coming-soon.js` removed (no longer used)
+- `js/progress/record.js`
+- `js/views/exercise-session.js`
+- `js/app.js`
+- `tests/progress-record.test.js`
+- `sw.js`
 
 **Estimated scope:** Medium (5 files)
 
+## Task 5: Progresso screen with stats, Para revisar and Copiar resumo
+
+**Description:** Test first for the rules and the summary text (`js/progress/summary.js`): practiced lessons (full round, at least 75 %), best score, Para revisar (last answer wrong). Then the screen: counts, best scores, Para revisar links, pending count, last update date, Copiar resumo with fallback, cached summary offline.
+
+**Acceptance criteria:**
+- [ ] A 6 out of 9 round does not mark the lesson practiced; 7 out of 9 does; a retry round never does.
+- [ ] An exercise leaves Para revisar after one right answer.
+- [ ] The summary text lists lessons, scores and the most missed exercises with her wrong answers.
+
+**Verification:**
+- [ ] Tests pass: `node --test`
+- [ ] Headless check (Claude): each state, both themes, no console errors.
+- [ ] Manual check (owner): the real-iPhone checklist.
+
+**Dependencies:** Tasks 2 and 4
+
+**Files likely touched:**
+- `js/progress/summary.js`
+- `tests/progress-summary.test.js`
+- `js/views/progress.js`
+- `css/progress.css`
+- `locales/pt-BR.json`, `sw.js`
+
+**Estimated scope:** Medium (5 to 6 files)
+
 ## Checkpoint 2: Complete
-- [ ] The owner's real-iPhone check passes (right code, wrong code, disconnect, lessons offline)
+- [ ] The real-iPhone check passes (answers saved online and offline, stats shown, summary copied)
 - [ ] Every success criterion of the spec is met
-- [ ] Review with the owner before starting the `progress` module
+- [ ] Review with the owner before starting the `ai-correction` module

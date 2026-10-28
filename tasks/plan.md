@@ -1,47 +1,48 @@
-# Implementation Plan: access (Bora!)
+# Implementation Plan: progress (Bora!)
 
-Source spec: `SPEC-access.md` (approved 2026-10-27). Module map: `CAPABILITY-MAP.md`.
+Source spec: `SPEC-progress.md` (approved 2026-10-28). Module map: `CAPABILITY-MAP.md`.
 Tasks are tracked in `tasks/todo.md`. Completed plans are in `tasks/done/`.
 
 ## Overview
 
-A Cloudflare Worker (`bora-api`) deployed from `worker/` by Workers Builds, protected by an access code stored as a Cloudflare secret, and a "Conexão" card in the Progresso tab to enter the code once.
+Save every exercise answer in a D1 database through `bora-api`, with an offline queue on the iPhone, then show practiced lessons, best scores and "Para revisar" in the Progresso tab, plus a "Copiar resumo" text for the owner.
 
 ## Architecture Decisions
 
-- **The Worker is tested without Cloudflare.** Its `fetch` handler is called directly from `node --test` with real `Request` objects and a fake `env`.
-- **Code first, deployment second.** The Worker is written and tested before the owner creates the Cloudflare account, so the first deployment is the real one.
-- **The owner's setup is a task of its own.** It is short, but it blocks the real-device check, so it sits between the Worker and the app screen.
-- **The app never depends on the Worker for lessons.** The connection card is the only place that calls it.
+- **The server stores facts, the app applies the rules.** The Worker returns rounds and per-exercise stats; the app decides "practiced" (full round, at least 75 %) and "Para revisar" using the lesson content it already has. Rules can change without touching the database.
+- **Idempotent uploads.** Each attempt carries a `client_id` made on the iPhone; the table has a unique index on it and inserts use `INSERT OR IGNORE`. Retrying a batch is always safe.
+- **Queue first, network second.** An answer is written to the local queue before any network call, so a failed or slow upload never loses it and never blocks the exercise.
+- **Schema created by the Worker.** `CREATE TABLE IF NOT EXISTS` runs once per Worker instance, so the owner never runs SQL.
+- **Fake D1 in tests.** A small in-memory fake of `prepare().bind().run()/all()`, enough for the queries used, keeps tests free of Cloudflare tools. The real database is checked after deployment.
 
 ## Task List
 
-### Phase 1: Worker
-- [x] Task 1: Worker with health check, CORS and access code
+### Phase 1: Server
+- [x] Task 1: Attempts storage and summary routes in the Worker
+- [ ] Task 2: D1 database and binding (owner, guided)
 
-### Checkpoint 1: Worker ready to deploy
+### Checkpoint 1: Server ready
 - [x] Unit tests pass
+- [ ] The deployed Worker answers `/progress/summary` with an empty summary
 
-### Phase 2: Deployment (owner, guided)
-- [x] Task 2: Cloudflare account, Workers Builds, `ACCESS_CODE` secret
-
-### Phase 3: App
-- [x] Task 3: API client and code storage
-- [ ] Task 4: Connection card in the Progresso tab
+### Phase 2: App
+- [ ] Task 3: Local queue, sync and API calls
+- [ ] Task 4: Record answers during exercise sessions
+- [ ] Task 5: Progresso screen with stats, Para revisar and Copiar resumo
 
 ### Checkpoint 2: Complete
-- [ ] The owner's real-iPhone check passes (right code, wrong code, disconnect, lessons offline)
+- [ ] The real-iPhone check passes (answers saved online and offline, stats shown, summary copied)
 - [ ] Every success criterion of the spec is met
-- [ ] Review with the owner before starting the `progress` module
+- [ ] Review with the owner before starting the `ai-correction` module
 
 ## Risks and Mitigations
 
 | Risk | Impact | Mitigation |
 |---|---|---|
-| Workers Builds does not find the Worker in the repository | Medium | `worker/` as root directory with its own `wrangler.toml`; the owner shares the build log if it fails. |
-| CORS blocks the app | Medium | Origin allow-list tested; the exact origin is `https://kgov1810.github.io` (no path). |
-| The code is entered in Safari instead of the installed app | Low | Explained on the card and in the setup steps. |
-| A weak access code | Low | At least 12 characters, recommended in the setup steps. |
+| The fake D1 behaves differently from the real one | Medium | Only simple SQL (insert, select, group by); checked on the deployed Worker at Checkpoint 1. |
+| Answers sent twice after a network retry | Medium | Unique `client_id` with `INSERT OR IGNORE`, covered by tests. |
+| The queue grows while she is not connected | Low | Small rows; batches of 100; a visible "aguardando envio" count. |
+| Clipboard refused on iOS | Low | Fallback to a selectable text box. |
 
 ## Open Questions
 
